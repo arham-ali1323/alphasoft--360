@@ -40,7 +40,7 @@
 
 /*  */
 .hero {
-  background: url("https://plus.unsplash.com/premium_photo-1682141007707-1f09c5a1d814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fHNvZnR3YXJlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D") center/cover no-repeat;
+  background: url("https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHNvZnR3YXJlJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D") center/cover no-repeat;
   min-height: 100vh;
 }
 
