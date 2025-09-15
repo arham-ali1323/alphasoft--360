@@ -37,7 +37,7 @@ const MainNavbar = () => {
             >
               <a href="/" className="text-decoration-none text-dark small">
                 <FaMapMarkerAlt className="text-primary me-2" />
-                05 kandi BR. New York
+                Pak Avenue Sahiwal Punjab Pakistan
               </a>
               <a
                 href="mailto:info@yourmail.com"

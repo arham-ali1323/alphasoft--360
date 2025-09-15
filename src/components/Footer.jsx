@@ -24,8 +24,9 @@ const Footer = () => {
                 </a>
               </div>
               <p className="pb-30">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam.
+                Empowering businesses through innovative software solutions and
+                cutting-edge technology. We transform ideas into powerful digital
+                experiences that drive growth and success.
               </p>
               <ul className="footer-social">
                 <li>
@@ -62,13 +63,13 @@ const Footer = () => {
                   <a href="/web-development">Web Development</a>
                 </li>
                 <li>
-                  <a href="/analytic-solutions">Analytic Solutions</a>
+                  <a href="/app-development">App Development</a>
                 </li>
                 <li>
                   <a href="/cloud-and-devops">Cloud and DevOps</a>
                 </li>
                 <li>
-                  <a href="/product-design">Product Design</a>
+                  <a href="/product-design">Product Development</a>
                 </li>
               </ul>
             </div>
