@@ -1,31 +1,33 @@
 // src/components/AboutSection.js
 import React from "react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import person1 from "../assets/img/person1.jpg";
 import person2 from "../assets/img/person2.jpg";
 import person3 from "../assets/img/person3.jpg";
-
-const ProgressBar = ({ label, percentage }) => {
-  return (
-    <div className="progress-bar-container">
-      <div className="d-flex justify-content-between align-items-center mb-1">
-        <span className="progress-bar-label">{label}</span>
-        <span className="progress-bar-percentage">{percentage}%</span>
-      </div>
-      <div className="progress-bar-wrapper">
-        <div
-          className="progress-bar-fill"
-          style={{ width: `${percentage}%` }}
-        ></div>
-      </div>
-    </div>
-  );
-};
+import ProgressBar from "./ProgressBar"; // Make sure to import the updated ProgressBar
 
 const AboutSection = () => {
+  // useInView hook to detect when the section is visible
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger the animation once
+    threshold: 0.3, // Trigger when 30% of the component is visible
+  });
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.2 },
+    },
+  };
+
   return (
-    <div className="about-section">
+    <div className="about-section" ref={ref}>
       {/* Left Images */}
       <div className="about-left">
+        {/* We can also add animations to the images if desired */}
         <div className="top-img">
           <img src={person1} alt="Main" />
         </div>
@@ -37,25 +39,31 @@ const AboutSection = () => {
 
       {/* Right Content */}
       <div className="about-right">
-        <div className="about-header">
-          <span className="line"></span>
-          <span>-ABOUT US</span>
-        </div>
-        <h2>AlphaSoft360: Increasing Business Success With Technology</h2>
-        <p className="about-description">
-          AlphaSoft360 has over 25 years of experience in IT services, developing software applications
-          and mobile apps for clients all over the world.
-        </p>
+        <motion.div
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={contentVariants}
+        >
+          <div className="about-header">
+            <span className="line"></span>
+            <span>-ABOUT US</span>
+          </div>
+          <h2>AlphaSoft360: Increasing Business Success With Technology</h2>
+          <p className="about-description">
+            AlphaSoft360 has over 25 years of experience in IT services, developing software applications
+            and mobile apps for clients all over the world.
+          </p>
 
-        {/* Progress Bars */}
-        <div className="progress-bars">
-          <ProgressBar label="Software Development" percentage={92} />
-          <ProgressBar label="Cyber Security" percentage={80} />
-          <ProgressBar label="Artificial Intelligence" percentage={95} />
-          <ProgressBar label="Web Development" percentage={78} />
-        </div>
+          {/* Progress Bars */}
+          <div className="progress-bars">
+            <ProgressBar label="Software Development" percentage={92} isVisible={inView} />
+            <ProgressBar label="Cyber Security" percentage={80} isVisible={inView} />
+            <ProgressBar label="Artificial Intelligence" percentage={95} isVisible={inView} />
+            <ProgressBar label="Web Development" percentage={78} isVisible={inView} />
+          </div>
 
-        <button className="learn-more-btn">Learn-More</button>
+          <button className="learn-more-btn">Learn-More</button>
+        </motion.div>
       </div>
     </div>
   );

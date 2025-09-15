@@ -4,7 +4,12 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 const Hero = () => {
   return (
     <div>
-            <div className="hero d-flex align-items-center">
+      <div className="hero d-flex align-items-center" style={{
+  backgroundImage: `url('https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=3840&q=100')`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat'
+}}>
         <Container>
           <Row className="align-items-center">
             {/* Left Content */}

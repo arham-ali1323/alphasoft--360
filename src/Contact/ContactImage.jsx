@@ -6,7 +6,7 @@ const ContactImage = () => {
     <section
       className="image-text-section"
       style={{
-        background: `url("https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat`,
+        background: `url("https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=3840&q=100") center/cover no-repeat`,
         minHeight: "60vh",
         display: "flex",
         alignItems: "center",
@@ -17,7 +17,7 @@ const ContactImage = () => {
       <div
         className="overlay"
        style={{
-          // background: "rgba(0, 0, 0, 0.5)",
+          //  
           // height: "100%",
           display: "flex",
           flexDirection: "column",
