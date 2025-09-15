@@ -1,2 +1,4 @@
-- [x] Create ProgressBar component in src/Home/ProgressBar.jsx
-- [x] Test the component by running dev server and checking if import error is resolved
+- [x] Update the main heading in FaqPage.jsx to "Frequently Asked Questions About Our Software House"
+- [x] Revise the FAQ questions and answers to be relevant to a software house
+- [x] Remove the duplicate FAQ item
+- [x] Update the image alt text to be more relevant
