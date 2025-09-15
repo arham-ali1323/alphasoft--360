@@ -1,12 +1,7 @@
 import React from "react";
 import { Container, Row, Col, ProgressBar, Button } from "react-bootstrap";
 
-// import person1 from "../assets/img/person1.jpg";
-// import person2 from "../assets/img/person2.jpg";
-// import person3 from "../assets/img/person3.jpg";
-
-const AboutSection = () => {
-
+const AboutTechSection = () => {
   return (
     <section className="about-tech-section py-5">
       <Container>
@@ -86,4 +81,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default AboutTechSection;

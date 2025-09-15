@@ -5,6 +5,7 @@ import FaqPage from '../faq/FaqPage';
 import Pricing from '../Home/Pricing';
 import FaQForm from '../faq/FaQForm';
 import PartnerSlider from '../Home/PartnerSlider';
+import AboutTechSection from '../faq/AboutTechSection';
 const FAQ = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const FAQ = () => {
       <FaQForm/>
       <Pricing/>
       <PartnerSlider/>
+      <AboutTechSection/>
     </>
   )
 }

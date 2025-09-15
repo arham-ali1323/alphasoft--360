@@ -4,8 +4,26 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { DiHtml5, DiCss3, DiJsBadge, DiReact, DiBootstrap, DiNodejs } from "react-icons/di";
-import { SiTailwindcss, SiGithub, SiWordpress } from "react-icons/si";
+// Existing icons
+import {
+  DiHtml5,
+  DiCss3,
+  DiJsBadge,
+  DiReact,
+  DiBootstrap,
+  DiNodejs,
+  DiPhp,
+} from "react-icons/di";
+import {
+  SiTailwindcss,
+  SiGithub,
+  SiWordpress,
+  SiLaravel,
+  SiSymfony,
+  SiNextdotjs,
+  SiAngular,
+  SiReact
+} from "react-icons/si";
 
 const partners = [
   { id: 1, Icon: DiHtml5, name: "HTML5", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
@@ -17,6 +35,11 @@ const partners = [
   { id: 7, Icon: DiNodejs, name: "Node.js", link: "https://nodejs.org/" },
   { id: 8, Icon: SiGithub, name: "GitHub", link: "https://github.com/" },
   { id: 9, Icon: SiWordpress, name: "WordPress", link: "https://wordpress.org/" },
+  { id: 10, Icon: DiPhp, name: "PHP", link: "https://www.php.net/" },
+  { id: 11, Icon: SiLaravel, name: "Laravel", link: "https://laravel.com/" },
+  { id: 12, Icon: SiSymfony, name: "Symfony", link: "https://symfony.com/" },
+  { id: 13, Icon: SiNextdotjs, name: "Next.js", link: "https://nextjs.org/" },
+  { id: 14, Icon: SiAngular, name: "Angular", link: "https://angular.io/" },
 ];
 
 const PartnerSlider = () => {
@@ -42,7 +65,13 @@ const PartnerSlider = () => {
         <Slider {...settings}>
           {partners.map(({ id, Icon, name, link }) => (
             <div className="partner-item" key={id}>
-              <a href={link} target="_blank" rel="noreferrer" className="logo-icon">
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="logo-icon"
+                aria-label={name}
+              >
                 <Icon size={80} title={`${name} logo`} />
               </a>
             </div>
