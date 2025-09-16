@@ -73,17 +73,10 @@
 }
 
 /* Small images around main image */
-.small-img {
-  position: absolute;
-  width: 130px;
-  height: auto;
-  object-fit: cover;
-  z-index: 2;
-}
 .small-img2 {
   position: absolute;
-  width: 130px;
-  height: auto;
+  width: 300px;
+  height: 400px;
   object-fit: cover;
   z-index: -2;
   animation: ali 10s infinite; ;
@@ -97,20 +90,20 @@
 }
 .small-img3 {
   position: absolute;
-  width: 130px;
+  width: 300px;
   height: auto;
   object-fit: cover;
   z-index: -2;
     animation: spin 3s infinite;
 }
 @keyframes spin {
-  0% { transform: translateX(0); }
-  50%{ transform: translateX(5px); }
-  100% { transform: translateX(10px) }
+  0% { transform: translateX(5px); }
+  50%{ transform: translateX(10px); }
+  100% { transform: translateX(20px) }
 }
-.img1 { top: -40px; left: 0; }
+.img1 { top: -111px; left: -60px; }
 .img2 { bottom: -40px; left: -40px; }
-.img3 { bottom: -40px; left: 0px; }
+.img3 { bottom: -100px; left: -46px; }
 
 
 @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 // src/components/TeamSection.js
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import ngbng from "../assets/img/ngbng.png";
 
 const teamMembers = [
@@ -12,7 +12,8 @@ const teamMembers = [
       facebook: "https://facebook.com",
       instagram: "https://instagram.com",
       twitter: "https://twitter.com",
-      linkedin: "https://linkedin.com"
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
@@ -23,7 +24,8 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
@@ -34,7 +36,8 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
@@ -45,7 +48,8 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
@@ -56,7 +60,8 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
@@ -67,7 +72,8 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
@@ -78,7 +84,8 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
@@ -89,7 +96,8 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
     }
   },
   {
@@ -100,7 +108,9 @@ const teamMembers = [
       facebook: "#",
       instagram: "#",
       twitter: "#",
-      linkedin: "#"
+      linkedin: "#",
+      github: "#"
+      
     }
   }
 ];
@@ -136,6 +146,9 @@ const TeamSection = () => {
                   </a>
                   <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
                     <FaLinkedinIn />
+                  </a>
+                  <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="social-link">
+                    <FaGithub />
                   </a>
                 </div>
               </div>

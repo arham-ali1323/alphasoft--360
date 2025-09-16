@@ -18,8 +18,6 @@ const FaQImg = () => {
       <div
         className="overlay"
         style={{
-          // background: "rgba(0, 0, 0, 0.5)",
-          // height: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

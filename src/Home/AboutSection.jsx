@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col, ProgressBar, Button } from "react-bootstrap";
 
-// import person1 from "../assets/img/person1.jpg";
-// import person2 from "../assets/img/person2.jpg";
-// import person3 from "../assets/img/person3.jpg";
+import person1 from "../assets/img/person1.jpg";
+import person2 from "../assets/img/person2.jpg";
+import person3 from "../assets/img/person3.jpg";
 
 const AboutSection = () => {
 
@@ -17,18 +17,18 @@ const AboutSection = () => {
               <div className="bg-rotate"></div>
 
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80"
+                src={person1}
                 alt="Main team working"
                 className="main-img rounded-4 shadow"
               />
 
               <img
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=400&q=80"
+                src={person2}
                 alt="Team small 1"
                 className="small-img2 img1 rounded-3 shadow"
               />
              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
+                src={person3}
                 alt="Team small 3"
                 className="small-img3 img3 rounded-3 shadow"
               />

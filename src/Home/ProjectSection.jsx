@@ -3,7 +3,6 @@ import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-
 // Import your placeholder images
 import productEngineeringImg from '../assets/img/6.jpg';
 import analyticSolutionsImg from '../assets/img/7.jpg';
@@ -12,7 +11,7 @@ import growthStrategiesImg from '../assets/img/8.jpg';
 // Import ServiceCard component
 import ServiceCard from './Servicescard';
 
-const ITSolutionsSection = () => {
+const ProjectSection = () => {
   const options = {
     loop: true,
     margin: 30,
@@ -83,4 +82,4 @@ const ITSolutionsSection = () => {
   );
 };
 
-export default ITSolutionsSection;
+export default ProjectSection;
