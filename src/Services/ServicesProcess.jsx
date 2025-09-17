@@ -22,7 +22,7 @@ const Servicesprocess2 = () => {
           <div className="process2-left-panel">
             <p className="Services-process2-tag">Working Process</p>
             <h2>
-              Our Services Process – How We Work For Our Customers
+              Our Services Delivery Process - How AlphaSoft Delivers Excellence
             </h2>
             <button className="contact-us-button">Contact Us</button>
           </div>
@@ -33,23 +33,23 @@ const Servicesprocess2 = () => {
           <div className="process2-right-steps">
             <Process2Step
               number="1"
-              title="Discovery"
-              description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+              title="Consultation & Assessment"
+              description="We begin with a thorough consultation to understand your requirements, assess your current infrastructure, and identify the best solutions for your business needs."
             />
             <Process2Step
               number="2"
-              title="Planning"
-              description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+              title="Proposal & Planning"
+              description="Our team develops a detailed proposal with project scope, timeline, and cost estimates. We create a comprehensive plan outlining deliverables and milestones."
             />
             <Process2Step
               number="3"
-              title="Execute"
-              description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+              title="Implementation & Development"
+              description="Our skilled developers and engineers execute the project using industry best practices, ensuring quality, security, and scalability throughout the development process."
             />
             <Process2Step
               number="4"
-              title="Deliver"
-              description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+              title="Testing & Deployment"
+              description="Rigorous testing ensures the solution meets all requirements. We handle seamless deployment and provide training, documentation, and ongoing support."
             />
           </div>
         </Col>

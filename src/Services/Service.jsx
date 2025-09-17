@@ -13,40 +13,40 @@ import icon6 from "../assets/img/6.png";
 const services = [
   {
     img: icon1,
-       title: "Data Center",
+       title: "App Development",
     description:
-      "Expert guidance to streamline operations, enhance efficiency, and achieve sustainable business growth.",
+      "Secure and scalable data center solutions with advanced infrastructure management, ensuring high availability and performance for your critical applications.",
   },
   {
     img: icon2,
     title: "Web Development",
     description:
-      "Proactive risk identification, assessment, and mitigation to safeguard your business and ensure long-term stability.",
+      "Custom web application development using modern frameworks and technologies to create responsive, user-friendly websites and web platforms.",
   },
   {
     img: icon3,
     title: "Analytic Solutions",
     description:
-      "In-depth market analysis and insights to inform decision-making and maintain a competitive edge in your industry.",
+      "Advanced data analytics and business intelligence solutions to transform raw data into actionable insights for informed decision-making.",
   },
   {
     img: icon4,
     title: "Cloud & DevOps",
     description:
-      "High-quality service delivery with a focus on excellence, ensuring client satisfaction and building lasting partnerships.",
+      "Comprehensive cloud migration, infrastructure automation, and DevOps practices to accelerate development cycles and improve deployment reliability.",
   },
   {
     img: icon5,
     title: "Product & Design",
     description:
-      "Scalable cloud infrastructure and migration strategies to support digital transformation and growth.",
+      "User-centered product design and UX/UI development services to create intuitive, engaging digital products that delight your customers.",
   },
   {
     img: icon6,
      title: "Software Development",
 
     description:
-      "Dedicated assistance around the clock to resolve issues quickly and maintain smooth operations.",
+      "Full-cycle software development services including custom applications, enterprise solutions, and system integrations tailored to your business needs.",
   },
 ];
 
@@ -80,7 +80,7 @@ const Services = () => {
           <Col xs={10} md={6}>
             <small className="text-primary fw-bold">SERVICES</small>
             <h3 className="fs-2 fs-lg-3">
-              AlphaSoft360 Offers All Kinds of IT Solutions Services
+              AlphaSoft Offers Comprehensive IT Solutions and Software Development Services
             </h3>
             <div className="line mx-auto"></div>
           </Col>

@@ -24,9 +24,9 @@ const Footer = () => {
                 </a>
               </div>
               <p className="pb-30">
-                Empowering businesses through innovative software solutions and
-                cutting-edge technology. We transform ideas into powerful digital
-                experiences that drive growth and success.
+                AlphaSoft is a leading software development company specializing in
+                custom web applications, mobile apps, and cloud solutions. We deliver
+                high-quality software that helps businesses thrive in the digital age.
               </p>
               <ul className="footer-social">
                 <li>
@@ -103,7 +103,7 @@ const Footer = () => {
                 news & offers.
               </p>
 
-              <form className="newsletter-form">
+              <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert('Thank you for subscribing to our newsletter!'); }}>
                 <input type="email" placeholder="Your email address" required />
                 <button type="submit">
                   <FaPaperPlane />

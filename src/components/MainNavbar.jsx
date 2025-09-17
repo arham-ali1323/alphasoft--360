@@ -16,6 +16,7 @@ import {
   FaTwitter,
   FaPinterestP,
   FaInstagram,
+  FaLinkedinIn
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/img/AlphaSoft_logo1.png";
@@ -85,18 +86,18 @@ const MainNavbar = () => {
                 Contact
               </Nav.Link>
             </Nav>
-            <div className="d-flex gap-3">
-              <a href="/" className="text-white">
+            <div className="d-flex gap-3 navbar-social">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
                 <FaFacebookF />
               </a>
-              <a href="/" className="text-white">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
                 <FaTwitter />
               </a>
-              <a href="/" className="text-white">
-                <FaPinterestP />
-              </a>
-              <a href="/" className="text-white">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
                 <FaInstagram />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                <FaLinkedinIn />
               </a>
             </div>
           </Navbar.Collapse>

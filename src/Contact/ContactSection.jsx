@@ -1,8 +1,59 @@
-import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaHome, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    website: "",
+    message: ""
+  });
+
+  const [alert, setAlert] = useState({ show: false, variant: "", message: "" });
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+      setAlert({
+        show: true,
+        variant: "danger",
+        message: "Please fill all required fields correctly!"
+      });
+    } else {
+      setAlert({
+        show: true,
+        variant: "success",
+        message: "Thank you! We'll contact you soon."
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        website: "",
+        message: ""
+      });
+      setValidated(false);
+    }
+
+    setValidated(true);
+    setTimeout(() => {
+      setAlert({ show: false, variant: "", message: "" });
+    }, 3000);
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section className="contact-section py-5">
       <Container>
@@ -49,25 +100,85 @@ const ContactSection = () => {
           <Col md={7}>
             <h6 className="text-primary">GET IN TOUCH</h6>
             <h3 className="fw-bold mb-4">Fill The Form Below</h3>
-            <Form>
+            
+            {alert.show && (
+              <Alert 
+                variant={alert.variant} 
+                onClose={() => setAlert({ show: false, variant: "", message: "" })} 
+                dismissible
+                className="mb-3"
+              >
+                {alert.message}
+              </Alert>
+            )}
+
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
               <Row>
                 <Col md={6} className="mb-3">
-                  <Form.Control type="text" placeholder="Name" />
+                  <Form.Control
+                    required
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide your name.
+                  </Form.Control.Feedback>
                 </Col>
                 <Col md={6} className="mb-3">
-                  <Form.Control type="email" placeholder="E-Mail" />
+                  <Form.Control
+                    required
+                    type="email"
+                    name="email"
+                    placeholder="E-Mail"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid email.
+                  </Form.Control.Feedback>
                 </Col>
               </Row>
               <Row>
                 <Col md={6} className="mb-3">
-                  <Form.Control type="text" placeholder="Phone Number" />
+                  <Form.Control
+                    required
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    pattern="[0-9]{10,}"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid phone number.
+                  </Form.Control.Feedback>
                 </Col>
                 <Col md={6} className="mb-3">
-                  <Form.Control type="text" placeholder="Your Website" />
+                  <Form.Control
+                    type="url"
+                    name="website"
+                    placeholder="Your Website"
+                    value={formData.website}
+                    onChange={handleChange}
+                  />
                 </Col>
               </Row>
               <Form.Group className="mb-3">
-                <Form.Control as="textarea" rows={4} placeholder="Your Message Here" />
+                <Form.Control
+                  required
+                  as="textarea"
+                  name="message"
+                  rows={4}
+                  placeholder="Your Message Here"
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please provide your message.
+                </Form.Control.Feedback>
               </Form.Group>
               <Button type="submit" className="submit-btn px-4 py-2">
                 Submit Now
@@ -77,7 +188,6 @@ const ContactSection = () => {
         </Row>
       </Container>
     </section>
-    
   );
 };
 

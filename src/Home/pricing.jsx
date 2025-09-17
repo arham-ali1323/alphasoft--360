@@ -13,10 +13,11 @@ const PricingSection = () => {
       price: billingCycle === 'monthly' ? "$29.99" : "$299.99",
       period: billingCycle === 'monthly' ? "Monthly Package" : "Yearly Package",
       features: [
-        "Powerful Admin Panel",
-        "1 Native Android App",
-        "Multi-Language Support",
-        "Support via E-mail and Phone"
+        "Basic Web Application",
+        "Admin Dashboard",
+        "Responsive Design",
+        "Email & Phone Support",
+        "1 Month Free Maintenance"
       ],
       recommended: false,
       savings: ""
@@ -26,10 +27,11 @@ const PricingSection = () => {
       price: billingCycle === 'monthly' ? "$39.99" : "$399.99",
       period: billingCycle === 'monthly' ? "Monthly Package" : "Yearly Package",
       features: [
-        "Powerful Admin Panel",
-        "2 Native Android Apps",
-        "Multi-Language Support",
-        "Support via E-mail and Phone"
+        "Advanced Web Application",
+        "2 Mobile Apps (iOS & Android)",
+        "Database Integration",
+        "Priority Email & Phone Support",
+        "3 Months Free Maintenance"
       ],
       recommended: true,
       savings: "Save 15%"
@@ -39,10 +41,11 @@ const PricingSection = () => {
       price: billingCycle === 'monthly' ? "$79.99" : "$799.99",
       period: billingCycle === 'monthly' ? "Monthly Package" : "Yearly Package",
       features: [
-        "Powerful Admin Panel",
-        "3 Native Android Apps",
-        "Multi-Language Support",
-        "Support via E-mail and Phone"
+        "Enterprise Software Solution",
+        "3 Cross-Platform Apps",
+        "Advanced Analytics & Reporting",
+        "24/7 Premium Support",
+        "6 Months Free Maintenance"
       ],
       recommended: false,
       savings: "Save 20%"
@@ -54,7 +57,7 @@ const PricingSection = () => {
       <Container className="PricingSection">
         <div className="text-center mb-5">
           <p className="text-primary">Pricing</p>
-          <h1 className="display-4 fw-bold">Our Pricing Plan</h1>
+          <h1 className="display-4 fw-bold">AlphaSoft Pricing Plans</h1>
           <div className="divider mx-auto my-4"></div>
           <p className="lead text-muted">Choose the plan that works best for your needs</p>
 

@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Import your placeholder images
-import blogImage1 from '../assets/img/6.jpg'; // Adjust path as needed
-import blogImage2 from '../assets/img/7.jpg'; // Adjust path as needed
-import blogImage3 from '../assets/img/8.jpg'; // Adjust path as needed
+import blogImage1 from '../assets/img/9.jpg'; // Adjust path as needed
+import blogImage2 from '../assets/img/10.jpg'; // Adjust path as needed
+import blogImage3 from '../assets/img/11.jpg'; // Adjust path as needed
 
 // A simple component for a blog post card
 const BlogCard = ({ image, date, author, title, text, category }) => {
@@ -32,27 +32,27 @@ const BlogSection = () => {
   const blogPosts = [
     {
       image: blogImage1,
-      date: "28 December 2020",
-      author: "admin",
-      title: "Tech Firms Support Huawei Restriction, Balk at Cost",
-      text: "We denounce with righteous indignation and dislike men who are so beguiled...",
-      category: "Digital Technology",
+      date: "15 March 2024",
+      author: "AlphaSoft Team",
+      title: "The Future of React Development: Best Practices for 2024",
+      text: "Discover the latest trends and techniques in React development that will help you build more efficient and scalable web applications...",
+      category: "Web Development",
     },
     {
       image: blogImage2,
-      date: "30 December 2020",
-      author: "admin",
-      title: "Servo Project Joins The Linux Foundation Fold Desco",
-      text: "We denounce with righteous indignation and dislike men who are so beguiled...",
-      category: "IT Services",
+      date: "22 March 2024",
+      author: "AlphaSoft Team",
+      title: "Cloud Migration Strategies: Moving Your Business to the Cloud",
+      text: "Learn about effective strategies for migrating your existing applications to cloud platforms while minimizing downtime and maximizing performance...",
+      category: "Cloud Computing",
     },
     {
       image: blogImage3,
-      date: "16 Nov 2020",
-      author: "admin",
-      title: "Necessity May Give Us Your Best Virtual Court System",
-      text: "We denounce with righteous indignation and dislike men who are so beguiled...",
-      category: "Software Development",
+      date: "28 March 2024",
+      author: "AlphaSoft Team",
+      title: "Mobile App Security: Protecting Your Users in a Digital World",
+      text: "Explore essential security measures and best practices for developing secure mobile applications that protect user data and privacy...",
+      category: "Mobile Development",
     },
   ];
 

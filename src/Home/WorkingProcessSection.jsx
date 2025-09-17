@@ -18,7 +18,7 @@ const WorkingProcessSection = () => {
       <div className="process-left-panel">
         <p className="working-process-tag">WORKING PROCESS</p>
         <h2>
-          Our Working Process - How We Work For Our Customers
+          Our Software Development Process - How AlphaSoft Delivers Excellence
         </h2>
         <button className="learn-more-btn">Contact Us</button>
       </div>
@@ -27,23 +27,23 @@ const WorkingProcessSection = () => {
       <div className="process-right-steps">
         <ProcessStep
           number="1"
-          title="Discovery"
-          description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+          title="Requirement Analysis"
+          description="We thoroughly understand your business needs, gather detailed requirements, and define project scope to ensure a clear roadmap for success."
         />
         <ProcessStep
           number="2"
-          title="Planning"
-          description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+          title="Design & Planning"
+          description="Our team creates comprehensive designs, architectures, and project plans, ensuring scalability, security, and alignment with your goals."
         />
         <ProcessStep
           number="3"
-          title="Execute"
-          description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+          title="Development"
+          description="Using cutting-edge technologies and best practices, we build robust, efficient software solutions tailored to your specifications."
         />
         <ProcessStep
           number="4"
-          title="Deliver"
-          description="Quisque placerat vitae lacus ut scelerisque. Fusce luctus odio ac nibh luctus, in porttitor theo lacus egestas."
+          title="Testing & Deployment"
+          description="Rigorous testing ensures quality and reliability. We handle seamless deployment and provide ongoing support for optimal performance."
         />
       </div>
     </div>
