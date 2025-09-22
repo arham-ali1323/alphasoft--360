@@ -6,7 +6,7 @@ const ContactImage = () => {
     <section
       className="image-text-section"
       style={{
-        background: `url("https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=3840&q=100") center/cover no-repeat`,
+        background: `url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop") center/cover no-repeat`,
         minHeight: "60vh",
         display: "flex",
         alignItems: "center",

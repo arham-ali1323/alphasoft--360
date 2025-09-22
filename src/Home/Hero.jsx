@@ -1,154 +1,95 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useMemo, useState, useEffect } from 'react';
+import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
+
+// High-quality software company themed images from Unsplash
+const allHeroImages = [
+  "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=2000&h=1200&fit=crop"
+];
 
 const Hero = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  const [alert, setAlert] = useState({ show: false, variant: '', message: '' });
+  const [refreshSeed, setRefreshSeed] = useState(0);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      setAlert({
-        show: true,
-        variant: 'danger',
-        message: 'Please fill in all fields!'
-      });
-      return;
-    }
+  // Generate new random seed on component mount (page refresh)
+  useEffect(() => {
+    setRefreshSeed(Math.random());
+  }, []);
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setAlert({
-        show: true,
-        variant: 'danger',
-        message: 'Please enter a valid email address!'
-      });
-      return;
-    }
-
-    // Success alert
-    setAlert({
-      show: true,
-      variant: 'success',
-      message: 'Form submitted successfully!'
-    });
-    
-    // Clear form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
-
-    // Hide alert after 3 seconds
-    setTimeout(() => {
-      setAlert({ show: false, variant: '', message: '' });
-    }, 3000);
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-    // Clear alert when user starts typing
-    if (alert.show) {
-      setAlert({ show: false, variant: '', message: '' });
-    }
-  };
+  // Randomly select 4 images on each page refresh
+  const heroImages = useMemo(() => {
+    const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 4);
+  }, [refreshSeed]); // Using refreshSeed as dependency to change on each refresh
 
   return (
     <div>
-      <div className="hero d-flex align-items-center" style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=3840&q=100')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}>
-        <Container>
-          <Row className="align-items-center">
-            {/* Left Content */}
-            <Col md={6} className="text-white">
-              <h1 className="fw-bold">
-                IT Consulting Services For Your Business
-              </h1>
-              <p className="lead">
-                AlphaSoft360 is a leading technology solutions provider company
-                all over the world with over 20 years of experience.
-              </p>
-            </Col>
+      <Carousel className="hero-carousel" interval={5000} fade>
+        {heroImages.map((image, index) => (
+          <Carousel.Item key={index}>
+            <div
+              className="hero d-flex align-items-center"
+              style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                minHeight: '100vh'
+              }}
+            >
+              <Container>
+                <Row className="align-items-center">
+                  {/* Left Content */}
+                  <Col md={6} className="text-white">
+                    <h1 className="fw-bold">
+                      IT Consulting Services For Your Business
+                    </h1>
+                    <p className="lead">
+                      AlphaSoft360 is a leading technology solutions provider company
+                      all over the world with over 20 years of experience.
+                    </p>
+                  </Col>
 
-            {/* Right Form */}
-            <Col md={5} className="ms-auto">
-              <div className="bg-white p-4 rounded shadow">
-                <h4 className="fw-bold mb-3">Schedule Your Appointment</h4>
-                <p className="text-muted">
-                  We are here to help you 24/7 with experts
-                </p>
-                {alert.show && (
-                  <Alert variant={alert.variant} onClose={() => setAlert({ show: false, variant: '', message: '' })} dismissible>
-                    {alert.message}
-                  </Alert>
-                )}
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-3">
-                    <Form.Control 
-                      type="text" 
-                      placeholder="Name" 
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group className="mb-3">
-                    <Form.Control 
-                      type="email" 
-                      placeholder="E-Mail" 
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group className="mb-3">
-                    <Form.Control 
-                      type="text" 
-                      placeholder="Phone Number" 
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group className="mb-3">
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      placeholder="Message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                    />
-                  </Form.Group>
-                  <Button variant="primary" type="submit" className="w-100">
-                    Submit Now
-                  </Button>
-                </Form>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <ToastContainer />
+                  {/* Right Form */}
+                  <Col md={5} className="ms-auto">
+                    <div className="bg-white p-4 rounded shadow">
+                      <h4 className="fw-bold mb-3">Schedule Your Appointment</h4>
+                      <p className="text-muted">
+                        We are here to help you 24/7 with experts
+                      </p>
+                      <Form>
+                        <Form.Group className="mb-3">
+                          <Form.Control type="text" placeholder="Name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                          <Form.Control type="email" placeholder="E-Mail" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                          <Form.Control type="text" placeholder="Phone Number" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                          <Form.Control
+                            as="textarea"
+                            rows={3}
+                            placeholder="Message"
+                          />
+                        </Form.Group>
+                        <Button variant="primary" type="submit" className="w-100">
+                          Submit Now
+                        </Button>
+                      </Form>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </div>
   );
 };
