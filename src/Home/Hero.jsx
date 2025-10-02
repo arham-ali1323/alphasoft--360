@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
 
 // High-quality software company themed images from Unsplash
@@ -13,18 +13,13 @@ const allHeroImages = [
 ];
 
 const Hero = () => {
-  const [refreshSeed, setRefreshSeed] = useState(0);
+  const [heroImages, setHeroImages] = useState([]);
 
-  // Generate new random seed on component mount (page refresh)
+  // Randomly select 4 images on component mount
   useEffect(() => {
-    setRefreshSeed(Math.random());
-  }, []);
-
-  // Randomly select 4 images on each page refresh
-  const heroImages = useMemo(() => {
     const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 4);
-  }, [refreshSeed]); // Using refreshSeed as dependency to change on each refresh
+    setHeroImages(shuffled.slice(0, 4));
+  }, []);
 
   return (
     <div>

@@ -1,15 +1,11 @@
 // src/components/ContactSection.jsx
-import React, { memo } from "react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import React from "react";
+import { FaPhoneAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
-import client1 from "../assets/img/client1.png";
-import client2 from "../assets/img/client2.png";
-import client3 from "../assets/img/client3.png";
 import mail from "../assets/img/mail.png";
 import worldGlobe from "../assets/img/world-globe.png";
-import dataAnalytics from "../assets/img/data-analytics.png";
 
 // Stat Card with CountUp
 const StatCard = ({ value, label, isVisible }) => {

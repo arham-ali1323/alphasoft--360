@@ -7,9 +7,15 @@ import Services from "./Pages/Services";
 import Team from "./Pages/Team";
 import Contact from "./Pages/Contact";
 import FAQ from "./Pages/FAQ";
+
 function App() {
   return (
-    <Router>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       <div className="app-container">
         <MainNavbar />
         <main>
