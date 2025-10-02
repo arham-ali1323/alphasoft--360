@@ -1,5 +1,5 @@
 import React from 'react';
-import About from '../assets/img/portrait-1.jpg'; // Ensure you have this image in the specified path
+import About from '../assets/img/CEo.jpeg'; // Ensure you have this image in the specified path
 
 const AboutSection = () => {
   return (
