@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
-import bgImage from "../assets/img/hero-bg.jpg";
+import bgImage from "../assets/img/Hero-BG.jpg";
 import bgImage2 from "../assets/img/servicesbg.jpg";
 
 const ServicesSection = () => {
