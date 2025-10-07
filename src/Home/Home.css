@@ -1404,75 +1404,78 @@
     margin-bottom: 30px;
   }
 }
-
+/* Testimonials Section */
 .testimonial-section {
-  background: #f9fafc;
+  padding: 3rem 1rem;
+  background: #f8f9fa;
 }
 
 .testimonial-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1.5rem;
+  transition: all 0.3s ease;
   min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 0.3s ease; /* Smooth animations */
 }
 
 .testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  background-color: #0d6efd;
-  color: #fff; /* Makes headings & text white */
-}
-
-.testimonial-card:hover .testimonial-text {
-  color: #fff;
-}
-
-.testimonial-card:hover .quote-icon {
-  color: #fff;
-}
-
-.quote-icon {
-  font-size: 32px;
-  color: #0d6efd;
-  transition: color 0.3s ease;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-text {
-  font-size: 15px;
-  color: #555;
+  color: #333;
   line-height: 1.6;
-  transition: color 0.3s ease;
+  font-size: 0.98rem;
 }
 
-.client-img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  margin-top: -30px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+.client-info img {
+  transition: transform 0.3s ease;
+}
+
+.client-info img:hover {
+  transform: scale(1.05);
+}
+
+.quote-icon {
+  opacity: 0.8;
 }
 
 .divider {
-  width: 50px;
-  height: 3px;
+  width: 60px;
+  height: 4px;
   background: #0d6efd;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-.blog-section {
-  background-color: #f8f9fa; /* Light background for the section */
-  padding: 80px 0;
+/* Slick dots customization */
+.slick-dots li button:before {
+  color: #0d6efd;
+  font-size: 10px;
 }
 
-.blog-section .text-primary {
-  color: #007bff !important; /* Bootstrap primary blue */
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #0a58ca;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .testimonial-card {
+    padding: 1.5rem;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 1.25rem;
+    min-height: auto;
+  }
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
 }
 /* BlogCard.css */
 
@@ -1717,4 +1720,76 @@
     margin: 15px 0;
     justify-content: center;
   }
+}
+
+/* HERO */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 4rem 0;
+}
+.hero .hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Carousel/Images inside hero */
+.hero .carousel-item,
+.hero .hero-slide {
+  min-height: 70vh;
+}
+.hero img, .hero .bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Navbar social icons (compact) */
+.navbar-social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.navbar-social a {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all .25s ease;
+}
+.navbar-social a:hover { transform: translateY(-3px); }
+
+/* Projects grid adjustments - slick will handle slides, ensure card scales */
+.project-item { padding: 0.75rem; }
+.project-img img { width: 100%; height: auto; object-fit: cover; }
+
+/* Contact / Form spacing */
+.contact-info-box { padding: 1.5rem; }
+.stats-bar { flex-wrap: wrap; gap: 1rem; }
+
+/* Utility spacing for small screens */
+@media (max-width: 991px) {
+  .hero { padding: 3rem 0; min-height: 60vh; }
+  .navbar-social { gap: 8px; }
+}
+@media (max-width: 767px) {
+  .hero { min-height: 50vh; padding: 2rem 0; }
+  .hero .hero-inner { padding: 0 0.75rem; }
+  .project-item { padding: 0.5rem; }
+  .nav .nav-link { padding: .45rem .5rem; }
+  .top-info-bar { display: none; } /* hide less-important topbar on small screens */
+}
+/* Ensure form and left info stack correctly */
+@media (max-width: 575px) {
+  .contact-info-box { padding: 1rem; text-align: left; }
+  .stats-bar { justify-content: space-between; }
 }
