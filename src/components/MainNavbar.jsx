@@ -66,7 +66,7 @@ const MainNavbar = () => {
         {" "}
         <Container>
           {" "}
-          <Navbar.Brand href="#">AlphaSoft360</Navbar.Brand>{" "}
+          <Navbar.Brand href="/">AlphaSoft360</Navbar.Brand>{" "}
           <Navbar.Toggle aria-controls="main-navbar" />
           <Navbar.Collapse id="main-navbar">
             <Nav className="me-auto me-3">

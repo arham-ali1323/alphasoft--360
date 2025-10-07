@@ -13,9 +13,9 @@ import icon6 from "../assets/img/6.png";
 const services = [
   {
     img: icon1,
-       title: "App Development",
+    title: "App Development",
     description:
-      "Secure and scalable data center solutions with advanced infrastructure management, ensuring high availability and performance for your critical applications.",
+      "Secure and scalable data center services offering advanced infrastructure management, ensuring peak performance and maximum uptime."
   },
   {
     img: icon2,
@@ -44,7 +44,6 @@ const services = [
   {
     img: icon6,
      title: "Software Development",
-
     description:
       "Full-cycle software development services including custom applications, enterprise solutions, and system integrations tailored to your business needs.",
   },

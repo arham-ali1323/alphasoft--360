@@ -50,6 +50,7 @@ const services = [
   },
 ];
 
+
 const Services = () => {
   // Service Card Component inside the same file
   const ServiceCard = ({ image, title, description }) => (
