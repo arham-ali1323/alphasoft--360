@@ -1,9 +1,15 @@
 // src/components/ContactSection.jsx
 import React, { memo } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
+import client1 from "../assets/img/client1.png";
+import client2 from "../assets/img/client2.png";
+import client3 from "../assets/img/client3.png";
+import mail from "../assets/img/mail.png";
+import worldGlobe from "../assets/img/world-globe.png";
+import dataAnalytics from "../assets/img/data-analytics.png";
 
 // Stat Card with CountUp
 const StatCard = ({ value, label, isVisible }) => {
@@ -44,7 +50,7 @@ const ContactSection = () => {
             className="contact-person-image"
           />
           <div className="idea-bubble">
-            <p>Have an idea or Project?</p>
+            <p>Got a Project Idea?</p>
           </div>
         </div>
 
@@ -59,19 +65,37 @@ const ContactSection = () => {
             Have any idea or project in your mind? Call us or schedule an
             appointment. Our representative will reply to you shortly.
           </p>
-           <button className="learn-more-btn">Lets Talk</button>
+
+          {/* Additional Contact Methods */}
+          <div className="additional-contact-methods">
+            <div className="contact-method">
+              <img src={mail} alt="Email" className="contact-icon-img" />
+              <div>
+                <p className="contact-method-title">Email Us</p>
+                <p className="contact-method-detail">info@alphasoft360.com</p>
+              </div>
+            </div>
+            <div className="contact-method">
+              <img src={worldGlobe} alt="Location" className="contact-icon-img" />
+              <div>
+                <p className="contact-method-title">Our Location</p>
+                <p className="contact-method-detail">123 Business Ave, Tech City</p>
+              </div>
+            </div>
+          </div>
+
+           <button className="lets-talk-button">Lets Talk</button>
         </div>
       </div>
 
       {/* Stats Bar */}
       <div className="stats-bar-wrapper mb-5" ref={ref}>
   <div className="stats-bar text-primary">
-    <StatCard value="80k" label="Happy Clients" isVisible={inView} />
-    <StatCard value="50+" label="Companies" isVisible={inView} />
-    <StatCard value="230+" label="Projects Done" isVisible={inView} />
+    <StatCard value="60k" label="Happy Clients" isVisible={inView} />
+    <StatCard value="40+" label="Companies" isVisible={inView} />
+    <StatCard value="250+" label="Projects Done" isVisible={inView} />
   </div>
 </div>
-
     </div>
   );
 };

@@ -3,9 +3,19 @@ import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
 import ngbng from "../assets/img/ngbng.png";
 
+import CEo from "../assets/img/CEo.jpeg";
+import person1 from "../assets/img/person1.jpg";
+import person2 from "../assets/img/person2.jpg";
+import person3 from "../assets/img/person3.jpg";
+import portrait1 from "../assets/img/portrait-1.jpg";
+import portrait2 from "../assets/img/portrait-3.jpg";
+import portrait3 from "../assets/img/portrait-4.jpg";
+import portrait4 from "../assets/img/portrait-5.jpg";
+import portrait5 from "../assets/img/portrait-6.jpg";
+
 const teamMembers = [
   {
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=1600",
+    image: CEo,
     name: "Pull Maradona",
     role: "President & CEO",
     socials: {
@@ -17,100 +27,99 @@ const teamMembers = [
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=1600",
+    image: person1,
     name: "Rohit Pande",
     role: "Chief Technology Officer",
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+     socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=1600",
+    image: person2,
     name: "Makhaia Antitni",
     role: "Head of Marketing",
     socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=1600",
+    image: person3,
     name: "James Carter",
     role: "Project Manager",
     socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=1600",
+    image: portrait1,
     name: "Sophia Turner",
     role: "UI/UX Designer",
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+  socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1600",
+    image: portrait2,
     name: "David Khan",
     role: "Software Engineer",
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+     socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=1600",
+    image: portrait3,
     name: "Emily Stone",
     role: "Business Analyst",
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+     socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=1600",
+    image: portrait4,
     name: "Michael Brown",
     role: "QA Lead",
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
+     socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=1600",
+    image: portrait5,
     name: "Isabella Rossi",
     role: "Content Strategist",
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#"
-      
+     socials: {
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      twitter: "https://twitter.com",
+      linkedin: "https://linkedin.com",
+      github: "https://github.com"
     }
   }
 ];
