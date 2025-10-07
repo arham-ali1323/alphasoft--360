@@ -39,7 +39,7 @@ body {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 12px;
-  border: 1px solid #eee;
+  
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -55,6 +55,7 @@ body {
 /* Back */
 .feature-card-back {
   background: linear-gradient(135deg, #007bff, #00c6ff);
+  border: 1px solid #eee;
   color: #fff;
   transform: rotateX(180deg);
 }

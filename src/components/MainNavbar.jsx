@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Row,
@@ -7,6 +7,7 @@ import {
   Nav,
   Form,
   Button,
+  Offcanvas,
 } from "react-bootstrap";
 import {
   FaMapMarkerAlt,
@@ -22,6 +23,8 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/img/AlphaSoft_logo1.png";
 
 const MainNavbar = () => {
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
   return (
     <>
       {/* Top Info Bar */}
@@ -51,7 +54,7 @@ const MainNavbar = () => {
                 href="tel:+01234567890"
                 className="text-decoration-none text-dark small"
               >
-                <FaPhone className="text-primary me-2" />
+                <i className="bi bi-telephone-fill text-primary me-2"></i>
                 +0123 456 7890
               </a>
             </Col>
@@ -63,7 +66,7 @@ const MainNavbar = () => {
         {" "}
         <Container>
           {" "}
-          <Navbar.Brand href="#">AlphaSoft360</Navbar.Brand>{" "}
+          <Navbar.Brand href="/">AlphaSoft360</Navbar.Brand>{" "}
           <Navbar.Toggle aria-controls="main-navbar" />
           <Navbar.Collapse id="main-navbar">
             <Nav className="me-auto me-3">
@@ -100,11 +103,27 @@ const MainNavbar = () => {
                 <FaLinkedinIn />
               </a>
             </div>
+            <Button variant="outline-light ms-auto" onClick={() => setShowOffcanvas(true)}>
+              <i className="bi bi-telephone-fill"></i>
+            </Button>
           </Navbar.Collapse>
-        </Container>{" "}
+        </Container>{""}
       </Navbar>
 
       {/* Hero Section */}
+
+      <Offcanvas show={showOffcanvas} onHide={() => setShowOffcanvas(false)} placement="end">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Contact Details</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <div>
+            <p><FaMapMarkerAlt className="me-2" /> Pak Avenue Sahiwal Punjab Pakistan</p>
+            <p><FaEnvelope className="me-2" /> info@yourmail.com</p>
+            <p><i className="bi bi-telephone me-2"></i> +0123 456 7890</p>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
 
     </>
   );
