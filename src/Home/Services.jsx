@@ -54,7 +54,7 @@ const services = [
 const Services = () => {
   // Service Card Component inside the same file
   const ServiceCard = ({ image, title, description }) => (
-    <div className="feature-card p-4 h-100 shadow-sm rounded text-start">
+    <div className="feature-card p-4 h-100 shadow-sm rounded text-start ">
       <div className="ring-icon d-flex align-items-center mb-3">
         <img src={image} alt={title} width="50" height="50" />
       </div>
@@ -64,7 +64,7 @@ const Services = () => {
   );
 
   return (
-    <section className="bg-white text-center my-5">
+    <section className="bg-white text-center py-5">
       <Container>
         {/* Section Title */}
         <Row className="justify-content-center text-center">

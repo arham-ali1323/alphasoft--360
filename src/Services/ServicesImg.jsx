@@ -6,7 +6,7 @@ const ServicesImage = () => {
     <section
       className="image-text-section"
       style={{
-        backgroundImage: `url('/src/assets/img/Services.jpeg')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=2000&h=300&fit=crop')`, // Live Unsplash image link for IT software houses
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -18,8 +18,6 @@ const ServicesImage = () => {
       <div
         className="overlay"
         style={{
-          // background: "rgba(0, 0, 0, 0.5)",
-          // height: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",

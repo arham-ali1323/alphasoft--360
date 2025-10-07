@@ -1,0 +1,9 @@
+
+.footer-widget a {
+  color: #000; /* Default text color */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer-widget a:hover {
+  color: #007bff; /* Change to your desired hover color */
+}

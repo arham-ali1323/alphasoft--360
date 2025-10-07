@@ -41,7 +41,7 @@ const MainNavbar = () => {
             >
               <a href="/" className="text-decoration-none text-dark small">
                 <FaMapMarkerAlt className="text-primary me-2" />
-                Pak Avenue Sahiwal Punjab Pakistan
+                Main Pakavenue Rd, Sahiwal, 57000, Pakistan
               </a>
               <a
                 href="mailto:info@yourmail.com"
@@ -118,7 +118,7 @@ const MainNavbar = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div>
-            <p><FaMapMarkerAlt className="me-2" /> Pak Avenue Sahiwal Punjab Pakistan</p>
+            <p><FaMapMarkerAlt className="me-2" /> Main Pakavenue Rd, Sahiwal, 57000, Pakistan</p>
             <p><FaEnvelope className="me-2" /> info@yourmail.com</p>
             <p><i className="bi bi-telephone me-2"></i> +0123 456 7890</p>
           </div>

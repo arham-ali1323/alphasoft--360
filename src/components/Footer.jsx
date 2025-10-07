@@ -80,7 +80,9 @@ const Footer = () => {
               <ul className="address-widget">
                 <li>
                   <MdLocationOn />{" "}
-                  <span><a href="">Main Rd, Park Avenue Colony Pak Avenue Housing Scheme, Sahiwal, Pakistan</a></span>
+                  <span>
+                    <a href="https://maps.app.goo.gl/hrJJY1yzK8GJ1brM6" target="_blank" rel="noopener noreferrer">Main Pakavenue Rd, Sahiwal, 57000, Pakistan</a>
+                  </span>
                 </li>
                 <li>
                   <MdCall /> <a href="/">1234567890</a>
