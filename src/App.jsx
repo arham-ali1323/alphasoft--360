@@ -7,6 +7,7 @@ import Services from "./Pages/Services";
 import Team from "./Pages/Team";
 import Contact from "./Pages/Contact";
 import FAQ from "./Pages/FAQ";
+import "./App.css";
 function App() {
   return (
     <Router>

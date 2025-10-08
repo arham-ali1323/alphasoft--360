@@ -1,6 +1,10 @@
-// src/components/TeamSliderSection.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Container } from "react-bootstrap";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+
 import Person1 from "../assets/img/client1.png";
 import Person2 from "../assets/img/client2.png";
 import Person3 from "../assets/img/client3.png";
@@ -30,80 +34,158 @@ const teamMembers = [
 ];
 
 const TeamSliderSection = () => {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  // Responsive handling using media queries
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth <= 992) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const settings = {
     dots: true,
+    arrows: false,
     infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
-    responsive: [
-      {
-        breakpoint: 1200, // lg
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 992, // md
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 576, // sm & xs
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    autoplaySpeed: 3000,
+    speed: 800,
+    slidesToShow,
+    slidesToScroll: 1,
+    pauseOnHover: true,
   };
 
   return (
-    <section className="team-slider-section py-5">
-      <div className="container">
+    <section className="team-section py-5">
+      <Container>
         <div className="text-center mb-5">
-          <p>Our Team</p>
-          <h2 className="section-heading">Meet With IT Experts</h2>
+          <span className="text-primary fw-semibold d-block mb-2">
+            OUR TEAM
+          </span>
+          <h2 className="fw-bold text-white">Meet With IT Experts</h2>
+          <p className="text-light small">
+            The professionals behind our innovation and success
+          </p>
         </div>
 
         <Slider {...settings}>
           {teamMembers.map((member, index) => (
             <div key={index} className="px-3">
-              <div className="team-member-card text-center">
-                <div className="team-image-wrapper mx-auto">
+              <div className="team-card bg-white text-center rounded shadow-sm p-4">
+                <div className="position-relative d-inline-block mb-3">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="img-fluid rounded-circle team-image"
+                    className="rounded-circle team-img"
+                    style={{
+                      width: "120px",
+                      height: "120px",
+                      objectFit: "cover",
+                      border: "4px solid #0d6efd",
+                    }}
                   />
-                  <div className="bg-shape-1"></div>
-                  <div className="bg-shape-2"></div>
                 </div>
-                <h5 className="member-name mt-4">{member.name}</h5>
-                <p className="member-role">{member.role}</p>
-                <div className="social-links d-flex justify-content-center mt-3">
+                <h5 className="fw-bold mb-1">{member.name}</h5>
+                <p className="text-primary small mb-3">{member.role}</p>
+
+                <div className="d-flex justify-content-center gap-3">
                   <a href="#" className="social-icon">
-                    <i className="fab fa-facebook-f"></i>
+                    <FaFacebookF />
                   </a>
                   <a href="#" className="social-icon">
-                    <i className="fab fa-instagram"></i>
+                    <FaInstagram />
                   </a>
                   <a href="#" className="social-icon">
-                    <i className="fab fa-twitter"></i>
+                    <FaTwitter />
                   </a>
                   <a href="#" className="social-icon">
-                    <i className="fab fa-linkedin-in"></i>
+                    <FaLinkedinIn />
                   </a>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
-      </div>
+      </Container>
+
+      <style jsx>{`
+        .team-section {
+          background: linear-gradient(180deg, #071e83 0%, #00135c 100%);
+        }
+
+        .team-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          min-height: 350px;
+        }
+
+        .team-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon {
+          color: #0d6efd;
+          font-size: 1rem;
+          background: rgba(13, 110, 253, 0.1);
+          padding: 10px;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+          width: 35px;
+          height: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+        }
+
+        .social-icon:hover {
+          background: #0d6efd;
+          color: white;
+          transform: translateY(-3px);
+        }
+
+        .slick-dots li button:before {
+          color: #ffffff !important;
+          font-size: 10px;
+        }
+
+        @media (max-width: 992px) {
+          .team-section h2 {
+            font-size: 1.8rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .team-section h2 {
+            font-size: 1.6rem;
+          }
+          .team-card {
+            min-height: 330px;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .team-section h2 {
+            font-size: 1.4rem;
+          }
+          .team-card {
+            min-height: 310px;
+          }
+        }
+      `}</style>
     </section>
   );
 };
 
 export default TeamSliderSection;
+

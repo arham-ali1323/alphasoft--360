@@ -86,7 +86,7 @@ const Testimonials = () => {
       <Container>
         <div className="text-center mb-5">
           <span className="text-primary fw-semibold d-block mb-2">TESTIMONIALS</span>
-          <h2 className="fw-bold text-dark mb-3">
+          <h2 className="fw-bold text-light mb-3">
             What Our Clients Say About AlphaSoft360
           </h2>
           </div>
@@ -117,47 +117,59 @@ const Testimonials = () => {
       </Container>
 
       <style jsx>{`
-              .testimonial-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .testimonial-section {
+          position: relative;
+          overflow: hidden;
+          background: #000061;
+          padding: 80px 0;
+        }
+
+        .testimonial-card {
+          background: #ffffff;
+          border-radius: 10px;
+          padding: 30px;
+          margin: 15px;
           min-height: 340px;
+          transition: all 0.3s ease-in-out;
+          border: 1px solid rgba(13, 110, 253, 0.1);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .testimonial-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          background: linear-gradient(145deg, #0d6efd 0%, #0a58ca 100%);
+          box-shadow: 0 10px 25px rgba(13, 110, 253, 0.2);
+        }
+
+        .testimonial-card:hover * {
+          color: #ffffff !important;
+        }
+
+        .testimonial-text {
+          color: #495057;
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+          color: #212529;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+          color: #6c757d;
+          font-size: 0.9rem;
         }
 
         .slick-dots li button:before {
-          color: #ffffff !important;
-          font-size: 10px;
+          color: #0d6efd;
+          opacity: 0.5;
         }
 
-        @media (max-width: 992px) {
-          .testimonial-card {
-            min-height: 320px;
-          }
-          .testimonial-section h2 {
-            font-size: 1.8rem;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .testimonial-card {
-            min-height: 300px;
-          }
-          .testimonial-section h2 {
-            font-size: 1.6rem;
-          }
-        }
-
-        @media (max-width: 576px) {
-          .testimonial-card {
-            min-height: 280px;
-          }
-          .testimonial-section h2 {
-            font-size: 1.4rem;
-            line-height: 1.4;
-          }
+        .slick-dots li.slick-active button:before {
+          opacity: 1;
         }
       `}</style>
     </section>

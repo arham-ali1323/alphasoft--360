@@ -79,7 +79,7 @@ const MainNavbar = () => {
               <Nav.Link as={NavLink} to="/Services">
                 Services
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/Pages">
+              <Nav.Link as={NavLink} to="/NotFound">
                 Pages
               </Nav.Link>
               <Nav.Link as={NavLink} to="/Team">

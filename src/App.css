@@ -7,3 +7,47 @@
 .footer-widget a:hover {
   color: #007bff; /* Change to your desired hover color */
 }
+
+/* Footer Styles */
+
+.rs-footer {
+  background: #fff;
+  color: #007bff;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.rs-footer .footer-top {
+  padding: 60px 0;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social li a {
+  font-size: 18px;
+  color: #0056b3;
+  transition: color 0.3s;
+}
+
+/* Brand hover colors */
+.footer-social li:nth-child(1) a:hover {
+  color: #1877f2;
+}
+.footer-social li:nth-child(2) a:hover {
+  color: #1da1f2;
+}
+.footer-social li:nth-child(3) a:hover {
+  color: #e60023;
+}
+.footer-social li:nth-child(4) a:hover {
+  color: #e4405f;
+}
