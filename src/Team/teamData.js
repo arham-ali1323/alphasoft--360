@@ -134,7 +134,7 @@ const teamMembers = [
       linkedin: "https://linkedin.com",
       github: "https://github.com"
     }
-  }
+  },
 ];
 
 export default teamMembers;
