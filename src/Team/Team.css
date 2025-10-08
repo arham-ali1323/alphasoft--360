@@ -90,3 +90,13 @@
   color: #fff;
   transform: translateY(-4px) scale(1.05);
 }
+
+.team-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.team-card-link:hover {
+  text-decoration: none;
+}

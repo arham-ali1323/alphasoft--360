@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Services from "./Pages/Services";
 import Team from "./Pages/Team";
+import TeamMemberDetail from "./Pages/TeamMemberDetail";
 import Contact from "./Pages/Contact";
 import FAQ from "./Pages/FAQ";
 import ScrollToTop from "./components/ScrollToTop";
@@ -21,6 +22,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/team/:id" element={<TeamMemberDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
           </Routes>
