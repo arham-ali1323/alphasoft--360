@@ -1,10 +1,9 @@
-// src/components/PartnerSlider.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Existing icons
+// React Icons
 import {
   DiHtml5,
   DiCss3,
@@ -22,7 +21,6 @@ import {
   SiSymfony,
   SiNextdotjs,
   SiAngular,
-  SiReact
 } from "react-icons/si";
 
 const partners = [
@@ -43,50 +41,114 @@ const partners = [
 ];
 
 const PartnerSlider = () => {
+  const [slidesToShow, setSlidesToShow] = useState(5);
+
+  // Handle responsiveness using media queries (not breakpoints)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 576) setSlidesToShow(1);
+      else if (window.innerWidth <= 768) setSlidesToShow(2);
+      else if (window.innerWidth <= 992) setSlidesToShow(3);
+      else setSlidesToShow(5);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const settings = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 800,
-    slidesToShow: 5,
-    slidesToScroll: 1,
+    autoplaySpeed: 2500,
+    speed: 700,
     arrows: false,
     dots: false,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
-    ],
+    slidesToShow,
+    slidesToScroll: 1,
+    pauseOnHover: true,
   };
 
   return (
-    <section className="rs-partner pt-80 pb-70">
-      <div className="container">
+    <section className="partner-section py-5">
+      <div className="container text-center">
+        <span className="text-primary fw-semibold d-block mb-2">OUR TECHNOLOGIES</span>
+        <h2 className="fw-bold text-white mb-5">Trusted by Modern Frameworks</h2>
+
         <Slider {...settings}>
           {partners.map(({ id, Icon, name, link, hoverColor }) => (
-            <div className="partner-item" key={id}>
+            <div key={id} className="px-3">
               <a
                 href={link}
                 target="_blank"
                 rel="noreferrer"
-                className="logo-icon"
-                aria-label={name}
-                style={{
-                  transition: 'color 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = hoverColor;
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = '';
-                }}
+                className="partner-icon d-flex flex-column align-items-center justify-content-center text-decoration-none"
               >
-                <Icon size={80} title={`${name} logo`} />
+                <Icon
+                  size={80}
+                  className="tech-icon"
+                  style={{ color: "#ffffffcc", transition: "all 0.3s ease" }}
+                  onMouseEnter={(e) => (e.target.style.color = hoverColor)}
+                  onMouseLeave={(e) => (e.target.style.color = "#ffffffcc")}
+                />
+                <p className="text-light mt-3 mb-0 small fw-semibold">{name}</p>
               </a>
             </div>
           ))}
         </Slider>
       </div>
+
+      <style jsx>{`
+        .partner-section {
+          background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+        }
+
+        .tech-icon:hover {
+          transform: scale(1.15);
+        }
+
+        .slick-slide {
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .slick-track {
+          display: flex !important;
+          align-items: center;
+        }
+
+        .slick-dots li button:before {
+          color: white !important;
+          font-size: 10px;
+        }
+
+        @media (max-width: 992px) {
+          .partner-section h2 {
+            font-size: 1.8rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .partner-section h2 {
+            font-size: 1.6rem;
+          }
+          .tech-icon {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .partner-section h2 {
+            font-size: 1.4rem;
+          }
+          .tech-icon {
+            width: 55px;
+            height: 55px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

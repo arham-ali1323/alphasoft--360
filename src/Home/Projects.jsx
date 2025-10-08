@@ -111,7 +111,7 @@ const ProjectSection = () => {
         </Slider>
       </Container>
 
-      <style jsx>{`
+      <style>{`
         .project-section {
           background: linear-gradient(180deg, #0a1a66, #00113d);
         }
