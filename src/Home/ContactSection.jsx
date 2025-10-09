@@ -1,15 +1,8 @@
 // src/components/ContactSection.jsx
-import React, { memo } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
-import client1 from "../assets/img/client1.png";
-import client2 from "../assets/img/client2.png";
-import client3 from "../assets/img/client3.png";
-import mail from "../assets/img/mail.png";
-import worldGlobe from "../assets/img/world-globe.png";
-import dataAnalytics from "../assets/img/data-analytics.png";
 
 // Stat Card with CountUp
 const StatCard = ({ value, label, isVisible }) => {
@@ -49,10 +42,7 @@ const ContactSection = () => {
             alt="Businessman"
             className="contact-person-image"
           />
-          <div className="idea-bubble">
-            <p>Got a Project Idea?</p>
           </div>
-        </div>
 
         {/* Right: Contact Info */}
         <div className="contact-info">
@@ -69,14 +59,14 @@ const ContactSection = () => {
           {/* Additional Contact Methods */}
           <div className="additional-contact-methods">
             <div className="contact-method">
-              <img src={mail} alt="Email" className="contact-icon-img" />
+              <FaEnvelope className="contact-icon-img" />
               <div>
                 <p className="contact-method-title">Email Us</p>
                 <p className="contact-method-detail">info@alphasoft360.com</p>
               </div>
             </div>
             <div className="contact-method">
-              <img src={worldGlobe} alt="Location" className="contact-icon-img" />
+              <FaMapMarkerAlt className="contact-icon-img" />
               <div>
                 <p className="contact-method-title">Our Location</p>
                 <p className="contact-method-detail">123 Business Ave, Tech City</p>

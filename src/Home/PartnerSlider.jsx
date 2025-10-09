@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -98,7 +98,7 @@ const PartnerSlider = () => {
         </Slider>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .partner-section {
           background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
         }

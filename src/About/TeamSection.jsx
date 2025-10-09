@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -118,7 +118,7 @@ const TeamSliderSection = () => {
         </Slider>
       </Container>
 
-      <style jsx>{`
+      <style>{`
         .team-section {
           background: linear-gradient(180deg, #071e83 0%, #00135c 100%);
         }

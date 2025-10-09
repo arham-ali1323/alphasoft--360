@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Navbar, Nav, Container, Offcanvas, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
@@ -11,7 +11,8 @@ import {
   FaInstagram,
   FaLinkedinIn
 } from "react-icons/fa";
-import logo from "../assets/img/AlphaSoft_logo1.png";
+import logo from "../assets/img/AlphaSoft_logo.png";
+import call from "../assets/img/Calling V3 .svg";
 
 const MainNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -29,7 +30,21 @@ const MainNavbar = () => {
         <Container>
           <Row className="align-items-center text-center text-lg-start gy-2">
             <Col lg={4} md={12}>
-              <img src={logo} alt="logo" width={120} />
+              
+            <div className="d-flex gap-3 navbar-social">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                <FaFacebookF />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                <FaTwitter />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                <FaInstagram />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white">
+                <FaLinkedinIn />
+              </a>
+            </div>
             </Col>
             <Col
               lg={8}
@@ -69,7 +84,7 @@ const MainNavbar = () => {
         onToggle={(open) => setExpanded(open)}
       >
         <Container>
-          <Navbar.Brand as={Link} to="/">AlphaSoft360</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/"> <img src={logo} alt="logo" width={120} /></Navbar.Brand>
           <Navbar.Toggle aria-controls="main-navbar" />
           <Navbar.Collapse id="main-navbar">
             <Nav className="ms-auto">
@@ -81,23 +96,9 @@ const MainNavbar = () => {
               <Nav.Link as={Link} to="/contact" onClick={handleNavClick}>Contact</Nav.Link>
             </Nav>
 
-            <div className="d-flex gap-3 navbar-social">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaFacebookF />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaTwitter />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaInstagram />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaLinkedinIn />
-              </a>
-            </div>
 
             <Button variant="outline-light" className="ms-3" onClick={() => setShowOffcanvas(true)}>
-              <FaPhone />
+              <img src={call} alt="call" style={{width: '1em', height: '1em'}} />
             </Button>
           </Navbar.Collapse>
         </Container>
