@@ -1,10 +1,8 @@
 // src/Home/ContactSection.jsx
-import { FaHeartbeat } from "react-icons/fa";
+import { FaHeartbeat, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
-import mail from "../assets/img/mail.png";
-import worldGlobe from "../assets/img/world-globe.png";
 
 // Stat Card with CountUp
 const StatCard = ({ value, label, isVisible }) => {
@@ -75,14 +73,14 @@ const ContactSection = () => {
           {/* Additional Contact Methods */}
           <div className="additional-contact-methods">
             <div className="contact-method">
-              <img src={mail} alt="Email" className="contact-icon-img" />
+              <FaEnvelope className="contact-icon-img" />
               <div>
                 <p className="contact-method-title">Email Us</p>
                 <p className="contact-method-detail">info@alphasoft360.com</p>
               </div>
             </div>
             <div className="contact-method">
-              <img src={worldGlobe} alt="Location" className="contact-icon-img" />
+              <FaMapMarkerAlt className="contact-icon-img" />
               <div>
                 <p className="contact-method-title">Our Location</p>
                 <p className="contact-method-detail">123 Business Ave, Tech City</p>
