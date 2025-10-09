@@ -1547,10 +1547,10 @@
 .site-map a:hover,
 .copy-right-menu a:hover,
 .address-widget a:hover {
-  background-color: #2575fc;
-  color: white;
+    color: black;
   padding: 5px 10px;
   border-radius: 5px;
+  font-weight: bolder;
 }
 
 .newsletter-form {
