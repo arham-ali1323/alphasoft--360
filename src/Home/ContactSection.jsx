@@ -1,8 +1,10 @@
-// src/components/ContactSection.jsx
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+// src/Home/ContactSection.jsx
+import { FaHeartbeat } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
+import mail from "../assets/img/mail.png";
+import worldGlobe from "../assets/img/world-globe.png";
 
 // Stat Card with CountUp
 const StatCard = ({ value, label, isVisible }) => {
@@ -32,7 +34,20 @@ const ContactSection = () => {
   });
 
   return (
-    <div className="contact-section-container ">
+    <>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .throbbing-heartbeat {
+            animation: throb 1s infinite;
+            color: red;
+          }
+          @keyframes throb {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+          }
+        `
+      }} />
+      <div className="contact-section-container ">
       {/* Main Content */}
       <div className="contact-main-content">
         {/* Left: Image + Idea Bubble */}
@@ -42,12 +57,13 @@ const ContactSection = () => {
             alt="Businessman"
             className="contact-person-image"
           />
-          </div>
+          
+        </div>
 
         {/* Right: Contact Info */}
         <div className="contact-info">
           <div className="phone-icon-circle">
-            <FaPhoneAlt />
+            <FaHeartbeat className="throbbing-heartbeat" />
           </div>
           <p className="call-us-text">CALL US 24/7</p>
           <p className="phone-number">(+123) 456-9989</p>
@@ -59,14 +75,14 @@ const ContactSection = () => {
           {/* Additional Contact Methods */}
           <div className="additional-contact-methods">
             <div className="contact-method">
-              <FaEnvelope className="contact-icon-img" />
+              <img src={mail} alt="Email" className="contact-icon-img" />
               <div>
                 <p className="contact-method-title">Email Us</p>
                 <p className="contact-method-detail">info@alphasoft360.com</p>
               </div>
             </div>
             <div className="contact-method">
-              <FaMapMarkerAlt className="contact-icon-img" />
+              <img src={worldGlobe} alt="Location" className="contact-icon-img" />
               <div>
                 <p className="contact-method-title">Our Location</p>
                 <p className="contact-method-detail">123 Business Ave, Tech City</p>
@@ -74,7 +90,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-           <button className="lets-talk-button">Lets Talk</button>
+           <button className="lets-talk-button">Let's Talk</button>
         </div>
       </div>
 
@@ -87,6 +103,7 @@ const ContactSection = () => {
   </div>
 </div>
     </div>
+    </>
   );
 };
 

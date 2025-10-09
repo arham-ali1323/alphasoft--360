@@ -9,7 +9,8 @@ import {
   FaTwitter,
   FaPinterestP,
   FaInstagram,
-  FaLinkedinIn
+  FaLinkedinIn,
+  FaHeartbeat
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
 import call from "../assets/img/Calling V3 .svg";
