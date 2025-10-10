@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaHome, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +16,7 @@ const ContactSection = () => {
   const [alert, setAlert] = useState({ show: false, variant: "", message: "" });
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
 
@@ -25,12 +27,22 @@ const ContactSection = () => {
         variant: "danger",
         message: "Please fill all required fields correctly!"
       });
-    } else {
-      setAlert({
-        show: true,
-        variant: "success",
-        message: "Thank you! We'll contact you soon."
-      });
+      setValidated(true);
+      setTimeout(() => {
+        setAlert({ show: false, variant: "", message: "" });
+      }, 3000);
+      return;
+    }
+
+    setValidated(true);
+
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      await emailjs.send(serviceID, templateID, formData, publicKey);
+      toast.success('Email sent successfully!');
       setFormData({
         name: "",
         email: "",
@@ -39,12 +51,10 @@ const ContactSection = () => {
         message: ""
       });
       setValidated(false);
+    } catch (error) {
+      console.log('FAILED...', error);
+      toast.error('Failed to send email. Please try again.');
     }
-
-    setValidated(true);
-    setTimeout(() => {
-      setAlert({ show: false, variant: "", message: "" });
-    }, 3000);
   };
 
   const handleChange = (e) => {
