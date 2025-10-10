@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Offcanvas, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
@@ -13,11 +13,20 @@ import {
   FaHeartbeat
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
-import call from "../assets/img/Calling V3 .svg";
 
 const MainNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://animatedicons.co/scripts/embed-animated-icons.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handleNavClick = () => {
     setExpanded(false);
@@ -98,8 +107,14 @@ const MainNavbar = () => {
             </Nav>
 
 
-            <Button variant="outline-light" className="ms-3" onClick={() => setShowOffcanvas(true)}>
-              <img src={call} alt="call" style={{width: '1em', height: '1em'}} />
+            <Button variant="outline-light" className="ms-3 call-button" onClick={() => setShowOffcanvas(true)}>
+              <div dangerouslySetInnerHTML={{__html: `<animated-icons
+                src="https://animatedicons.co/get-icon?name=Calling%20V3&style=minimalistic&token=66ff3706-138c-41fa-a993-dee03566e48c"
+                trigger="click"
+                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#536DFE","background":"#FFFFFF"}}'
+                height="30"
+                width="30"
+              ></animated-icons>`}} />
             </Button>
           </Navbar.Collapse>
         </Container>

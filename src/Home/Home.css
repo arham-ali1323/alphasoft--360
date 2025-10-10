@@ -154,8 +154,14 @@
 }
 /* ========== Features Section ========== */
 .feature-card {
-  background: #fff;
-  border: 1px solid #eee;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  background: rgba(6, 78, 59, 0.18);
+  border: 1px solid rgba(110, 231, 183, 0.2);
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px 0 rgba(2, 44, 34, 0.25),
+              inset 0 0 0px rgba(255, 255, 255, 0),
+              inset 0px 0px 4px 2px rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
   cursor: pointer;
   padding: 20px;
@@ -238,8 +244,7 @@
 
 .contact-person-image {
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  height: 630px;
   border-radius: 10px;
   /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
   transition: transform 0.3s ease;
@@ -407,7 +412,7 @@
 }
 
 .contact-method:hover {
-  background: rgba(255, 255, 255, 0.2);
+ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   transform: translateX(5px);
   border-left-color: #007bff;
 }
@@ -545,14 +550,56 @@
   }
 
   .phone-icon-circle {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 15px auto;
-  }
+  background: radial-gradient(circle, #ff4d6d 0%, #dc3545 100%);
+  box-shadow: 0 0 25px rgba(255, 77, 109, 0.6);
+}
 
-  .phone-icon-circle svg {
-    font-size: 1.5em;
+.phone-icon-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #dc3545; /* red */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2rem;
+  box-shadow: 0 0 0 rgba(220, 53, 69, 0.7);
+  animation: pulseRing 1.5s infinite;
+}
+
+.throbbing-heartbeat {
+  animation: heartbeat 1.2s infinite;
+}
+
+/* Pulse Ring Animation (outer glowing ring) */
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.6);
   }
+  70% {
+    box-shadow: 0 0 0 20px rgba(220, 53, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+/* Heartbeat Animation (icon scale) */
+@keyframes heartbeat {
+  0%,
+  40%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+  20%,
+  60% {
+    transform: scale(1.2);
+  }
+}
+
 
   .call-us-text {
     font-size: 0.8em;
@@ -1392,12 +1439,29 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   position: absolute;
   top: 20px;
   left: 20px;
-background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   color: white;
   padding: 8px 16px;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.category-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, #0a2a8f 0%, #001a4d 100%);
+}
+
+.category-badge a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-badge a:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 .card-meta {
@@ -1457,6 +1521,27 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
 /* Progress bar styles */
 .progress-bar {
   background: linear-gradient(180deg, #061b6b 0%, #000a33 100%) !important;
+}
+
+/* Call button hover effects */
+.call-button {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.call-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.animated-icon {
+  transition: transform 0.3s ease;
+}
+
+.call-button:hover .animated-icon {
+  transform: scale(1.1);
 }
 
 
