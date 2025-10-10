@@ -28,7 +28,7 @@ const Hero = () => {
 
   return (
     <div>
-      <Carousel className="hero-carousel" interval={5000} fade>
+      <Carousel className="hero-carousel" interval={5000} fade controls={false}>
         {heroImages.map((image, index) => (
           <Carousel.Item key={index}>
             <div
@@ -56,9 +56,9 @@ const Hero = () => {
 
                   {/* Right Form */}
                   <Col md={5} className="ms-auto">
-                    <div className="bg-white p-4 rounded shadow">
-                      <h4 className="fw-bold mb-3">Schedule Your Appointment</h4>
-                      <p className="text-muted">
+                    <div className="hero-form rounded-4 rounded shadow">
+                      <h4 className="fw-bold text-light mb-3">Schedule Your Appointment</h4>
+                      <p className="text-light mb-4">
                         We are here to help you 24/7 with experts
                       </p>
                       <Form>
@@ -78,7 +78,7 @@ const Hero = () => {
                             placeholder="Message"
                           />
                         </Form.Group>
-                        <Button variant="primary" type="submit" className="w-100">
+                        <Button type="submit" className="w-100 hero-submit-btn">
                           Submit Now
                         </Button>
                       </Form>

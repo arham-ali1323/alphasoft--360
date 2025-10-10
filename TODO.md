@@ -1,1 +1,6 @@
-- [x] Add content to src/Pages/NotFound.jsx: Create a basic 404 Not Found page with heading, message, and link back to home.
+- [x] Edit App.css to change footer social icons color to gradient
+- [x] Add styles for address widget icons to use gradient
+- [x] Add styles for newsletter button icon to use gradient
+- [x] Edit Team.css to change social icon gradients to the new one
+- [x] Edit App.css to change navbar social icons color to gradient
+- [ ] Test the changes by running the dev server

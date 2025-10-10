@@ -1,6 +1,4 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
 // Import service icons
 import icon1 from "../assets/img/1.png";
 import icon2 from "../assets/img/2.png";

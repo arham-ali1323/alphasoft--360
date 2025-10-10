@@ -52,31 +52,31 @@ const AboutSection = () => {
               <div className="d-flex justify-content-between">
                 <span>Software Development</span><span>92%</span>
               </div>
-              <ProgressBar now={92} variant="primary" />
+              <ProgressBar now={92} />
             </div>
 
             <div className="mb-3">
               <div className="d-flex justify-content-between">
                 <span>Cyber Security</span><span>80%</span>
               </div>
-              <ProgressBar now={80} variant="primary" />
+              <ProgressBar now={80} />
             </div>
 
             <div className="mb-3">
               <div className="d-flex justify-content-between">
                 <span>Artificial Intelligence</span><span>95%</span>
               </div>
-              <ProgressBar now={95} variant="primary" />
+              <ProgressBar now={95}/>
             </div>
 
             <div className="mb-4">
               <div className="d-flex justify-content-between">
                 <span>Web Development</span><span>78%</span>
               </div>
-              <ProgressBar now={78} variant="primary" />
+              <ProgressBar now={78}/>
             </div>
 
-            <Button variant="primary" className="px-4 py-2 rounded-pill">
+            <Button className="px-4 py-2 rounded-pill learn-more-btn">
               Learn More
             </Button>
           </Col>

@@ -1,9 +1,9 @@
 // src/ServicesSection.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
 import bgImage from "../assets/img/Hero-BG.jpg";
-import bgImage2 from "../assets/img/servicesbg.jpg";
+
 
 const ServicesSection = () => {
   const [formData, setFormData] = useState({
@@ -190,10 +190,7 @@ const ServicesSection = () => {
         fluid
         className="my-5 p-5 rounded-3 text-white"
         style={{
-          backgroundImage: `url(${bgImage2})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundColor: "#000061",
         }}
       >
         {/* Overlay for readability */}
