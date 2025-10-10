@@ -3,14 +3,15 @@ import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
 
 // High-quality software company themed images from Unsplash
 const allHeroImages = [
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=2000&h=1200&fit=crop", // IT Software House 1
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=2000&h=1200&fit=crop", // IT Software House 2
-  "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=2000&h=1200&fit=crop", // IT Software House 3
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=2000&h=1200&fit=crop", // IT Software House 4
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=2000&h=1200&fit=crop", // IT Software House 5
-  "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=2000&h=1200&fit=crop", // IT Software House 6
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2000&h=1200&fit=crop"  // IT Software House 7
+  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1581090700227-f7a447b9d577?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1504384308090-0b3e1e7e7b59?w=2000&h=1200&fit=crop"
 ];
+
 
 const Hero = () => {
   const [refreshSeed, setRefreshSeed] = useState(0);
