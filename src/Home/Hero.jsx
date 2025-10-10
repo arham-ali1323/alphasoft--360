@@ -38,7 +38,7 @@ const Hero = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
@@ -47,9 +47,9 @@ const Hero = () => {
     }
 
     // EmailJS setup
-    const serviceID = "YOUR_SERVICE_ID";
-    const templateID = "YOUR_TEMPLATE_ID";
-    const publicKey = "YOUR_PUBLIC_KEY";
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     // Email parameters (sent to Arham Ali)
     const templateParams = {
@@ -60,16 +60,15 @@ const Hero = () => {
       to_email: "arham.ali1223@gmail.com"
     };
 
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        toast.success('Email has been sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      })
-      .catch((error) => {
-        console.error('FAILED...', error);
-        toast.error('Failed to send email. Please try again.');
-      });
+    try {
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+      console.log('SUCCESS!');
+      toast.success('Email has been sent successfully!');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('FAILED...', error);
+      toast.error('Failed to send email. Please try again.');
+    }
   };
 
   return (
