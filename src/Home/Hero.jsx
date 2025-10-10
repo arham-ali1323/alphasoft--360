@@ -1,5 +1,8 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
 
 // High-quality software company themed images from Unsplash
 const allHeroImages = [
@@ -14,6 +17,12 @@ const allHeroImages = [
 
 const Hero = () => {
   const [refreshSeed, setRefreshSeed] = useState(0);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
 
   // Generate new random seed on component mount (page refresh)
   useEffect(() => {
@@ -25,6 +34,36 @@ const Hero = () => {
     const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 4);
   }, [refreshSeed]); // Using refreshSeed as dependency to change on each refresh
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      toast.error('Please fill in all fields.');
+      return;
+    }
+
+    // EmailJS parameters - replace with your actual IDs
+    const serviceID = 'your_service_id'; // Replace with your EmailJS Service ID
+    const templateID = 'your_template_id'; // Replace with your EmailJS Template ID
+    const publicKey = 'your_public_key'; // Replace with your EmailJS Public Key
+
+    emailjs.send(serviceID, templateID, formData, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        toast.success('Email sent successfully!');
+        setFormData({ name: '', email: '', phone: '', message: '' }); // Reset form
+      }, (error) => {
+        console.log('FAILED...', error);
+        toast.error('Failed to send email. Please try again.');
+      });
+  };
 
   return (
     <div>
@@ -61,21 +100,46 @@ const Hero = () => {
                       <p className="text-light mb-4">
                         We are here to help you 24/7 with experts
                       </p>
-                      <Form>
+                      <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
-                          <Form.Control type="text" placeholder="Name" />
+                          <Form.Control
+                            type="text"
+                            placeholder="Name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                          />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                          <Form.Control type="email" placeholder="E-Mail" />
+                          <Form.Control
+                            type="email"
+                            placeholder="E-Mail"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                          />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                          <Form.Control type="text" placeholder="Phone Number" />
+                          <Form.Control
+                            type="text"
+                            placeholder="Phone Number"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                          />
                         </Form.Group>
                         <Form.Group className="mb-3">
                           <Form.Control
                             as="textarea"
                             rows={3}
                             placeholder="Message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
                           />
                         </Form.Group>
                         <Button type="submit" className="w-100 hero-submit-btn">
@@ -90,6 +154,7 @@ const Hero = () => {
           </Carousel.Item>
         ))}
       </Carousel>
+      <ToastContainer />
     </div>
   );
 };
