@@ -108,13 +108,7 @@ const MainNavbar = () => {
 
 
             <Button variant="outline-light" className="ms-3 call-button" onClick={() => setShowOffcanvas(true)}>
-              <div dangerouslySetInnerHTML={{__html: `<animated-icons
-                src="https://animatedicons.co/get-icon?name=Calling%20V3&style=minimalistic&token=66ff3706-138c-41fa-a993-dee03566e48c"
-                trigger="click"
-                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#536DFE","background":"#FFFFFF"}}'
-                height="30"
-                width="30"
-              ></animated-icons>`}} />
+              <FaPhone size={20} />
             </Button>
           </Navbar.Collapse>
         </Container>
