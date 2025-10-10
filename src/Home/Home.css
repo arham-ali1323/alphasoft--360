@@ -11,72 +11,6 @@
   background-color: #f4f4f4;
 }
 
-.navbar {
-  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
-}
-
-/* Navbar links hover */
-.navbar .nav-link {
-  color: #ffffff; /* default white */
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.navbar .nav-link:hover {
-  color: #007bff !important; /* blue on hover */
-  background-color: #fff;
-  font-weight: 600;
-  border-radius: 5px;
-  transform: translateY(-2px); /* small lift effect */
-}
-
-/* Social icons hover */
-.navbar .d-flex svg {
-  cursor: pointer;
-  color: #ffffff;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.navbar .d-flex svg:hover {
-  color: #007bff; /* blue on hover */
-  background-color: #fff;
-  font-weight: 600;
-  border-radius: 5px;
-  transform: scale(1.2); /* slightly bigger */
-}
-.navbar-social {
-  display: flex;
-  gap: 15px;
-  margin-left: 20px;
-}
-
-.navbar-social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%) !important;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.navbar-social a:hover {
-background: linear-gradient(180deg, #485175 0%, #000a33 100%);
-  color: white;
-  transform: translateY(-3px);
-}
-
-.navbar-social svg {
-  font-size: 16px;
-}
-
-@media (max-width: 991px) {
-  .navbar-social {
-    margin: 15px 0;
-    justify-content: center;
-  }
-}
 /*  */
 /* Hero Section Background */
 .hero {
@@ -229,10 +163,10 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
 }
 
 .feature-card:hover {
-  background: linear-gradient(135deg, #007bff, #00c6ff);
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: #fff;
   transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 10px 20px rgba(6, 27, 107, 0.3);
 }
 
 .feature-card:hover h5,
@@ -314,23 +248,6 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
 .contact-person-image:hover {
   transform: scale(1.02);
 }
-
-/* Bubble */
-.idea-bubble {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: #fff;
-  color: #1877f2;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-weight: 500;
-  font-size: 14px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  white-space: nowrap;
-}
-
 /* Right */
 .contact-info {
   flex: 1;
@@ -378,7 +295,7 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
 .phone-icon-circle i,
 .phone-icon-circle svg {
   font-size: 2em;
-  color: #007bff;
+  color: linear-gradient(180deg, #061b6b 0%, #000a33 100%) ;
 }
 
 .call-us-text {
@@ -416,10 +333,12 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 20px;
 }
 
 .lets-talk-button:hover {
-  background: #0056b3;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
@@ -997,7 +916,8 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
 }
 
 .contact-us-button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 
 .process-right-steps {
@@ -1174,7 +1094,7 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
 
 .project-content .category a {
   font-size: 14px;
-  color: #007bff;
+  color: #061b6b;
   text-decoration: none;
 }
 
@@ -1200,7 +1120,7 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
 
 .slick-prev:hover,
 .slick-next:hover {
-  background: #007bff;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: #fff;
 }
 
@@ -1278,7 +1198,7 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
 
 /* Specific colors */
 .plan-silver {
-  background: #c0c0c0 !important;
+  background: green !important;
   color: #000 !important;
 }
 
@@ -1287,8 +1207,9 @@ background: linear-gradient(180deg, #485175 0%, #000a33 100%);
   color: #000 !important;
 }
 
+
 .plan-platinum {
-  background: #e5e4e2 !important;
+  background: red !important;
   color: #000 !important;
 }
 
@@ -1443,7 +1364,7 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
 }
 
 .blog-section .text-primary {
-  color: #007bff !important; /* Bootstrap primary blue */
+  color: #061b6b !important; /* Bootstrap primary blue */
 }
 /* BlogCard.css */
 
@@ -1510,94 +1431,32 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   color: #0056b3;
 }
 
-.site-map,
-.address-widget,
-.copy-right-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.site-map li,
-.address-widget li {
-  margin-bottom: 10px;
-}
-
-.site-map a,
-.copy-right-menu a,
-.address-widget a {
-  color: #007bff;
-  transition: color 0.3s;
-  text-decoration: none;
-}
-
-.site-map a:hover,
-.copy-right-menu a:hover,
-.address-widget a:hover {
-    color: black;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bolder;
-}
-
-.newsletter-form {
-  display: flex;
-  margin-top: 15px;
-}
-
-.newsletter-form input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #2575fc;
-  border-radius: 4px 0 0 4px;
-}
-
-.newsletter-form input:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(37, 117, 252, 0.6);
-}
-.newsletter-form button {
-  padding: 10px 20px;
+/* Button styles for Hero and AboutSection */
+.hero-submit-btn {
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
   border: none;
-background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
-  color: #fff;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px; /* make the icon bigger */
 }
 
-.newsletter-form button:hover {
-  background: white;
-  color: #2575fc;
-  border: 1px solid #2575fc;
+.hero-submit-btn:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 
-.footer-bottom {
-  background: #091336;
-  padding: 20px 0;
-  font-size: 14px;
-  border-top: 1px solid #1a2a6c;
+.learn-more-btn {
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
+  border: none;
 }
 
-.copy-right-menu {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+.learn-more-btn:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 
-.copy-right-menu a {
-  color: #ccc;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.copy-right-menu a:hover {
-  color: #fff;
+/* Progress bar styles */
+.progress-bar {
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%) !important;
 }
 
 

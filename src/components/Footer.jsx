@@ -13,7 +13,7 @@ import Logo from "../assets/img/AlphaSoft_logo1.png"; // Adjust the path as need
 const Footer = () => {
   return (
     <footer id="rs-footer" className="rs-footer">
-      <div className="footer-top">
+      <div className="footer-top" style={{background: 'linear-gradient(180deg, #061b6b 0%, #000a33 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
         <div className="container">
           <div className="row">
             {/* Logo & About */}

@@ -1,4 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
 
+.navbar {
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+}
+
+/* Navbar links hover */
+.navbar .nav-link {
+  color: #ffffff; /* default white */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white !important;
+  font-weight: 600;
+  border-radius: 5px;
+  transform: translateY(-2px); /* small lift effect */
+}
+
+/* Social icons hover */
+.navbar .d-flex svg {
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .d-flex svg:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  transform: scale(1.2); /* slightly bigger */
+}
+.navbar-social {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.navbar-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%) !important;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.navbar-social a:hover {
+background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.navbar-social svg {
+  font-size: 16px;
+}
+
+@media (max-width: 991px) {
+  .navbar-social {
+    margin: 15px 0;
+    justify-content: center;
+  }
+}
 .footer-widget a {
   color: #000; /* Default text color */
   text-decoration: none; /* Remove underline */
@@ -34,20 +112,122 @@
 
 .footer-social li a {
   font-size: 18px;
-  color: #0056b3;
+  color: #061b6b;
+  background-clip: text;
+  -webkit-background-clip: text;
   transition: color 0.3s;
 }
 
-/* Brand hover colors */
-.footer-social li:nth-child(1) a:hover {
-  color: #1877f2;
+.footer-social li a:hover {
+  color: #fff;
 }
-.footer-social li:nth-child(2) a:hover {
-  color: #1da1f2;
+
+.address-widget li svg {
+  color: #061b6b;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
-.footer-social li:nth-child(3) a:hover {
-  color: #e60023;
+
+.newsletter-form button svg {
+  color:  #fff ;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
-.footer-social li:nth-child(4) a:hover {
-  color: #e4405f;
+
+.site-map,
+.address-widget,
+.copy-right-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-map li,
+.address-widget li {
+  margin-bottom: 10px;
+}
+
+.site-map a,
+.copy-right-menu a,
+.address-widget a {
+  color: #061b6b;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.site-map a:hover,
+.copy-right-menu a:hover,
+.address-widget a:hover {
+    color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 15px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #061b6b;
+  border-radius: 4px 0 0 4px;
+  color: #000a33 !important;
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(6, 27, 107, 0.6);
+}
+.newsletter-form button {
+  padding: 10px 20px;
+  border: none;
+background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* make the icon bigger */
+}
+
+.newsletter-form button:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
+}
+
+.footer-bottom {
+  background: #091336;
+  padding: 20px 0;
+  font-size: 14px;
+  border-top: 1px solid #1a2a6c;
+}
+
+.copy-right-menu {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.copy-right-menu a {
+  color: #ccc !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.copy-right-menu a:hover {
+ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+.copyright {
+  color: #ccc !important;
 }

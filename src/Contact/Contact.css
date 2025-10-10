@@ -68,17 +68,26 @@ body {
   border-radius: 50%;
 }
 
+
 .submit-btn {
-  background: linear-gradient(to right, #003973, #005bb5);
+
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+
   border: none;
+
   border-radius: 25px;
+
   color: #fff;
+
   transition: 0.3s;
+
 }
 
 .submit-btn:hover {
-  opacity: 0.9;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  opacity: 1;
 }
+
 .map-section iframe {
   width: 100%;
   height: 450px;

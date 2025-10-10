@@ -73,20 +73,30 @@ body{
   font-weight: 700;
 }
 
+
 .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+
   padding: 12px 30px;
+
   border-radius: 30px;
+
   font-weight: 600;
+
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+
+  box-shadow: 0 4px 15px rgba(6, 27, 107, 0.2);
+
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
 }
+
 
 @media (max-width: 991.98px) {
   .image-container {

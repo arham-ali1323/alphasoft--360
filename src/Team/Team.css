@@ -72,24 +72,37 @@
   gap: 12px;
 }
 
+
 .social-link {
+
   width: 42px;
+
   height: 42px;
+
   border-radius: 50%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  background-color: #f1f1f1;
-  color: #343a40;
+
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+
+  color: white;
+
   font-size: 1.2rem;
+
   transition: all 0.3s ease;
+
 }
 
 .social-link:hover {
-  background-color: #007bff;
-  color: #fff;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
   transform: translateY(-4px) scale(1.05);
 }
+
 
 .team-card-link {
   display: block;
@@ -99,4 +112,27 @@
 
 .team-card-link:hover {
   text-decoration: none;
+}
+
+/* Team Member Detail Icons */
+.contact-details svg {
+  color: #061b6b ;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.social-icons a svg {
+  color: #061b6b ;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.team-member-detail .btn {
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
+  border: none;
+  transition: background 0.3s ease;
+}
+.team-member-detail .btn:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }

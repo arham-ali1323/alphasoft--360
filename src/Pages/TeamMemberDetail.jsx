@@ -5,10 +5,9 @@ import {
   FaInstagram,
   FaTwitter,
   FaLinkedinIn,
-  FaGithub,
-  FaArrowLeft,
   FaEnvelope,
-  FaPhone,
+  FaPhoneAlt,
+  FaArrowLeft,
 } from "react-icons/fa";
 import teamMembers from "../Team/teamData";
 import "../Team/Team.css";
@@ -30,91 +29,66 @@ const TeamMemberDetail = () => {
 
   return (
     <div className="team-member-detail bg-light">
-      {/* ===== Hero Section ===== */}
-      <section
-        className="team-hero d-flex align-items-center justify-content-center text-center text-white"
-        style={{
-          backgroundImage: `url(${member.cover})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "300px",
-          position: "relative",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundColor: "rgba(0,0,0,0.5)",
-          }}
-        ></div>
-        <div style={{ position: "relative", zIndex: 2 }}>
-          <h1 className="fw-bold">{member.name}</h1>
-          <p>
-            <Link to="/" className="text-white text-decoration-none">
-              Home
-            </Link>{" "}
-            / Team / {member.name}
-          </p>
-        </div>
-      </section>
-
-      {/* ===== Member Info Section ===== */}
-      <section className="container py-5">
-        <Link to="/team" className="btn btn-outline-primary mb-4">
+      {/* ===== Back Link ===== */}
+      <section className="container py-4">
+        <Link to="/team" className="btn mb-4">
           <FaArrowLeft className="me-2" /> Back to Team
         </Link>
+      </section>
 
+      {/* ===== Profile Section ===== */}
+      <section className="container team-profile-section p-4 bg-white shadow-sm rounded-3 mb-5">
         <div className="row align-items-center">
-          <div className="col-md-4 text-center mb-4 mb-md-0">
+          {/* Left: Image */}
+          <div className="col-lg-3 text-center mb-4 mb-lg-0">
             <img
               src={member.image}
               alt={member.name}
-              className="rounded-circle shadow"
-              style={{ width: "250px", height: "250px", objectFit: "cover" }}
+              className="rounded-circle profile-photo shadow-sm"
+              style={{ width: "200px", height: "200px", objectFit: "cover" }}
             />
           </div>
 
-          <div className="col-md-8">
-            <h3 className="text-primary text-uppercase">{member.position}</h3>
+          {/* Right: Info */}
+          <div className="col-lg-9">
+            <h6 className="text-uppercase fw-semibold mb-1">
+              {member.role}
+            </h6>
             <h2 className="fw-bold mb-3">{member.name}</h2>
-            <p className="text-muted mb-3" style={{ fontSize: "1.1rem" }}>
-              {member.description}
+            <p className="text-muted mb-3" style={{ maxWidth: "600px" }}>
+              {member.bio}
             </p>
 
-            <div className="d-flex align-items-center mb-3">
-              <FaEnvelope className="me-2 text-primary" />
-              <span>{member.email}</span>
-            </div>
-            <div className="d-flex align-items-center mb-4">
-              <FaPhone className="me-2 text-primary" />
-              <span>{member.phone}</span>
+            <div className="contact-details mb-3">
+              <p className="mb-2">
+                <FaEnvelope className="me-2" />
+                {member.contact.email}
+              </p>
+              <p>
+                <FaPhoneAlt className="me-2" />
+                {member.contact.phone}
+              </p>
             </div>
 
-            <div className="d-flex gap-3">
-              {member.socials.facebook && (
-                <a href={member.socials.facebook} target="_blank" rel="noreferrer" className="text-dark">
+            <div className="social-icons d-flex gap-3">
+              {member.socials?.facebook && (
+                <a href={member.socials.facebook} target="_blank" rel="noreferrer">
                   <FaFacebookF />
                 </a>
               )}
-              {member.socials.instagram && (
-                <a href={member.socials.instagram} target="_blank" rel="noreferrer" className="text-dark">
-                  <FaInstagram />
-                </a>
-              )}
-              {member.socials.twitter && (
-                <a href={member.socials.twitter} target="_blank" rel="noreferrer" className="text-dark">
+              {member.socials?.twitter && (
+                <a href={member.socials.twitter} target="_blank" rel="noreferrer">
                   <FaTwitter />
                 </a>
               )}
-              {member.socials.linkedin && (
-                <a href={member.socials.linkedin} target="_blank" rel="noreferrer" className="text-dark">
-                  <FaLinkedinIn />
+              {member.socials?.instagram && (
+                <a href={member.socials.instagram} target="_blank" rel="noreferrer">
+                  <FaInstagram />
                 </a>
               )}
-              {member.socials.github && (
-                <a href={member.socials.github} target="_blank" rel="noreferrer" className="text-dark">
-                  <FaGithub />
+              {member.socials?.linkedin && (
+                <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
+                  <FaLinkedinIn />
                 </a>
               )}
             </div>
@@ -122,47 +96,39 @@ const TeamMemberDetail = () => {
         </div>
       </section>
 
-      {/* ===== Biography + Skills Section ===== */}
+      {/* ===== Biography + Skills ===== */}
       <section className="container pb-5">
-        <div className="row g-5">
-          <div className="col-md-6">
-            <h3 className="fw-bold mb-3">Biography</h3>
-            <p className="text-muted">{member.biography}</p>
+        <div className="row">
+          {/* Biography */}
+          <div className="col-lg-6 mb-4">
+            <h4 className="fw-bold mb-3">Biography</h4>
+            {member.biography.map((para, index) => (
+              <p key={index} className="text-muted mb-3" style={{ lineHeight: "1.8" }}>
+                {para}
+              </p>
+            ))}
           </div>
-          <div className="col-md-6">
-            <h3 className="fw-bold mb-3">Professional Skills</h3>
-            {member.skills && member.skills.map((skill, index) => (
+
+          {/* Skills */}
+          <div className="col-lg-6">
+            <h4 className="fw-bold mb-3">Professional Skills</h4>
+            {member.skills.map((skill, index) => (
               <div key={index} className="mb-3">
                 <div className="d-flex justify-content-between mb-1">
-                  <span>{skill.name}</span>
-                  <span>{skill.level}%</span>
+                  <span className="fw-semibold">{skill.name}</span>
+                  <span>{skill.percentage}%</span>
                 </div>
                 <div className="progress" style={{ height: "8px" }}>
                   <div
                     className="progress-bar bg-primary"
                     role="progressbar"
-                    style={{ width: `${skill.level}%` }}
+                    style={{ width: `${skill.percentage}%` }}
                   ></div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* ===== Call to Action ===== */}
-      <section
-        className="py-5 text-white text-center"
-        style={{
-          background: "linear-gradient(90deg, #0d6efd, #0b5ed7)",
-        }}
-      >
-        <h2 className="fw-bold mb-3">
-          Grow Your Business and Build Your Website or Software With Us.
-        </h2>
-        <Link to="/contact" className="btn btn-light fw-semibold px-4 py-2">
-          Get In Touch
-        </Link>
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -43,7 +43,7 @@ const partners = [
 const PartnerSlider = () => {
   const [slidesToShow, setSlidesToShow] = useState(5);
 
-  // Handle responsiveness using media queries (not breakpoints)
+  // Use media queries to control slides (instead of static breakpoints)
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 576) setSlidesToShow(1);
@@ -60,24 +60,29 @@ const PartnerSlider = () => {
   const settings = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 2500,
-    speed: 700,
-    arrows: false,
-    dots: false,
+    autoplaySpeed: 0, // continuous scroll
+    speed: 4000, // controls marquee speed
+    cssEase: "linear", // smooth motion
     slidesToShow,
     slidesToScroll: 1,
-    pauseOnHover: true,
+    arrows: false,
+    dots: false,
+    pauseOnHover: false,
   };
 
   return (
     <section className="partner-section py-5">
       <div className="container text-center">
-        <span className="text-primary fw-semibold d-block mb-2">OUR TECHNOLOGIES</span>
-        <h2 className="fw-bold text-white mb-5">Trusted by Modern Frameworks</h2>
+        <span className="text-primary fw-semibold d-block mb-2">
+          OUR TECHNOLOGIES
+        </span>
+        <h2 className="fw-bold text-white mb-5">
+          Trusted by Modern Frameworks
+        </h2>
 
         <Slider {...settings}>
-          {partners.map(({ id, Icon, name, link, hoverColor }) => (
-            <div key={id} className="px-3">
+          {[...partners, ...partners].map(({ id, Icon, name, link, hoverColor }, index) => (
+            <div key={index} className="px-3">
               <a
                 href={link}
                 target="_blank"
@@ -85,7 +90,7 @@ const PartnerSlider = () => {
                 className="partner-icon d-flex flex-column align-items-center justify-content-center text-decoration-none"
               >
                 <Icon
-                  size={80}
+                  size={70}
                   className="tech-icon"
                   style={{ color: "#ffffffcc", transition: "all 0.3s ease" }}
                   onMouseEnter={(e) => (e.target.style.color = hoverColor)}
@@ -98,13 +103,20 @@ const PartnerSlider = () => {
         </Slider>
       </div>
 
-      <style>{`
+      <style jsx>{`
         .partner-section {
           background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+          overflow: hidden;
+        }
+
+        .tech-icon {
+          opacity: 0.9;
+          transition: transform 0.3s ease, color 0.3s ease;
         }
 
         .tech-icon:hover {
           transform: scale(1.15);
+          opacity: 1;
         }
 
         .slick-slide {
@@ -116,11 +128,6 @@ const PartnerSlider = () => {
         .slick-track {
           display: flex !important;
           align-items: center;
-        }
-
-        .slick-dots li button:before {
-          color: white !important;
-          font-size: 10px;
         }
 
         @media (max-width: 992px) {

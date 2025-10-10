@@ -63,15 +63,15 @@ body {
 .feature-card-back .btn {
   margin-top: 15px;
   font-weight: bold;
-  background: #fff;
-  color: #007bff;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
   border: none;
   transition: 0.3s ease;
 }
 
 .feature-card-back .btn:hover {
-  background: #0056b3;
-  color: #fff;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 
 /* ---------- Responsive ---------- */
@@ -97,15 +97,15 @@ body {
 }
 
 .Services-section .submit-btn {
-  background: #fff;
-  color: #007bff;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
   border: none;
   transition: all 0.3s ease-in-out;
 }
 
 .Services-section .submit-btn:hover {
-  background: #0056b3;
-  color: #fff;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 .Services-section .no-gap {
   margin: 0;
@@ -116,8 +116,8 @@ body {
 .Services-section .play-btn {
   width: 70px;
   height: 70px;
-  background: #fff;
-  color: #007bff;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
   border: none;
   font-size: 20px;
   cursor: pointer;
@@ -126,8 +126,8 @@ body {
 }
 
 .Services-section .play-btn:hover {
-  background: #007bff;
-  color: #fff;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 
 .form-box {
@@ -143,27 +143,27 @@ body {
   color: #555;
 }
 .submit-btn {
-  background: linear-gradient(135deg, #0d1a49, #3b5998) !important;
-  color: #fff !important;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%) !important;
+  color: white !important;
   border: none;
 }
 .submit-btn:hover {
-  background: #fff !important;
-  color: #007bff !important;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
+  color: white !important;
 }
 .play-btn {
   width: 60px;
   height: 60px;
-  background: #fff;
-  color: #007bff;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
   border: none;
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 .play-btn:hover {
-  background: #007bff;
-  color: #fff;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 .Services-process2 {
   display: flex;
@@ -223,7 +223,7 @@ body {
 
 /* Contact button */
 .contact-us-button {
-  background-color: #007bff;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   color: white;
   padding: 15px 30px;
   border: none;
@@ -234,7 +234,8 @@ body {
 }
 
 .contact-us-button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 
 .contact-us-button:focus {
