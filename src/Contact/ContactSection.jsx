@@ -69,6 +69,30 @@ const ContactSection = () => {
     } catch (error) {
       console.log('FAILED...', error);
       toast.error('Failed to send email. Please try again.');
+
+      // Still store the message locally even if email fails
+      const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+      const newMessage = {
+        id: Date.now(),
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        website: formData.website,
+        message: formData.message,
+        timestamp: new Date().toISOString(),
+        emailStatus: 'failed'
+      };
+      messages.push(newMessage);
+      localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        website: "",
+        message: ""
+      });
+      setValidated(false);
     }
   };
 
