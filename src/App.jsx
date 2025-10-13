@@ -8,6 +8,7 @@ import Team from "./Pages/Team";
 import TeamMemberDetail from "./Pages/TeamMemberDetail";
 import Contact from "./Pages/Contact";
 import FAQ from "./Pages/FAQ";
+import Messages from "./Pages/Messages";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/team/:id" element={<TeamMemberDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/messages" element={<Messages />} />
           </Routes>
         </main>
         <Footer />

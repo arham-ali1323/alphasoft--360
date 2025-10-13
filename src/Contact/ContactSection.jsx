@@ -43,6 +43,21 @@ const ContactSection = () => {
     try {
       await emailjs.send(serviceID, templateID, formData, publicKey);
       toast.success('Email sent successfully!');
+
+      // Store the message locally
+      const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+      const newMessage = {
+        id: Date.now(),
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        website: formData.website,
+        message: formData.message,
+        timestamp: new Date().toISOString()
+      };
+      messages.push(newMessage);
+      localStorage.setItem('contactMessages', JSON.stringify(messages));
+
       setFormData({
         name: "",
         email: "",

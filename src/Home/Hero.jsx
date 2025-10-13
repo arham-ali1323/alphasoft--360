@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useEffect, useRef } from 'react';
-import { Container, Row, Col, Form, Button, Carousel, Spinner } from 'react-bootstrap';
+import React, { useMemo, useState, useEffect } from 'react';
+import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
@@ -17,58 +17,59 @@ const allHeroImages = [
 
 const Hero = () => {
   const [refreshSeed, setRefreshSeed] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const formRef = useRef(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
 
   useEffect(() => {
     setRefreshSeed(Math.random());
   }, []);
 
-  // Shuffle hero images each reload
   const heroImages = useMemo(() => {
     const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 4);
   }, [refreshSeed]);
 
-  const handleSubmit = async (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const form = formRef.current;
-    const formData = new FormData(form);
-
-    const name = formData.get("from_name")?.trim();
-    const email = formData.get("from_email")?.trim();
-    const phone = formData.get("from_phone")?.trim();
-    const message = formData.get("message")?.trim();
-
-    // Manual validation
-    if (!name || !email || !phone || !message) {
-      toast.error("Please fill in all fields before submitting.");
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+      toast.error('Please fill in all fields.');
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast.error("Please enter a valid email address.");
-      return;
-    }
+    // EmailJS setup
+    const serviceID = "YOUR_SERVICE_ID";
+    const templateID = "YOUR_TEMPLATE_ID";
+    const publicKey = "YOUR_PUBLIC_KEY";
 
-    setLoading(true);
+    // Email parameters (sent to Arham Ali)
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      message: formData.message,
+      to_email: "arham.ali1223@gmail.com"
+    };
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PK;
-
-    try {
-      await emailjs.sendForm(serviceID, templateID, form, publicKey);
-      toast.success("Message sent successfully!");
-      form.reset();
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-      toast.error(`Error: ${error.text || error.message || "Try again later."}`);
-    } finally {
-      setLoading(false);
-    }
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        toast.success('Email has been sent successfully!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      })
+      .catch((error) => {
+        console.error('FAILED...', error);
+        toast.error('Failed to send email. Please try again.');
+      });
   };
 
   return (
@@ -99,38 +100,37 @@ const Hero = () => {
                   </Col>
 
                   <Col md={5} className="ms-auto">
-                    <div
-                      className="hero-form rounded-4 shadow p-4"
-                      style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
-                    >
+                    <div className="hero-form rounded-4 shadow p-4" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
                       <h4 className="fw-bold text-light mb-3">Schedule Your Appointment</h4>
                       <p className="text-light mb-4">
                         We are here to help you 24/7 with our experts
                       </p>
-
-                      <Form ref={formRef} onSubmit={handleSubmit}>
+                      <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
                           <Form.Control
                             type="text"
                             placeholder="Name"
-                            name="from_name"
-                            required
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
                           <Form.Control
                             type="email"
                             placeholder="E-Mail"
-                            name="from_email"
-                            required
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
                           <Form.Control
-                            type="tel"
+                            type="text"
                             placeholder="Phone Number"
-                            name="from_phone"
-                            required
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -139,28 +139,12 @@ const Hero = () => {
                             rows={3}
                             placeholder="Message"
                             name="message"
-                            required
+                            value={formData.message}
+                            onChange={handleChange}
                           />
                         </Form.Group>
-
-                        <Button
-                          type="submit"
-                          className="w-100 hero-submit-btn d-flex justify-content-center align-items-center"
-                          disabled={loading}
-                        >
-                          {loading ? (
-                            <>
-                              <Spinner
-                                animation="border"
-                                size="sm"
-                                role="status"
-                                className="me-2"
-                              />
-                              Sending...
-                            </>
-                          ) : (
-                            "Submit Now"
-                          )}
+                        <Button type="submit" className="w-100 hero-submit-btn">
+                          Submit Now
                         </Button>
                       </Form>
                     </div>
@@ -171,7 +155,6 @@ const Hero = () => {
           </Carousel.Item>
         ))}
       </Carousel>
-
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );

@@ -1,6 +1,6 @@
-- [x] Edit App.css to change footer social icons color to gradient
-- [x] Add styles for address widget icons to use gradient
-- [x] Add styles for newsletter button icon to use gradient
-- [x] Edit Team.css to change social icon gradients to the new one
-- [x] Edit App.css to change navbar social icons color to gradient
-- [ ] Test the changes by running the dev server
+# TODO List for Contact Messages Feature
+
+- [x] Update ContactSection.jsx to store submitted messages in localStorage upon successful form submission.
+- [x] Create a new Messages.jsx page/component to display stored messages using the provided HTML template.
+- [x] Add a new route for /messages in App.jsx.
+- [x] Test the contact form submission and message display functionality.
