@@ -137,7 +137,7 @@ const Testimonials = () => {
 
         .testimonial-card:hover {
           transform: translateY(-8px);
-          background: linear-gradient(145deg, #0d6efd 0%, #0a58ca 100%);
+          background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
           box-shadow: 0 10px 25px rgba(13, 110, 253, 0.2);
         }
 
