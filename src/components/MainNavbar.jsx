@@ -7,10 +7,8 @@ import {
   FaPhone,
   FaFacebookF,
   FaTwitter,
-  FaPinterestP,
   FaInstagram,
-  FaLinkedinIn,
-  FaHeartbeat
+  FaLinkedinIn
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
 
