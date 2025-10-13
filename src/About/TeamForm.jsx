@@ -1,10 +1,50 @@
 // src/ServicesSection.jsx
-import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
 import bgImage from "../assets/img/Hero-BG.jpg"; // <-- replace with your image
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const ServicesSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    website: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      await emailjs.send(serviceID, templateID, formData, publicKey);
+      toast.success('Email sent successfully!');
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        website: "",
+        message: ""
+      });
+    } catch (error) {
+      console.log('FAILED...', error);
+      toast.error('Failed to send email. Please try again.');
+    }
+  };
+
   return (
   <>
     <section className="Services-section py-5">
@@ -36,25 +76,61 @@ const ServicesSection = () => {
             <div className="form-box p-4 text-white h-100 d-flex flex-column justify-content-center">
               <h6 className="fw-bold">GET IN TOUCH</h6>
               <h3 className="fw-bold mb-4">Fill The Form Below</h3>
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col md={6} className="mb-3">
-                    <Form.Control type="text" placeholder="Name" />
+                    <Form.Control
+                      required
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
                   </Col>
                   <Col md={6} className="mb-3">
-                    <Form.Control type="email" placeholder="E-Mail" />
+                    <Form.Control
+                      required
+                      type="email"
+                      name="email"
+                      placeholder="E-Mail"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
                   </Col>
                 </Row>
                 <Row>
                   <Col md={6} className="mb-3">
-                    <Form.Control type="text" placeholder="Phone Number" />
+                    <Form.Control
+                      required
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      pattern="[0-9]{10,}"
+                    />
                   </Col>
                   <Col md={6} className="mb-3">
-                    <Form.Control type="text" placeholder="Your Website" />
+                    <Form.Control
+                      type="url"
+                      name="website"
+                      placeholder="Your Website"
+                      value={formData.website}
+                      onChange={handleChange}
+                    />
                   </Col>
                 </Row>
                 <Form.Group className="mb-3">
-                  <Form.Control as="textarea" rows={4} placeholder="Your Message Here" />
+                  <Form.Control
+                    required
+                    as="textarea"
+                    name="message"
+                    rows={4}
+                    placeholder="Your Message Here"
+                    value={formData.message}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
                 <Button type="submit" className="submit-btn px-4 py-2 fw-bold">
                   Submit Now

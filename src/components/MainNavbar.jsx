@@ -107,14 +107,15 @@ const MainNavbar = () => {
             </Nav>
 
 
-            <Button variant="outline-light" className="ms-3 call-button" onClick={() => setShowOffcanvas(true)}>
-              <div dangerouslySetInnerHTML={{__html: `<animated-icons
-                src="https://animatedicons.co/get-icon?name=Calling%20V3&style=minimalistic&token=66ff3706-138c-41fa-a993-dee03566e48c"
-                trigger="click"
-                attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#536DFE","background":"#FFFFFF"}}'
-                height="30"
-                width="30"
-              ></animated-icons>`}} />
+            <Button variant="" className="ms-3 call-button" onClick={() => setShowOffcanvas(true)}>
+     <animated-icons
+  src="https://animatedicons.co/get-icon?name=Calling%20V5&style=minimalistic&token=90e18f0c-ab7a-4f3a-a2ac-5d17fb78e7de"
+  trigger="loop"
+  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":0.98,"defaultColours":{"group-1":"#03228FFF","group-2":"#ECECECFF","background":"#03228FFF"}}'
+  height="60"
+  width="60"
+></animated-icons>
+
             </Button>
           </Navbar.Collapse>
         </Container>

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
 import bgImage from "../assets/img/Hero-BG.jpg";
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 
 const ServicesSection = () => {
@@ -21,7 +23,7 @@ const ServicesSection = () => {
   });
   const [validated, setValidated] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
 
@@ -32,14 +34,22 @@ const ServicesSection = () => {
         variant: "danger",
         message: "Please fill all required fields correctly!",
       });
-    } else {
-      // Success case
-      setAlert({
-        show: true,
-        variant: "success",
-        message: "Thank you! We will get back to you soon.",
-      });
-      // Reset form
+      setValidated(true);
+      setTimeout(() => {
+        setAlert({ show: false, variant: "", message: "" });
+      }, 3000);
+      return;
+    }
+
+    setValidated(true);
+
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      await emailjs.send(serviceID, templateID, formData, publicKey);
+      toast.success('Email sent successfully!');
       setFormData({
         name: "",
         email: "",
@@ -48,13 +58,10 @@ const ServicesSection = () => {
         message: "",
       });
       setValidated(false);
+    } catch (error) {
+      console.log('FAILED...', error);
+      toast.error('Failed to send email. Please try again.');
     }
-
-    setValidated(true);
-    // Hide alert after 3 seconds
-    setTimeout(() => {
-      setAlert({ show: false, variant: "", message: "" });
-    }, 3000);
   };
 
   const handleChange = (e) => {

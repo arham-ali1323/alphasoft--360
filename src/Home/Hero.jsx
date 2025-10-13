@@ -6,13 +6,13 @@ import emailjs from '@emailjs/browser';
 
 // High-quality software company themed images from Unsplash
 const allHeroImages = [
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=2000&h=1200&fit=crop", // IT Software House 1
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=2000&h=1200&fit=crop", // IT Software House 2
-  "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=2000&h=1200&fit=crop", // IT Software House 3
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=2000&h=1200&fit=crop", // IT Software House 4
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=2000&h=1200&fit=crop", // IT Software House 5
-  "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=2000&h=1200&fit=crop", // IT Software House 6
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2000&h=1200&fit=crop"  // IT Software House 7
+  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1581090700227-f7a447b9d577?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&h=1200&fit=crop",
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=2000&h=1200&fit=crop"
 ];
 
 const Hero = () => {
@@ -24,45 +24,51 @@ const Hero = () => {
     message: ''
   });
 
-  // Generate new random seed on component mount (page refresh)
   useEffect(() => {
     setRefreshSeed(Math.random());
   }, []);
 
-  // Randomly select 4 images on each page refresh
   const heroImages = useMemo(() => {
     const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 4);
-  }, [refreshSeed]); // Using refreshSeed as dependency to change on each refresh
+  }, [refreshSeed]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       toast.error('Please fill in all fields.');
       return;
     }
 
-    // EmailJS parameters - replace with your actual IDs
-    const serviceID = 'your_service_id'; // Replace with your EmailJS Service ID
-    const templateID = 'your_template_id'; // Replace with your EmailJS Template ID
-    const publicKey = 'your_public_key'; // Replace with your EmailJS Public Key
+    // EmailJS setup
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    emailjs.send(serviceID, templateID, formData, publicKey)
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        toast.success('Email sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' }); // Reset form
-      }, (error) => {
-        console.log('FAILED...', error);
-        toast.error('Failed to send email. Please try again.');
-      });
+    // Email parameters (sent to Arham Ali)
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      message: formData.message,
+      to_email: "arham.ali1223@gmail.com"
+    };
+
+    try {
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+      console.log('SUCCESS!');
+      toast.success('Email has been sent successfully!');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('FAILED...', error);
+      toast.error('Failed to send email. Please try again.');
+    }
   };
 
   return (
@@ -82,23 +88,21 @@ const Hero = () => {
             >
               <Container>
                 <Row className="align-items-center">
-                  {/* Left Content */}
                   <Col md={6} className="text-white">
                     <h1 className="fw-bold">
                       IT Consulting Services For Your Business
                     </h1>
                     <p className="lead">
                       AlphaSoft360 is a leading technology solutions provider company
-                      all over the world with over 20 years of experience.
+                      all over the world with over a decade of proven expertise.
                     </p>
-                   </Col>
+                  </Col>
 
-                  {/* Right Form */}
                   <Col md={5} className="ms-auto">
-                    <div className="hero-form rounded-4 rounded shadow">
+                    <div className="hero-form rounded-4 shadow p-4" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
                       <h4 className="fw-bold text-light mb-3">Schedule Your Appointment</h4>
                       <p className="text-light mb-4">
-                        We are here to help you 24/7 with experts
+                        We are here to help you 24/7 with our experts
                       </p>
                       <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
@@ -108,7 +112,6 @@ const Hero = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -118,7 +121,6 @@ const Hero = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -128,7 +130,6 @@ const Hero = () => {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -139,7 +140,6 @@ const Hero = () => {
                             name="message"
                             value={formData.message}
                             onChange={handleChange}
-                            required
                           />
                         </Form.Group>
                         <Button type="submit" className="w-100 hero-submit-btn">
@@ -154,9 +154,11 @@ const Hero = () => {
           </Carousel.Item>
         ))}
       </Carousel>
-      <ToastContainer />
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
 
 export default Hero;
+
+
