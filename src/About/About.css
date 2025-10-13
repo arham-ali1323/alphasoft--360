@@ -129,6 +129,8 @@ body{
 
 .team-member-card:hover {
   transform: translateY(-10px);
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
+  color: white;
 }
 
 .team-image-wrapper {
@@ -171,7 +173,8 @@ body{
 }
 
 .social-links .social-icon:hover {
-  color: #007bff;
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
   transform: translateY(-3px);
 }
 
@@ -286,6 +289,21 @@ body{
   font-weight: 600;
   color: #333;
   font-size: 1.3rem;
+}
+
+.submit-btn {
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
 }
 
 /* Optional: Background line connecting the steps (more complex with pure CSS, might need SVG or JS) */
