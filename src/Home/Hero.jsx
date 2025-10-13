@@ -1,8 +1,8 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import emailjs from '@emailjs/browser';
+import React, { useMemo, useState, useEffect } from "react";
+import { Container, Row, Col, Form, Button, Carousel } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
 // High-quality software company themed images from Unsplash
 const allHeroImages = [
@@ -12,16 +12,16 @@ const allHeroImages = [
   "https://images.unsplash.com/photo-1581090700227-f7a447b9d577?w=2000&h=1200&fit=crop",
   "https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&h=1200&fit=crop",
   "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&h=1200&fit=crop",
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=2000&h=1200&fit=crop"
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=2000&h=1200&fit=crop",
 ];
 
 const Hero = () => {
   const [refreshSeed, setRefreshSeed] = useState(0);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    from_name: "",
+    from_email: "",
+    from_phone: "",
+    message: "",
   });
 
   useEffect(() => {
@@ -41,34 +41,31 @@ const Hero = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      toast.error('Please fill in all fields.');
+    if (
+      !formData.from_name ||
+      !formData.from_email ||
+      !formData.from_phone ||
+      !formData.message
+    ) {
+      toast.error("Please fill in all fields before submitting.");
       return;
     }
 
-    // EmailJS setup
-    const serviceID = "YOUR_SERVICE_ID";
-    const templateID = "YOUR_TEMPLATE_ID";
-    const publicKey = "YOUR_PUBLIC_KEY";
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PK;
 
-    // Email parameters (sent to Arham Ali)
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      message: formData.message,
-      to_email: "arham.ali1223@gmail.com"
-    };
+    console.log("Form data before sending:", formData);
 
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
+    emailjs.send(serviceID, templateID, formData, publicKey)
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        toast.success('Email has been sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        console.log("SUCCESS!", response.status, response.text);
+        toast.success("Email sent successfully!");
+        setFormData({ from_name: "", from_email: "", from_phone: "", message: "" });
       })
       .catch((error) => {
-        console.error('FAILED...', error);
-        toast.error('Failed to send email. Please try again.');
+        console.error("FAILED...", error);
+        toast.error("Failed to send email. Please try again later.");
       });
   };
 
@@ -81,10 +78,10 @@ const Hero = () => {
               className="hero d-flex align-items-center"
               style={{
                 backgroundImage: `url(${image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                minHeight: '100vh'
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
               }}
             >
               <Container>
@@ -94,14 +91,20 @@ const Hero = () => {
                       IT Consulting Services For Your Business
                     </h1>
                     <p className="lead">
-                      AlphaSoft360 is a leading technology solutions provider company
-                      all over the world with over a decade of proven expertise.
+                      AlphaSoft360 is a leading technology solutions provider
+                      company all over the world with over a decade of proven
+                      expertise.
                     </p>
                   </Col>
 
                   <Col md={5} className="ms-auto">
-                    <div className="hero-form rounded-4 shadow p-4" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
-                      <h4 className="fw-bold text-light mb-3">Schedule Your Appointment</h4>
+                    <div
+                      className="hero-form rounded-4 shadow p-4"
+                      style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
+                    >
+                      <h4 className="fw-bold text-light mb-3">
+                        Schedule Your Appointment
+                      </h4>
                       <p className="text-light mb-4">
                         We are here to help you 24/7 with our experts
                       </p>
@@ -110,8 +113,8 @@ const Hero = () => {
                           <Form.Control
                             type="text"
                             placeholder="Name"
-                            name="name"
-                            value={formData.name}
+                            name="from_name"
+                            value={formData.from_name}
                             onChange={handleChange}
                           />
                         </Form.Group>
@@ -119,8 +122,8 @@ const Hero = () => {
                           <Form.Control
                             type="email"
                             placeholder="E-Mail"
-                            name="email"
-                            value={formData.email}
+                            name="from_email"
+                            value={formData.from_email}
                             onChange={handleChange}
                           />
                         </Form.Group>
@@ -128,8 +131,8 @@ const Hero = () => {
                           <Form.Control
                             type="text"
                             placeholder="Phone Number"
-                            name="phone"
-                            value={formData.phone}
+                            name="from_phone"
+                            value={formData.from_phone}
                             onChange={handleChange}
                           />
                         </Form.Group>
