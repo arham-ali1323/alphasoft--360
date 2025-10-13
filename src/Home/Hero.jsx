@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,12 +17,8 @@ const allHeroImages = [
 
 const Hero = () => {
   const [refreshSeed, setRefreshSeed] = useState(0);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+
+  const formRef = useRef(null);
 
   useEffect(() => {
     setRefreshSeed(Math.random());
@@ -33,15 +29,10 @@ const Hero = () => {
     return shuffled.slice(0, 4);
   }, [refreshSeed]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    if (!formRef.current.checkValidity()) {
       toast.error('Please fill in all fields.');
       return;
     }
@@ -51,24 +42,15 @@ const Hero = () => {
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    // Email parameters (sent to Arham Ali)
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      message: formData.message,
-      to_email: "arham.ali1223@gmail.com"
-    };
-
-    try {
-      await emailjs.send(serviceID, templateID, templateParams, publicKey);
-      console.log('SUCCESS!');
-      toast.success('Email has been sent successfully!');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (error) {
-      console.error('FAILED...', error);
-      toast.error('Failed to send email. Please try again.');
-    }
+    emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
+      .then(() => {
+        toast.success("Message sent successfully!");
+        formRef.current.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        toast.error("Try again later");
+      });
   };
 
   return (
@@ -104,32 +86,29 @@ const Hero = () => {
                       <p className="text-light mb-4">
                         We are here to help you 24/7 with our experts
                       </p>
-                      <Form onSubmit={handleSubmit}>
+                      <Form ref={formRef} onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
                           <Form.Control
                             type="text"
                             placeholder="Name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
+                            name="from_name"
+                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
                           <Form.Control
                             type="email"
                             placeholder="E-Mail"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
+                            name="from_email"
+                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
                           <Form.Control
-                            type="text"
+                            type="tel"
                             placeholder="Phone Number"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
+                            name="from_phone"
+                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -138,8 +117,7 @@ const Hero = () => {
                             rows={3}
                             placeholder="Message"
                             name="message"
-                            value={formData.message}
-                            onChange={handleChange}
+                            required
                           />
                         </Form.Group>
                         <Button type="submit" className="w-100 hero-submit-btn">
@@ -160,5 +138,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-

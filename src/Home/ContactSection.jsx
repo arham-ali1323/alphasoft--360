@@ -1,5 +1,5 @@
 // src/Home/ContactSection.jsx
-import { FaHeartbeat, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
@@ -61,7 +61,7 @@ const ContactSection = () => {
         {/* Right: Contact Info */}
         <div className="contact-info">
           <div className="phone-icon-circle">
-            <FaHeartbeat className="throbbing-heartbeat" />
+            <FaPhone className="throbbing-heartbeat" />
           </div>
           <p className="call-us-text">CALL US 24/7</p>
           <p className="phone-number">(+123) 456-9989</p>

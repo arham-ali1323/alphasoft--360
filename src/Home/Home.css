@@ -1545,4 +1545,32 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   transform: scale(1.1);
 }
 
+/* Throbbing heartbeat animation for phone icon */
+.throbbing-heartbeat {
+  animation: throbbing-heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes throbbing-heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Throbbing Phone animation */
+.throbbing-Phone {
+  animation: throbbing-Phone 2s ease-in-out infinite;
+}
+
+@keyframes throbbing-Phone {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 
