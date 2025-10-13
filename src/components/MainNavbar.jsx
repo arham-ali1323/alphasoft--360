@@ -33,6 +33,12 @@ const MainNavbar = () => {
     setShowOffcanvas(false);
   };
 
+  const handleCallClick = () => {
+    if (confirm("Do you want to call +0123 456 7890?")) {
+      window.location.href = 'tel:+01234567890';
+    }
+  };
+
   return (
     <>
       {/* Top Info Bar */}
@@ -107,7 +113,7 @@ const MainNavbar = () => {
             </Nav>
 
 
-            <Button variant="outline-light" className="ms-3 call-button" onClick={() => setShowOffcanvas(true)}>
+            <Button variant="outline-light" className="ms-3 call-button" onClick={handleCallClick}>
               <FaPhone size={20} />
             </Button>
           </Navbar.Collapse>
