@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
-import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Carousel, Spinner } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
@@ -17,40 +17,61 @@ const allHeroImages = [
 
 const Hero = () => {
   const [refreshSeed, setRefreshSeed] = useState(0);
-
+  const [loading, setLoading] = useState(false);
   const formRef = useRef(null);
 
   useEffect(() => {
     setRefreshSeed(Math.random());
   }, []);
 
+  // Shuffle hero images each reload
   const heroImages = useMemo(() => {
     const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 4);
   }, [refreshSeed]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formRef.current.checkValidity()) {
-      toast.error('Please fill in all fields.');
+    const form = formRef.current;
+    const formData = new FormData(form);
+
+    const name = formData.get("from_name")?.trim();
+    const email = formData.get("from_email")?.trim();
+    const phone = formData.get("from_phone")?.trim();
+    const message = formData.get("message")?.trim();
+
+    console.log("Form values:", { name: name || 'empty', email: email || 'empty', phone: phone || 'empty', message: message || 'empty' });
+
+    // Manual validation
+    if (!name || !email || !phone || !message) {
+      console.log("Validation failed:", { name: !!name, email: !!email, phone: !!phone, message: !!message });
+      toast.error("Please fill in all fields before submitting.");
       return;
     }
 
-    // EmailJS setup
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setLoading(true);
+
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PK;
 
-    emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
-      .then(() => {
-        toast.success("Message sent successfully!");
-        formRef.current.reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        toast.error("Try again later");
-      });
+    try {
+      await emailjs.sendForm(serviceID, templateID, form, publicKey);
+      toast.success("Message sent successfully!");
+      form.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error(`Error: ${error.text || error.message || "Try again later."}`);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -81,18 +102,21 @@ const Hero = () => {
                   </Col>
 
                   <Col md={5} className="ms-auto">
-                    <div className="hero-form rounded-4 shadow p-4" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
+                    <div
+                      className="hero-form rounded-4 shadow p-4"
+                      style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
+                    >
                       <h4 className="fw-bold text-light mb-3">Schedule Your Appointment</h4>
                       <p className="text-light mb-4">
                         We are here to help you 24/7 with our experts
                       </p>
+
                       <Form ref={formRef} onSubmit={handleSubmit}>
                         <Form.Group className="mb-3">
                           <Form.Control
                             type="text"
                             placeholder="Name"
                             name="from_name"
-                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -100,7 +124,6 @@ const Hero = () => {
                             type="email"
                             placeholder="E-Mail"
                             name="from_email"
-                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -108,7 +131,6 @@ const Hero = () => {
                             type="tel"
                             placeholder="Phone Number"
                             name="from_phone"
-                            required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -117,11 +139,27 @@ const Hero = () => {
                             rows={3}
                             placeholder="Message"
                             name="message"
-                            required
                           />
                         </Form.Group>
-                        <Button type="submit" className="w-100 hero-submit-btn">
-                          Submit Now
+
+                        <Button
+                          type="submit"
+                          className="w-100 hero-submit-btn d-flex justify-content-center align-items-center"
+                          disabled={loading}
+                        >
+                          {loading ? (
+                            <>
+                              <Spinner
+                                animation="border"
+                                size="sm"
+                                role="status"
+                                className="me-2"
+                              />
+                              Sending...
+                            </>
+                          ) : (
+                            "Submit Now"
+                          )}
                         </Button>
                       </Form>
                     </div>
@@ -132,6 +170,7 @@ const Hero = () => {
           </Carousel.Item>
         ))}
       </Carousel>
+
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
