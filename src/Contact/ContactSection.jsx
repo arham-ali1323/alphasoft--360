@@ -50,7 +50,12 @@ const Hero = () => {
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    emailjs.send(serviceID, templateID, formData, publicKey)
+    const templateParams = {
+      ...formData,
+      subject: `New Contact Form Submission from ${formData.name}`,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
       .then((response) => {
         toast.success('Email sent successfully!');
         setFormData({ name: '', email: '', phone: '', website: '', message: '' });
