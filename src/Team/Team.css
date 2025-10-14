@@ -20,9 +20,22 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-card:hover {
+.team-card-link:hover .team-card {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
+}
+
+.team-card-link:hover .team-name,
+.team-card-link:hover .team-role {
+  color: white !important;
+}
+
+.team-card-link:hover .social-link {
+  background: white !important;
+  color: #03228f !important;
+  transform: translateY(-3px);
 }
 
 .team-img-wrapper {

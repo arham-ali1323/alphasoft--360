@@ -7,10 +7,8 @@ import {
   FaPhone,
   FaFacebookF,
   FaTwitter,
-  FaPinterestP,
   FaInstagram,
-  FaLinkedinIn,
-  FaHeartbeat
+  FaLinkedinIn
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
 
@@ -31,6 +29,12 @@ const MainNavbar = () => {
   const handleNavClick = () => {
     setExpanded(false);
     setShowOffcanvas(false);
+  };
+
+  const handleCallClick = () => {
+    if (confirm("Do you want to call +0123 456 7890?")) {
+      window.location.href = 'tel:+01234567890';
+    }
   };
 
   return (
@@ -107,15 +111,8 @@ const MainNavbar = () => {
             </Nav>
 
 
-            <Button variant="" className="ms-3 call-button" onClick={() => setShowOffcanvas(true)}>
-     <animated-icons
-  src="https://animatedicons.co/get-icon?name=Calling%20V5&style=minimalistic&token=90e18f0c-ab7a-4f3a-a2ac-5d17fb78e7de"
-  trigger="loop"
-  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":0.98,"defaultColours":{"group-1":"#03228FFF","group-2":"#ECECECFF","background":"#03228FFF"}}'
-  height="60"
-  width="60"
-></animated-icons>
-
+            <Button variant="outline-light" className="ms-3 call-button" onClick={handleCallClick}>
+              <FaPhone size={20} />
             </Button>
           </Navbar.Collapse>
         </Container>

@@ -14,5 +14,23 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['jquery']
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['react-bootstrap', 'react-icons'],
+          utils: ['@emailjs/browser', 'react-toastify']
+        }
+      }
+    },
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
   }
 })

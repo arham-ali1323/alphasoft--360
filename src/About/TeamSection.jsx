@@ -10,7 +10,7 @@ import Person2 from "../assets/img/client2.png";
 import Person3 from "../assets/img/client3.png";
 import Person4 from "../assets/img/CEo.jpeg";
 
-const teamMembers = [
+const about_teamMembers = [
   {
     image: Person1,
     name: "Isabella Croline",
@@ -33,7 +33,7 @@ const teamMembers = [
   },
 ];
 
-const TeamSliderSection = () => {
+const About_teamSliderSection = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
 
   // Responsive handling using media queries
@@ -66,11 +66,11 @@ const TeamSliderSection = () => {
   };
 
   return (
-    <section className="team-section py-5">
+    <section className="about_team-section py-5">
       <Container>
         <div className="text-center mb-5">
           <span className="text-primary fw-semibold d-block mb-2">
-            OUR TEAM
+            OUR ABOUT_TEAM
           </span>
           <h2 className="fw-bold text-white">Meet With IT Experts</h2>
           <p className="text-light small">
@@ -79,14 +79,14 @@ const TeamSliderSection = () => {
         </div>
 
         <Slider {...settings}>
-          {teamMembers.map((member, index) => (
+          {about_teamMembers.map((member, index) => (
             <div key={index} className="px-3">
-              <div className="team-card bg-white text-center rounded shadow-sm p-4">
+              <div className="about_team-card bg-white text-center rounded shadow-sm p-4">
                 <div className="position-relative d-inline-block mb-3">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="rounded-circle team-img"
+                    className="rounded-circle about_team-img"
                     style={{
                       width: "120px",
                       height: "120px",
@@ -119,18 +119,20 @@ const TeamSliderSection = () => {
       </Container>
 
       <style>{`
-        .team-section {
+        .about_team-section {
           background: linear-gradient(180deg, #071e83 0%, #00135c 100%);
         }
 
-        .team-card {
+        .about_team-card {
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           min-height: 350px;
         }
 
-        .team-card:hover {
+        .about_team-card:hover {
           transform: translateY(-8px);
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
+          color: white;
         }
 
         .social-icon {
@@ -149,7 +151,7 @@ const TeamSliderSection = () => {
         }
 
         .social-icon:hover {
-          background: #0d6efd;
+          background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
           color: white;
           transform: translateY(-3px);
         }
@@ -160,25 +162,25 @@ const TeamSliderSection = () => {
         }
 
         @media (max-width: 992px) {
-          .team-section h2 {
+          .about_team-section h2 {
             font-size: 1.8rem;
           }
         }
 
         @media (max-width: 768px) {
-          .team-section h2 {
+          .about_team-section h2 {
             font-size: 1.6rem;
           }
-          .team-card {
+          .about_team-card {
             min-height: 330px;
           }
         }
 
         @media (max-width: 576px) {
-          .team-section h2 {
+          .about_team-section h2 {
             font-size: 1.4rem;
           }
-          .team-card {
+          .about_team-card {
             min-height: 310px;
           }
         }
@@ -187,5 +189,5 @@ const TeamSliderSection = () => {
   );
 };
 
-export default TeamSliderSection;
+export default About_teamSliderSection;
 

@@ -103,7 +103,7 @@ const PartnerSlider = () => {
         </Slider>
       </div>
 
-      <style jsx>{`
+      <style jsx="true">{`
         .partner-section {
           background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
           overflow: hidden;
