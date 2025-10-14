@@ -53,7 +53,11 @@ const Hero = () => {
 
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PK;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUK;
+
+    console.log("Service ID:", serviceID);
+    console.log("Template ID:", templateID);
+    console.log("Public Key:", publicKey);
 
     console.log("Form data before sending:", formData);
 
