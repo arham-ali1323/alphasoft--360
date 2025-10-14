@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaGithub, FaStackOverflow } from "react-icons/fa";
 import ngbng from "../assets/img/ngbng.png";
 import teamMembers from "./teamData";
 
@@ -48,6 +48,11 @@ const TeamSection = () => {
                     {member.socials.github && (
                       <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="social-link">
                         <FaGithub />
+                      </a>
+                    )}
+                    {member.socials.stackoverflow && (
+                      <a href={member.socials.stackoverflow} target="_blank" rel="noopener noreferrer" className="social-link">
+                        <FaStackOverflow />
                       </a>
                     )}
                   </div>

@@ -61,8 +61,8 @@ const ContactSection = () => {
         {/* Right: Contact Info */}
         <div className="contact-info">
           <div className="phone-icon-circle">
-            <a href="">
-  <FaPhone className="throbbing-heartbeat" />
+            <a href="tel:+1234569989">
+              <FaPhone className="throbbing-heartbeat" />
             </a>
           </div>
           <p className="call-us-text">CALL US 24/7</p>

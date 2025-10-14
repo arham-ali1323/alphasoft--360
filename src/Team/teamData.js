@@ -1,106 +1,90 @@
 import CEo from "../assets/img/CEo.jpeg";
-import person1 from "../assets/img/person1.jpg";
-import person2 from "../assets/img/person2.jpg";
+import maroof_sultan from "../assets/img/person1.jpg";
+import muhammad_shahbaz from "../assets/img/person2.jpg";
 import person3 from "../assets/img/person3.jpg";
-import portrait1 from "../assets/img/portrait-1.jpg";
+import arham_ali from "../assets/img/portrait-1.jpg";
 import portrait2 from "../assets/img/portrait-3.jpg";
-import portrait3 from "../assets/img/portrait-4.jpg";
+import ahmed_hassan from "../assets/img/portrait-4.jpg";
 import portrait4 from "../assets/img/portrait-5.jpg";
 import portrait5 from "../assets/img/portrait-6.jpg";
 
 const teamMembers = [
+  // Maroof Sultan
   {
-    id: "corey-anderson",
-    image: CEo,
-    name: "Corey Anderson",
-    role: "President & CEO",
-    bio: "Visionary leader with 15+ years of experience driving innovation, empowering teams, and scaling digital transformation across industries.",
+    id: "maroof-sultan",
+    image: maroof_sultan,
+    name: "Maroof Sultan",
+    role: "Full Stack Laravel Developer",
+    bio: "Expert in agile methodologies with a track record of delivering enterprise projects on time and within scope.",
     contact: {
-      email: "corey@alphasoft360.com",
-      phone: "(123) - 222 -1452",
+      email: "maroofsultan.dev@gmail.com",
+      phone: "+92 310 6510421",
     },
     biography: [
-      "Corey Anderson has led AlphaSoft360 since its inception, transforming it into a global software powerhouse. With a background in strategic management and digital innovation, he has guided the company’s expansion into multiple international markets.",
-      "He believes in fostering a culture of creativity, transparency, and continuous learning — ensuring that every project exceeds client expectations and delivers measurable business value.",
+      "Maroof Sultan is a full-stack developer skilled in Laravel, Next.js, Symfony, OpenCart, Python, and CI/CD pipelines. He specializes in designing responsive, high-performance web applications with clean, scalable architectures.",
+      "He combines his technical expertise with strong analytical and problem-solving skills, bringing efficient, data-driven solutions to complex projects.",
+      "Maroof has worked on multiple projects, including e-commerce platforms, enterprise software, and custom web solutions — focusing on optimization, modern technologies, and seamless user experiences.",
+      "He’s passionate about continuous learning, collaboration, and building innovative solutions that merge creativity with functionality.",
     ],
     skills: [
-      { name: "Leadership & Strategy", percentage: 95 },
-      { name: "Business Development", percentage: 92 },
-      { name: "Client Relations", percentage: 88 },
-      { name: "Operational Excellence", percentage: 91 },
-      { name: "Team Motivation", percentage: 94 },
+      { name: "Laravel Development", percentage: 95 },
+      { name: "Next.js", percentage: 80 },
+      { name: "Symfony", percentage: 80 },
+      { name: "OpenCart", percentage: 93 },
+      { name: "CI/CD Pipelines", percentage: 70 },
+      { name: "PHP", percentage: 94 },
+      { name: "JavaScript (ES6+)", percentage: 80 },
+      { name: "HTML5 & CSS3", percentage: 96 },
+      { name: "Bootstrap & Tailwind CSS", percentage: 94 },
+      { name: "Responsive Web Design", percentage: 93 },
+      { name: "Git & GitHub", percentage: 95 },
     ],
     socials: {
-      facebook: "https://facebook.com/coreyanderson",
-      instagram: "https://instagram.com/coreyanderson",
-      twitter: "https://twitter.com/coreyanderson",
-      linkedin: "https://linkedin.com/in/coreyanderson",
-      github: "#",
+      stackoverflow: "https://stackoverflow.com",
+      linkedin: "https://www.linkedin.com/in/maroof-sultan-081b33220",
+      github: "https://github.com/MaroofSultan17",
     },
   },
+  // Shahbaz
   {
-    id: "rohit-pande",
-    image: person1,
-    name: "Rohit Pande",
-    role: "Chief Technology Officer",
-    bio: "Technology strategist leading AlphaSoft360’s engineering vision, with deep expertise in cloud computing, architecture, and AI systems.",
+    id: "Muhammad Shahbaz",
+    image: muhammad_shahbaz,
+    name: "Muhammad Shahbaz",
+    role: "Full Stack Developer",
+    bio: "Skilled in modern web technologies with a proven ability to deliver robust, scalable, and efficient software solutions.",
     contact: {
-      email: "rohit@alphasoft360.com",
-      phone: "(123) - 333 -1452",
+      email: "shahbaz.dev012@gmail.com",
+      phone: "+92 310 6510421",
     },
     biography: [
-      "Rohit Pande oversees AlphaSoft360’s technical roadmap, ensuring innovation and reliability at every stage. His passion for scalable systems and modern tech stacks has shaped several enterprise-level platforms.",
-      "He mentors the engineering teams to adopt agile methodologies, implement CI/CD pipelines, and integrate AI-driven features into client products.",
+      "Muhammad Shahbaz is a Full Stack Developer experienced in Laravel, Next.js, Symfony, and OpenCart. He focuses on building responsive, high-performance web applications with clean and scalable architectures.",
+      "He combines deep technical knowledge with strong analytical thinking and problem-solving skills, delivering efficient, data-driven solutions for complex challenges.",
+      "Shahbaz has contributed to a range of projects, including enterprise platforms, e-commerce systems, and custom web solutions — always prioritizing performance, maintainability, and seamless user experiences.",
+      "He’s passionate about continuous learning, teamwork, and crafting innovative digital products that blend creativity with functionality.",
     ],
     skills: [
-      { name: "Software Architecture", percentage: 93 },
-      { name: "Cloud Engineering", percentage: 90 },
-      { name: "AI Integration", percentage: 85 },
-      { name: "Technical Leadership", percentage: 94 },
-      { name: "DevOps", percentage: 89 },
+      { name: "Laravel Development", percentage: 80 },
+      { name: "Next.js", percentage: 70 },
+      { name: "Symfony", percentage: 70 },
+      { name: "OpenCart", percentage: 90 },
+      { name: "PHP", percentage: 80 },
+      { name: "JavaScript (ES6+)", percentage: 80 },
+      { name: "HTML5 & CSS3", percentage: 90 },
+      { name: "Bootstrap & Tailwind CSS", percentage: 90 },
+      { name: "Responsive Web Design", percentage: 90 },
+      { name: "Git & GitHub", percentage: 95 },
     ],
     socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "https://github.com/rohitpande",
+      linkedin: "https://www.linkedin.com/in/shahbazdev012/",
+      github: "https://github.com/shahbazdev012/",
+      stackoverflow:"https://stackoverflow.com/users/24616554/muhammad-shahbaz",
     },
   },
-  {
-    id: "makhaia-antitni",
-    image: person2,
-    name: "Makhaia Antitni",
-    role: "Head of Marketing",
-    bio: "Data-driven marketer turning insights into impactful campaigns that connect brands to people.",
-    contact: {
-      email: "makhaia@alphasoft360.com",
-      phone: "(123) - 444 -1452",
-    },
-    biography: [
-      "Makhaia Antitni has been the creative force behind AlphaSoft360’s marketing success, blending storytelling with data analytics to design campaigns that resonate globally.",
-      "Her experience spans digital strategy, growth hacking, and brand positioning — helping the company expand its footprint in North America and Europe.",
-    ],
-    skills: [
-      { name: "Brand Strategy", percentage: 90 },
-      { name: "Social Media Marketing", percentage: 87 },
-      { name: "Campaign Management", percentage: 85 },
-      { name: "Content Creation", percentage: 89 },
-      { name: "SEO/SEM", percentage: 88 },
-    ],
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
-    },
-  },
- 
+  //  Mozzam
   {
     id: "sophia-turner",
-    image: portrait1,
-    name: "Sophia Turner",
+    image: person3  ,
+    name: "Mozam",
     role: "UI/UX Designer",
     bio: "Designing elegant, human-centered interfaces that enhance usability and delight users.",
     contact: {
@@ -119,16 +103,15 @@ const teamMembers = [
       { name: "Accessibility Design", percentage: 87 },
     ],
     socials: {
-      facebook: "#",
-      instagram: "#",
       twitter: "#",
       linkedin: "#",
-      github: "#",
+      github: "https://github.com/MuazamMughal",
     },
   },
-   {
+  // Arham Ali
+  {
     id: "arham-ali",
-    image: person3,
+    image: arham_ali,
     name: "Arham Ali",
     role: "Frontend developer and Designer",
     bio: "Expert in agile methodologies with a track record of delivering enterprise projects on time and within scope.",
@@ -142,26 +125,23 @@ const teamMembers = [
       "Arham has worked on multiple projects including a portfolio website, a real estate UI, and a car rental app — focusing on optimization, modern design, and seamless user experience.",
       "He’s passionate about continuous learning, collaboration, and building innovative solutions that merge creativity with functionality.",
     ],
-   skills: [
-  { name: "React.js Development", percentage: 95 },
-  { name: "JavaScript (ES6+)", percentage: 92 },
-  { name: "HTML5 & CSS3", percentage: 96 },
-  { name: "Bootstrap & Tailwind CSS", percentage: 94 },
-  { name: "Responsive Web Design", percentage: 93 },
-  { name: "UI/UX Implementation", percentage: 90 },
-  { name: "Web Performance Optimization", percentage: 88 },
-  { name: "Git & GitHub", percentage: 85 },
-]
-    ,
-  socials: {
-  facebook: "https://www.facebook.com/arhamali2001",
-  instagram: "www.instagram.com/arham_dev86/",
-  twitter: "https://twitter.com/",
-  linkedin: "https://www.linkedin.com/in/arham-ali1323/",
-  github: "https://github.com/arham-ali1323",
-},
-
+    skills: [
+      { name: "React.js Development", percentage: 95 },
+      { name: "JavaScript (ES6+)", percentage: 92 },
+      { name: "HTML5 & CSS3", percentage: 96 },
+      { name: "Bootstrap & Tailwind CSS", percentage: 94 },
+      { name: "Responsive Web Design", percentage: 93 },
+      { name: "UI/UX Implementation", percentage: 90 },
+      { name: "Web Performance Optimization", percentage: 88 },
+      { name: "Git & GitHub", percentage: 85 },
+    ],
+    socials: {
+      stackoverflow : "https://stackoverflow.com/users/31519431/arham-ali",
+      linkedin: "https://www.linkedin.com/in/arham-ali1323/",
+      github: "https://github.com/arham-ali1323",
+    },
   },
+  // fazain
   {
     id: "david-khan",
     image: portrait2,
@@ -183,43 +163,43 @@ const teamMembers = [
       { name: "API Integration", percentage: 89 },
       { name: "Testing & Debugging", percentage: 88 },
     ],
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
+   socials: {
+      stackoverflow : "https://stackoverflow.com/",
+      linkedin: "https://www.linkedin.com/",
+      github: "https://github.com/",
     },
   },
+  // Ahmed
   {
-    id: "emily-stone",
-    image: portrait3,
-    name: "Emily Stone",
-    role: "Business Analyst",
+    id: "ahmed_hassan",
+    image: ahmed_hassan,
+    name: "Ahmad Hassan Zafar",
+    role: "Frontend Developer",
     bio: "Turning data and insights into meaningful business strategies that drive performance.",
     contact: {
-      email: "emily@alphasoft360.com",
-      phone: "(123) - 888 -1452",
+      email: "ahassandevx@gmail.com",
+      phone: "+92 327 1888082",
     },
     biography: [
-      "Emily Stone bridges the gap between technology and business needs. Her analytical mindset helps clients clarify objectives and define data-backed roadmaps for execution.",
-      "Her cross-functional collaboration ensures that each project meets measurable KPIs and user requirements.",
+      " Ahmad Hassan is a passionate Web Developer skilled in HTML, CSS, Bootstrap, and JavaScript, dedicated to creating modern, responsive, and user-friendly websites. He focuses on clean code and elegant design to deliver seamless digital experiences.",
     ],
     skills: [
-      { name: "Data Analysis", percentage: 92 },
-      { name: "Requirements Gathering", percentage: 90 },
-      { name: "Process Optimization", percentage: 86 },
-      { name: "Communication", percentage: 91 },
-      { name: "Strategic Planning", percentage: 89 },
+      { name: "JavaScript (ES6+)", percentage: 92 },
+      { name: "HTML5 & CSS3", percentage: 96 },
+      { name: "Bootstrap & Tailwind CSS", percentage: 94 },
+      { name: "Responsive Web Design", percentage: 93 },
+      { name: "UI/UX Implementation", percentage: 90 },
+      { name: "Web Performance Optimization", percentage: 88 },
+      { name: "Git & GitHub", percentage: 85 },
     ],
     socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
+      stackoverflow : "https://stackoverflow.com/",
+      linkedin:  "https://www.linkedin.com/in/ahmad-hassan-41a28b26b/",
+      github:       "https://github.com/ahassandev",
+
     },
   },
+  // sameer
   {
     id: "michael-brown",
     image: portrait4,
@@ -242,13 +222,12 @@ const teamMembers = [
       { name: "Quality Assurance", percentage: 90 },
     ],
     socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
       linkedin: "#",
       github: "#",
+      stackoverflow: "#",
     },
   },
+  // ubadullah
   {
     id: "isabella-rossi",
     image: portrait5,
@@ -270,14 +249,12 @@ const teamMembers = [
       { name: "Copywriting", percentage: 93 },
       { name: "Brand Messaging", percentage: 88 },
     ],
-    socials: {
-      facebook: "#",
-      instagram: "#",
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
+     socials: {
+      stackoverflow : "https://stackoverflow.com/",
+      linkedin: "https://www.linkedin.com/",
+      github: "https://github.com/",
     },
-  }
+  },
 ];
 
 export default teamMembers;
