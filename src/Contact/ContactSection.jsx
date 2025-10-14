@@ -1,156 +1,194 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import emailjs from '@emailjs/browser';
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { FaHome, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
-// High-quality software company themed images from Unsplash
-const allHeroImages = [
-  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=2000&h=1200&fit=crop",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=2000&h=1200&fit=crop",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2000&h=1200&fit=crop",
-  "https://images.unsplash.com/photo-1581090700227-f7a447b9d577?w=2000&h=1200&fit=crop",
-  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&h=1200&fit=crop",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=2000&h=1200&fit=crop",
-  "https://images.unsplash.com/photo-1551434678-e076c223a692?w=2000&h=1200&fit=crop"
-];
-
-const Hero = () => {
-  const [refreshSeed, setRefreshSeed] = useState(0);
+const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    website: "",
+    message: ""
   });
 
-  useEffect(() => {
-    setRefreshSeed(Math.random());
-  }, []);
-
-  const heroImages = useMemo(() => {
-    const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 4);
-  }, [refreshSeed]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [alert, setAlert] = useState({ show: false, variant: "", message: "" });
+  const [validated, setValidated] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-      toast.error('Please fill in all fields.');
-      return;
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+      setAlert({
+        show: true,
+        variant: "danger",
+        message: "Please fill all required fields correctly!"
+      });
+    } else {
+      setAlert({
+        show: true,
+        variant: "success",
+        message: "Thank you! We'll contact you soon."
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        website: "",
+        message: ""
+      });
+      setValidated(false);
     }
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUK;
+    setValidated(true);
+    setTimeout(() => {
+      setAlert({ show: false, variant: "", message: "" });
+    }, 3000);
+  };
 
-    const templateParams = {
+  const handleChange = (e) => {
+    setFormData({
       ...formData,
-      subject: `New Contact Form Submission from ${formData.name}`,
-    };
-
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
-      .then((response) => {
-        toast.success('Email sent successfully!');
-        setFormData({ name: '', email: '', phone: '', website: '', message: '' });
-      })
-      .catch((error) => {
-        toast.error('Failed to send email. Please try again.');
-      });
+      [e.target.name]: e.target.value
+    });
   };
 
   return (
-    <div>
-      <Carousel className="hero-carousel" interval={5000} fade controls={false}>
-        {heroImages.map((image, index) => (
-          <Carousel.Item key={index}>
-            <div
-              className="hero d-flex align-items-center"
-              style={{
-                backgroundImage: `url(${image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                minHeight: '100vh'
-              }}
-            >
-              <Container>
-                <Row className="align-items-center">
-                  <Col md={6} className="text-white">
-                    <h1 className="fw-bold">
-                      IT Consulting Services For Your Business
-                    </h1>
-                    <p className="lead">
-                      AlphaSoft360 is a leading technology solutions provider company
-                      all over the world with over a decade of proven expertise.
-                    </p>
-                  </Col>
+    <section className="contact-section py-5">
+      <Container>
+        <Row className="align-items-stretch">
+          {/* Left Side - Contact Info */}
+          <Col md={5} className="mb-4">
+            <div className="contact-info-box h-100 text-white p-4 rounded">
+              <p className="small">LET'S TALK</p>
+              <h3 className="fw-bold mb-4">Speak With Expert Engineers.</h3>
 
-                  <Col md={5} className="ms-auto">
-                    <div className="hero-form rounded-4 shadow p-4" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
-                      <h4 className="fw-bold text-light mb-3">Schedule Your Appointment</h4>
-                      <p className="text-light mb-4">
-                        We are here to help you 24/7 with our experts
-                      </p>
-                      <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3">
-                          <Form.Control
-                            type="text"
-                            placeholder="Name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                          <Form.Control
-                            type="email"
-                            placeholder="E-Mail"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                          <Form.Control
-                            type="text"
-                            placeholder="Phone Number"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                          />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                          <Form.Control
-                            as="textarea"
-                            rows={3}
-                            placeholder="Message"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                          />
-                        </Form.Group>
-                        <Button type="submit" className="w-100 hero-submit-btn">
-                          Submit Now
-                        </Button>
-                      </Form>
-                    </div>
-                  </Col>
-                </Row>
-              </Container>
+              <div className="d-flex align-items-center mb-3">
+                <div className="icon-box me-3">
+                  <FaHome size={24} />
+                </div>
+                <div>
+                  <strong>Email:</strong>
+                  <p className="mb-0">(+088)589-8745</p>
+                </div>
+              </div>
+
+              <div className="d-flex align-items-center mb-3">
+                <div className="icon-box me-3">
+                  <FaPhone size={24} />
+                </div>
+                <div>
+                  <strong>Phone:</strong>
+                  <p className="mb-0">support@rstheme.com</p>
+                </div>
+              </div>
+
+              <div className="d-flex align-items-center">
+                <div className="icon-box me-3">
+                  <FaMapMarkerAlt size={24} />
+                </div>
+                <div>
+                  <strong>Address:</strong>
+                  <p className="mb-0">New Jersey, 1201, USA</p>
+                </div>
+              </div>
             </div>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-      <ToastContainer position="top-right" autoClose={3000} />
-    </div>
+          </Col>
+
+          {/* Right Side - Form */}
+          <Col md={7}>
+            <h6 className="text-primary">GET IN TOUCH</h6>
+            <h3 className="fw-bold mb-4">Fill The Form Below</h3>
+            
+            {alert.show && (
+              <Alert 
+                variant={alert.variant} 
+                onClose={() => setAlert({ show: false, variant: "", message: "" })} 
+                dismissible
+                className="mb-3"
+              >
+                {alert.message}
+              </Alert>
+            )}
+
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+              <Row>
+                <Col md={6} className="mb-3">
+                  <Form.Control
+                    required
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide your name.
+                  </Form.Control.Feedback>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control
+                    required
+                    type="email"
+                    name="email"
+                    placeholder="E-Mail"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid email.
+                  </Form.Control.Feedback>
+                </Col>
+              </Row>
+              <Row>
+                <Col md={6} className="mb-3">
+                  <Form.Control
+                    required
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    pattern="[0-9]{10,}"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid phone number.
+                  </Form.Control.Feedback>
+                </Col>
+                <Col md={6} className="mb-3">
+                  <Form.Control
+                    type="url"
+                    name="website"
+                    placeholder="Your Website"
+                    value={formData.website}
+                    onChange={handleChange}
+                  />
+                </Col>
+              </Row>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  required
+                  as="textarea"
+                  name="message"
+                  rows={4}
+                  placeholder="Your Message Here"
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please provide your message.
+                </Form.Control.Feedback>
+              </Form.Group>
+              <Button type="submit" className="submit-btn px-4 py-2">
+                Submit Now
+              </Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   );
 };
 
-export default Hero;
+export default ContactSection;

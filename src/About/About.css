@@ -130,7 +130,7 @@ body{
 .team-member-card:hover {
   transform: translateY(-10px);
   background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
-  color: white;
+  color: white !important;
 }
 
 .team-image-wrapper {
@@ -173,8 +173,7 @@ body{
 }
 
 .social-links .social-icon:hover {
-  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
-  color: white;
+  background: #fff!important;
   transform: translateY(-3px);
 }
 
