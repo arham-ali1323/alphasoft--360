@@ -155,7 +155,7 @@ const teamMembers = [
     ,
   socials: {
   facebook: "https://www.facebook.com/arhamali2001",
-  instagram: "https://instagram.com/",
+  instagram: "www.instagram.com/arham_dev86/",
   twitter: "https://twitter.com/",
   linkedin: "https://www.linkedin.com/in/arham-ali1323/",
   github: "https://github.com/arham-ali1323",

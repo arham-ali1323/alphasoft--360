@@ -36,11 +36,13 @@ const TeamWorkSection = () => {
             <div key={index} className="col-lg-3 col-md-6 mb-4">
               <div className="process-step-card text-center">
                 <div className="process-image-wrapper">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="img-fluid rounded-circle process-image"
-                  />
+                  <a href="#">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="img-fluid rounded-circle process-image"
+                    />
+                  </a>
                   {/* Decorative dashed circle */}
                   <div className="dashed-circle"></div>
                   {/* Blue circles */}
