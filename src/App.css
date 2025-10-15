@@ -199,7 +199,12 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
   padding: 10px;
   border: 1px solid #061b6b;
   border-radius: 4px 0 0 4px;
-  color: #000a33 !important;
+  color: #000 !important;
+  background: white !important;
+}
+
+.newsletter-form input::placeholder {
+  color: #ccc !important;
 }
 
 .newsletter-form input:focus {
