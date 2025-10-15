@@ -137,16 +137,15 @@ const MainNavbar = () => {
             <Nav.Link as={Link} to="/services" className="text-white">
               Services
             </Nav.Link>
-            <Nav.Link as={Link} to="/NotFound" className="text-white">
-              Pages
-            </Nav.Link>
             <Nav.Link as={Link} to="/team" className="text-white">
               Team
             </Nav.Link>
             <Nav.Link as={Link} to="/contact" className="text-white">
               Contact
             </Nav.Link>
-
+            <Nav.Link as={Link} to="/FAQ" className="text-white">
+              FAQs
+            </Nav.Link>
             <Button
               variant="outline-light"
               className="ms-3 call-button"
