@@ -89,22 +89,22 @@ const MainNavbar = () => {
                 className="text-decoration-none text-dark small d-flex align-items-center"
               >
                 <FaMapMarkerAlt className="text-primary me-2" />
-                Main Pakavenue Rd, Sahiwal, 57000, Pakistan
+                Main Pakavenue Road, Sahiwal, 57000, Pakistan
               </a>
               <a
-                href="mailto:alphasoft@gmail.com"
+                href="mailto:info@alphasoft360.com"
                 className="text-decoration-none text-dark small d-flex align-items-center"
               >
                 <FaEnvelope className="text-primary me-2" />
-               alphasoft@gmail.com
+               info@alphasoft360.com
               </a>
-              <a
+              {/* <a
                 href="tel:+01234567890"
                 className="text-decoration-none text-dark small d-flex align-items-center"
               >
                 <FaPhone className="text-primary me-2" />
                 +0123 456 7890
-              </a>
+              </a> */}
             </Col>
           </Row>
         </Container>

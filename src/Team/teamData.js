@@ -17,7 +17,7 @@ const teamMembers = [
     role: "Full Stack Laravel Developer",
     bio: "Expert in agile methodologies with a track record of delivering enterprise projects on time and within scope.",
     contact: {
-      email: "maroofsultan.dev@gmail.com",
+      email: "alphasoft@gmail.com",
       phone: "+92 310 6510421",
     },
     biography: [
@@ -125,7 +125,7 @@ const teamMembers = [
     role: "Frontend developer and Designer",
     bio: "Expert in agile methodologies with a track record of delivering enterprise projects on time and within scope.",
     contact: {
-      email: "arham.ali1323.com",
+      email: "arham.ali1323@gmail.com",
       phone: "+92 321 10651323",
     },
     biography: [
@@ -162,7 +162,7 @@ const teamMembers = [
     role: "Software Engineer",
     bio: "Full-stack engineer passionate about scalable, high-performance web applications.",
     contact: {
-      email: "david@alphasoft360.com",
+      email: "alphasoft@gmail.com",
       phone: "(123) - 777 -1452",
     },
     biography: [
@@ -190,7 +190,7 @@ const teamMembers = [
     role: "Frontend Developer",
     bio: "Turning data and insights into meaningful business strategies that drive performance.",
     contact: {
-      email: "ahassandevx@gmail.com",
+      email: "alphasoft@gmail.com",
       phone: "+92 327 1888082",
     },
     biography: [
