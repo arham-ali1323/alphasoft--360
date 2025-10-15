@@ -1,13 +1,12 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
   FaLinkedinIn,
   FaEnvelope,
   FaPhoneAlt,
   FaArrowLeft,
+  FaGithub,
+  FaStackOverflow,
 } from "react-icons/fa";
 import teamMembers from "../Team/teamData";
 import "../Team/Team.css";
@@ -51,9 +50,7 @@ const TeamMemberDetail = () => {
 
           {/* Right: Info */}
           <div className="col-lg-9">
-            <h6 className="text-uppercase fw-semibold mb-1">
-              {member.role}
-            </h6>
+            <h6 className="text-uppercase fw-semibold mb-1">{member.role}</h6>
             <h2 className="fw-bold mb-3">{member.name}</h2>
             <p className="text-muted mb-3" style={{ maxWidth: "600px" }}>
               {member.bio}
@@ -62,26 +59,41 @@ const TeamMemberDetail = () => {
             <div className="contact-details mb-3">
               <p className="mb-2">
                 <FaEnvelope className="me-2" />
-                {member.contact.email}
-              </p>
-              <p className="mb-2">
-                <FaPhoneAlt className="me-2" />
-                {member.contact.phone}
-              </p>
-              <p>
-                <FaLinkedinIn className="me-2" />
-                <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
-                  {member.socials.linkedin}
+                <a href={`mailto:${member.contact.email}`}>
+                  {member.contact.email}
                 </a>
               </p>
-            </div>
-
-            <div className="social-icons d-flex gap-3">       
-              {member.socials?.linkedin && (
-                <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
-                  <FaLinkedinIn />
-                </a>
+              {member.contact.phone && (
+                <p className="mb-2">
+                  <FaPhoneAlt className="me-2" />
+                  <a href={`tel:${member.contact.phone}`}>
+                    {member.contact.phone}
+                  </a>
+                </p>
               )}
+              <p>
+                <a
+                  href={member.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaLinkedinIn className="me-2 fs-4" />
+                </a>
+                <a
+                  href={member.socials.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGithub className="me-2 fs-4" />
+                </a>
+                <a
+                  href={member.socials.stackoverflow}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaStackOverflow className="me-2 fs-4" />
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -94,7 +106,11 @@ const TeamMemberDetail = () => {
           <div className="col-lg-6 mb-4">
             <h4 className="fw-bold mb-3">Biography</h4>
             {member.biography.map((para, index) => (
-              <p key={index} className="text-muted mb-3" style={{ lineHeight: "1.8" }}>
+              <p
+                key={index}
+                className="text-muted mb-3"
+                style={{ lineHeight: "1.8" }}
+              >
                 {para}
               </p>
             ))}
