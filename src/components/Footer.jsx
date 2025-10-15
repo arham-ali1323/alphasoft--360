@@ -89,19 +89,6 @@ const Footer = () => {
                 Subscribe to our newsletter and stay updated with the latest
                 news & offers.
               </p>
-
-              <form
-                className="newsletter-form"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Thank you for subscribing to our newsletter!");
-                }}
-              >
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit">
-                  <FaPaperPlane />
-                </button>
-              </form>
             </div>
           </div>
         </div>

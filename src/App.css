@@ -12,7 +12,32 @@
 }
 
 .navbar {
-  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%) !important;
+}
+
+.offcanvas-navbar {
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 50%) !important;
+}
+
+/* Offcanvas nav links hover */
+.offcanvas-navbar .nav-link {
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.offcanvas-navbar .nav-link:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white !important;
+  font-weight: 600;
+  border-radius: 5px;
+  transform: translateY(-2px);
+}
+
+/* Offcanvas close button hover */
+.offcanvas-navbar .btn-outline-light:hover {
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  color: white;
+  border-color: transparent;
 }
 
 /* Navbar links hover */
@@ -56,7 +81,7 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%) !important;
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 50%) !important;
   color: white;
   transition: all 0.3s ease;
 }
@@ -174,7 +199,12 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
   padding: 10px;
   border: 1px solid #061b6b;
   border-radius: 4px 0 0 4px;
-  color: #000a33 !important;
+  color: #000 !important;
+  background: white !important;
+}
+
+.newsletter-form input::placeholder {
+  color: #ccc !important;
 }
 
 .newsletter-form input:focus {

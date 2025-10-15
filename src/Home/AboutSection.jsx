@@ -6,7 +6,6 @@ import person2 from "../assets/img/person2.jpg";
 import person3 from "../assets/img/person3.jpg";
 
 const AboutSection = () => {
-
   return (
     <section className="about-tech-section py-5">
       <Container>
@@ -27,7 +26,7 @@ const AboutSection = () => {
                 alt="Team small 1"
                 className="small-img2 img1 rounded-3 shadow"
               />
-             <img
+              <img
                 src={person3}
                 alt="Team small 3"
                 className="small-img3 img3 rounded-3 shadow"
@@ -44,38 +43,40 @@ const AboutSection = () => {
               We Are Increasing Business Success With Technology
             </h2>
             <p className="text-muted mb-4">
-              Over 25 years working in IT services developing software applications
-              and mobile apps for clients all over the world.
+              Over 25 years working in IT services developing software
+              applications and mobile apps for clients all over the world.
             </p>
 
             <div className="mb-3">
               <div className="d-flex justify-content-between">
-                <span>Software Development</span><span>92%</span>
+                <span>Software Development</span>
+                <span>92%</span>
               </div>
               <ProgressBar now={92} />
             </div>
 
             <div className="mb-3">
               <div className="d-flex justify-content-between">
-                <span>Cyber Security</span><span>80%</span>
+                <span>App Development</span>
+                <span>90%</span>
               </div>
               <ProgressBar now={80} />
             </div>
 
-            <div className="mb-3">
-              <div className="d-flex justify-content-between">
-                <span>Artificial Intelligence</span><span>95%</span>
-              </div>
-              <ProgressBar now={95}/>
-            </div>
-
             <div className="mb-4">
               <div className="d-flex justify-content-between">
-                <span>Web Development</span><span>78%</span>
+                <span>Web Development</span>
+                <span>92%</span>
               </div>
-              <ProgressBar now={78}/>
+              <ProgressBar now={92} />
             </div>
-
+            <div className="mb-3">
+              <div className="d-flex justify-content-between">
+                <span>Artificial Intelligence</span>
+                <span>95%</span>
+              </div>
+              <ProgressBar now={95} />
+            </div>
             <Button className="px-4 py-2 rounded-pill learn-more-btn">
               Learn More
             </Button>
