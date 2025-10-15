@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Container, Offcanvas, Button, Row, Col } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Container,
+  Offcanvas,
+  Button,
+  Row,
+  Col,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
   FaMapMarkerAlt,
@@ -8,17 +16,17 @@ import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
-  FaLinkedinIn
+  FaLinkedinIn,
+  FaTimes,
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
 
 const MainNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://animatedicons.co/scripts/embed-animated-icons.js';
+    const script = document.createElement("script");
+    script.src = "https://animatedicons.co/scripts/embed-animated-icons.js";
     script.async = true;
     document.body.appendChild(script);
     return () => {
@@ -26,59 +34,73 @@ const MainNavbar = () => {
     };
   }, []);
 
-  const handleNavClick = () => {
-    setExpanded(false);
-    setShowOffcanvas(false);
-  };
-
   const handleCallClick = () => {
-    if (confirm("Do you want to call +0123 456 7890?")) {
-      window.location.href = 'tel:+01234567890';
+    if (window.confirm("Do you want to call +0123 456 7890?")) {
+      window.location.href = "tel:+01234567890";
     }
   };
 
   return (
     <>
-      {/* Top Info Bar */}
+      {/* ===== Top Info Bar ===== */}
       <div className="bg-light py-2 border-bottom">
         <Container>
           <Row className="align-items-center text-center text-lg-start gy-2">
             <Col lg={4} md={12}>
-              
-            <div className="d-flex gap-3 navbar-social">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaFacebookF />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaTwitter />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaInstagram />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaLinkedinIn />
-              </a>
-            </div>
+              <div className="d-flex gap-3 justify-content-center justify-content-lg-start navbar-social">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTwitter />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn />
+                </a>
+              </div>
             </Col>
+
             <Col
               lg={8}
               md={12}
               className="d-flex flex-wrap justify-content-center justify-content-lg-end gap-3"
             >
-              <a href="/" className="text-decoration-none text-dark small">
+              <a
+                href="/"
+                className="text-decoration-none text-dark small d-flex align-items-center"
+              >
                 <FaMapMarkerAlt className="text-primary me-2" />
                 Main Pakavenue Rd, Sahiwal, 57000, Pakistan
               </a>
               <a
                 href="mailto:info@yourmail.com"
-                className="text-decoration-none text-dark small"
+                className="text-decoration-none text-dark small d-flex align-items-center"
               >
                 <FaEnvelope className="text-primary me-2" />
                 info@yourmail.com
               </a>
               <a
                 href="tel:+01234567890"
-                className="text-decoration-none text-dark small"
+                className="text-decoration-none text-dark small d-flex align-items-center"
               >
                 <FaPhone className="text-primary me-2" />
                 +0123 456 7890
@@ -88,46 +110,123 @@ const MainNavbar = () => {
         </Container>
       </div>
 
-      {/* Navbar */}
-      <Navbar
-        expand="lg"
-        bg="primary"
-        variant="dark"
-        sticky="top"
-        expanded={expanded}
-        onToggle={(open) => setExpanded(open)}
-      >
+      {/* ===== Navbar ===== */}
+      <Navbar bg="primary" variant="dark" sticky="top" expand="lg">
         <Container>
-          <Navbar.Brand as={Link} to="/"> <img src={logo} alt="logo" width={120} /></Navbar.Brand>
-          <Navbar.Toggle aria-controls="main-navbar" />
-          <Navbar.Collapse id="main-navbar">
-            <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/" onClick={handleNavClick}>Home</Nav.Link>
-              <Nav.Link as={Link} to="/about" onClick={handleNavClick}>About</Nav.Link>
-              <Nav.Link as={Link} to="/services" onClick={handleNavClick}>Services</Nav.Link>
-              <Nav.Link as={Link} to="/NotFound" onClick={handleNavClick}>Pages</Nav.Link>
-              <Nav.Link as={Link} to="/team" onClick={handleNavClick}>Team</Nav.Link>
-              <Nav.Link as={Link} to="/contact" onClick={handleNavClick}>Contact</Nav.Link>
-            </Nav>
+          <Navbar.Brand as={Link} to="/">
+            <img src={logo} alt="logo" width={120} />
+          </Navbar.Brand>
 
+          {/* Custom Toggle Button */}
+          <Button
+            variant="outline-light"
+            className="d-lg-none border-0"
+            onClick={() => setShowOffcanvas(true)}
+          >
+            ☰
+          </Button>
 
-            <Button variant="outline-light" className="ms-3 call-button" onClick={handleCallClick}>
-              <FaPhone size={20} />
+          {/* Desktop Menu */}
+          <Nav className="ms-auto d-none d-lg-flex align-items-center">
+            <Nav.Link as={Link} to="/" className="text-white">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" className="text-white">
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/services" className="text-white">
+              Services
+            </Nav.Link>
+            <Nav.Link as={Link} to="/NotFound" className="text-white">
+              Pages
+            </Nav.Link>
+            <Nav.Link as={Link} to="/team" className="text-white">
+              Team
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contact" className="text-white">
+              Contact
+            </Nav.Link>
+
+            <Button
+              variant="outline-light"
+              className="ms-3 call-button"
+              onClick={handleCallClick}
+            >
+              <FaPhone size={18} />
             </Button>
-          </Navbar.Collapse>
+          </Nav>
         </Container>
       </Navbar>
 
-      <Offcanvas show={showOffcanvas} onHide={() => setShowOffcanvas(false)} placement="end">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Contact Details</Offcanvas.Title>
+      {/* ===== Offcanvas Menu for Mobile ===== */}
+      <Offcanvas
+        show={showOffcanvas}
+        onHide={() => setShowOffcanvas(false)}
+        placement="end"
+        className="offcanvas-navbar"
+      >
+        <Offcanvas.Header className="position-relative">
+          <Offcanvas.Title>
+            <img src={logo} alt="logo" width={100} />
+          </Offcanvas.Title>
+          <Button
+            variant="outline-light"
+            className="border-0 position-absolute top-0 end-0 mt-2 me-2"
+            onClick={() => setShowOffcanvas(false)}
+          >
+            <FaTimes size={20} />
+          </Button>
         </Offcanvas.Header>
+
         <Offcanvas.Body>
-          <div>
-            <p><FaMapMarkerAlt className="me-2" /> Main Pakavenue Rd, Sahiwal, 57000, Pakistan</p>
-            <p><FaEnvelope className="me-2" /> info@yourmail.com</p>
-            <p><FaPhone className="me-2" /> +0123 456 7890</p>
-          </div>
+          <Nav className="flex-column text-center">
+            <Nav.Link as={Link} to="/" onClick={() => setShowOffcanvas(false)}>
+              Home
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/about"
+              onClick={() => setShowOffcanvas(false)}
+            >
+              About
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/services"
+              onClick={() => setShowOffcanvas(false)}
+            >
+              Services
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/NotFound"
+              onClick={() => setShowOffcanvas(false)}
+            >
+              Pages
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/team"
+              onClick={() => setShowOffcanvas(false)}
+            >
+              Team
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              onClick={() => setShowOffcanvas(false)}
+            >
+              Contact
+            </Nav.Link>
+
+            <Button
+              variant="outline-light"
+              className="mt-4"
+              onClick={handleCallClick}
+            >
+              <FaPhone className="me-2" /> Call Us
+            </Button>
+          </Nav>
         </Offcanvas.Body>
       </Offcanvas>
     </>
