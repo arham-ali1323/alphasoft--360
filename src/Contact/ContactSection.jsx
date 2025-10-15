@@ -14,6 +14,10 @@ const ContactSection = () => {
   const [alert, setAlert] = useState({ show: false, variant: "", message: "" });
   const [validated, setValidated] = useState(false);
 
+  const handleCallClick = () => {
+    window.location.href = 'tel:+1234569989'; // Replace with actual phone number if needed
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -64,7 +68,7 @@ const ContactSection = () => {
               <p className="small">LET'S TALK</p>
               <h3 className="fw-bold mb-4">Speak With Expert Engineers.</h3>
 
-              <div className="d-flex align-items-center mb-3">
+              {/* <div className="d-flex align-items-center mb-3">
                 <div className="icon-box me-3">
                   <FaHome size={24} />
                 </div>
@@ -72,25 +76,37 @@ const ContactSection = () => {
                   <strong>Email:</strong>
                   <p className="mb-0">(+088)589-8745</p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="d-flex align-items-center mb-3">
                 <div className="icon-box me-3">
-                  <FaPhone size={24} />
+                 <animated-icons
+ src="https://animatedicons.co/get-icon?name=Calling%20V3&style=minimalistic&token=66ff3706-138c-41fa-a993-dee03566e48c"
+  trigger="loop"
+  attributes='{"variationThumbColour":"#536DFE","variationName":"Two Tone","variationNumber":2,"numberOfGroups":2,"backgroundIsGroup":false,"strokeWidth":1,"defaultColours":{"group-1":"#000000","group-2":"#03228FFF","background":"#03228FFF"}}'
+    height="30"
+  width="30"
+></animated-icons>
                 </div>
                 <div>
                   <strong>Phone:</strong>
-                  <p className="mb-0">support@rstheme.com</p>
+                  <p className="mb-0">alphasoft@gmail.com</p>
                 </div>
               </div>
 
               <div className="d-flex align-items-center">
                 <div className="icon-box me-3">
-                  <FaMapMarkerAlt size={24} />
+                     <animated-icons
+ src="https://animatedicons.co/get-icon?name=location&style=minimalistic&token=45b3e531-a5b4-4725-afdf-330d67562c0e"
+  trigger="loop"
+  attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#FFFFFFFF","group-2":"#000000","background":"#03228FFF"}}'
+    height="30"
+  width="30"
+></animated-icons>
                 </div>
                 <div>
                   <strong>Address:</strong>
-                  <p className="mb-0">New Jersey, 1201, USA</p>
+                  <p className="mb-0">Main Pakavenue Road, Sahiwal, 57000, Pakistan</p>
                 </div>
               </div>
             </div>

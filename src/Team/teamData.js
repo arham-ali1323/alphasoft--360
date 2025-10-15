@@ -195,6 +195,9 @@ const teamMembers = [
     },
     biography: [
       " Ahmad Hassan is a passionate Web Developer skilled in HTML, CSS, Bootstrap, and JavaScript, dedicated to creating modern, responsive, and user-friendly websites. He focuses on clean code and elegant design to deliver seamless digital experiences.",
+      "Currently pursuing a BS in Artificial Intelligence, Ahmad combines his technical skills with a strong foundation in problem-solving and analytical thinking.",
+      "He is committed to continuous learning and professional growth, actively exploring new technologies and best practices in web development.",
+      "Ahmad is eager to contribute his skills and enthusiasm to dynamic teams and projects, aiming to make a positive impact in the tech industry.",
     ],
     skills: [
       { name: "JavaScript (ES6+)", percentage: 92 },

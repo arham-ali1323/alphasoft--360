@@ -1,17 +1,20 @@
-# TODO: Add Stack Overflow Icon Support and Fix Phone Icon on Mobile
+# TODO: Replace All Emails with alphasoft@gmail.com
 
-## Tasks
-- [x] Add Stack Overflow icon to Footer social links in src/components/Footer.jsx
-- [x] Fix phone link in Footer to use tel: href for mobile functionality in src/components/Footer.jsx
-- [x] Fix footer social media icons hover effect in src/App.css
-- [x] Remove invalid className "rounded-circle" from footer-social ul in src/components/Footer.jsx
-- [x] Add brand-specific hover colors to footer social icons like in PartnerSlider.jsx
-- [x] Test the changes by running the application and verifying on mobile/desktop
+## Files to Edit:
+- [ ] src/Contact/ContactSection.jsx: Replace "support@rstheme.com" with "alphasoft@gmail.com"
+- [ ] src/Team/teamData.js: Replace multiple personal and company emails with "alphasoft@gmail.com"
+  - maroofsultan.dev@gmail.com
+  - shahbaz.dev012@gmail.com
+  - eng.muazam@gmail.com
+  - david@alphasoft360.com
+  - ahassandevx@gmail.com
+  - sameerxdev@gmail.com
+  - ubaidullah.web.dev@gmail.com
+  - ali.xdev77@gmail.com
+- [ ] src/Home/ContactSection.jsx: Replace "info@alphasoft360.com" with "alphasoft@gmail.com"
+- [ ] src/components/MainNavbar.jsx: Replace "info@alphasoft360.com" (two instances) with "alphasoft@gmail.com"
+- [ ] src/components/Footer.jsx: Replace "info@yourmail.com" with "alphasoft@gmail.com"
 
-## Notes
-- Stack Overflow icon is FaStackOverflow from react-icons/fa, already used in TeamSection.jsx
-- Phone number in Footer is 1234567890, ensure tel: link is correct
-- Application is running on http://localhost:5173/ for testing
-- Added gradient hover effect to footer social icons for better visibility
-- Fixed syntax error in Footer.jsx by removing invalid className
-- Added brand colors: Stack Overflow (#F48024), GitHub (#181717), LinkedIn (#0077B5)
+## Followup Steps:
+- [ ] Verify all replacements are correct by searching for emails again.
+- [ ] Test the application to ensure no broken links or functionality.

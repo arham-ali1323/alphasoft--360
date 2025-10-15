@@ -1,7 +1,7 @@
 import React from 'react'
 import AboutImg from '../About/AboutImg';
 import AboutSection from '../About/AboutSection';
-import Pricing from '../Home/pricing';
+// import Pricing from '../Home/pricing';
 import TeamWork from '../About/TeamWork';
 import AboutForm from '../About/TeamForm';
 import '../About/About.css';
@@ -12,7 +12,7 @@ const About = () => {
       <AboutImg/>
       <AboutSection/>
       <TeamWork/>
-      <Pricing/>
+      {/* <Pricing/> */}
       <AboutForm/>
     </div>
   )

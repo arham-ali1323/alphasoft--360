@@ -68,12 +68,12 @@ const Footer = () => {
                     </a>
                   </span>
                 </li>
-                <li>
+                {/* <li>
                   <MdCall /> <a href="/">1234567890</a>
-                </li>
+                </li> */}
                 <li>
                   <MdEmail />{" "}
-                  <a href="mailto:info@yourmail.com">info@yourmail.com</a>
+                  <a href="mailto:alphasoft@gmail.com">info@yourmail.com</a>
                 </li>
                 <li>
                   <MdAccessTime /> <span>Opening Hours: 10:00 - 18:00</span>

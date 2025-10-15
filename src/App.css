@@ -213,3 +213,12 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
 .copyright {
   color: #ccc !important;
 }
+.contact-details a{
+  color: #061b6b !important;
+  text-decoration: none;
+}
+.contact-details a:hover {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bolder;
+}

@@ -48,7 +48,7 @@ const ServicesSection = () => {
   return (
   <>
     <section className="Services-section py-5">
-      <Container>
+      <Container fluid>
        <Row className="align-items-stretch">
   <Col md={5} className="no-gap">
             <div

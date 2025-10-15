@@ -1,32 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import portrait1 from '../assets/img/portrait-1.jpg';
-import portrait2 from '../assets/img/portrait-3.jpg';
-import portrait3 from '../assets/img/portrait-4.jpg';
-import portrait4 from '../assets/img/portrait-5.jpg';
+import maroof_sultan from "../assets/img/maroof_sultan.jpg";
+import muhammad_shahbaz from "../assets/img/muhammad_shahbaz.jpg";
+import muazam_mughal from "../assets/img/muazam_mughal.jpg";
+import arham_ali from "../assets/img/arham_ali.jpg";
 
 const processSteps = [
   {
-    id: 'arham-ali',
-    image: portrait1,
+    id: 'maroof_sultan',
+    image: maroof_sultan,
     title: 'Requirement Analysis',
     description: 'We thoroughly understand your business needs, gather detailed requirements, and define project scope to ensure a clear roadmap for success.',
   },
   {
-    id: 'david-khan',
-    image: portrait2,
+    id: 'muhammad_shahbaz',
+    image: muhammad_shahbaz,
     title: 'Design & Planning',
     description: 'Our team creates comprehensive designs, architectures, and project plans, ensuring scalability, security, and alignment with your goals.',
   },
   {
-    id: 'ahmed_hassan',
-    image: portrait3,
+    id: 'muazam_mughal',
+    image: muazam_mughal,
     title: 'Development',
     description: 'Using cutting-edge technologies and best practices, we build robust, efficient software solutions tailored to your specifications.',
   },
   {
-    id: 'michael-brown',
-    image: portrait4,
+    id: 'arham_ali',
+    image: arham_ali,
     title: 'Testing & Deployment',
     description: 'Rigorous testing ensures quality and reliability. We handle seamless deployment and provide ongoing support for optimal performance.',
   },
