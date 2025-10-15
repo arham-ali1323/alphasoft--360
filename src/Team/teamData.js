@@ -1,12 +1,12 @@
-import CEo from "../assets/img/CEo.jpeg";
-import maroof_sultan from "../assets/img/person1.jpg";
-import muhammad_shahbaz from "../assets/img/person2.jpg";
-import person3 from "../assets/img/person3.jpg";
-import arham_ali from "../assets/img/portrait-1.jpg";
+import maroof_sultan from "../assets/img/maroof_sultan.jpg";
+import muhammad_shahbaz from "../assets/img/muhammad_shahbaz.jpg";
+import muazam_mughal from "../assets/img/muazam_mughal.jpg";
+import arham_ali from "../assets/img/arham_ali.jpg";
 import portrait2 from "../assets/img/portrait-3.jpg";
-import ahmed_hassan from "../assets/img/portrait-4.jpg";
-import portrait4 from "../assets/img/portrait-5.jpg";
-import portrait5 from "../assets/img/portrait-6.jpg";
+import ahmed_hassan from "../assets/img/ahmed_hassan.jpg";
+import sameer_akhtar from "../assets/img/sameer_akhtar.jpg";
+import ubaidullah from "../assets/img/ubaidullah.jpg";
+import ali_hassan from "../assets/img/ali_hassan.jpg";
 
 const teamMembers = [
   // Maroof Sultan
@@ -47,7 +47,7 @@ const teamMembers = [
   },
   // Shahbaz
   {
-    id: "Muhammad Shahbaz",
+    id: "muhammad-shahbaz",
     image: muhammad_shahbaz,
     name: "Muhammad Shahbaz",
     role: "Full Stack Developer",
@@ -77,34 +77,43 @@ const teamMembers = [
     socials: {
       linkedin: "https://www.linkedin.com/in/shahbazdev012/",
       github: "https://github.com/shahbazdev012/",
-      stackoverflow:"https://stackoverflow.com/users/24616554/muhammad-shahbaz",
+      stackoverflow:
+        "https://stackoverflow.com/users/24616554/muhammad-shahbaz",
     },
   },
   //  Mozzam
   {
-    id: "sophia-turner",
-    image: person3  ,
-    name: "Mozam",
-    role: "UI/UX Designer",
-    bio: "Designing elegant, human-centered interfaces that enhance usability and delight users.",
+    id: "muazam-mughal",
+    image: muazam_mughal,
+    name: "Muazam Mughal",
+    role: "Full-Stack Next.js & Laravel+Vue.js Developer",
+    bio: "Dynamic Full-stack Software Engineer with expertise in modern web technologies, generative AI, and cloud solutions, dedicated to crafting scalable and innovative applications.",
     contact: {
-      email: "sophia@alphasoft360.com",
-      phone: "(123) - 666 -1452",
+      email: "eng.muazam@gmail.com",
+      phone: "+92 303 4510773",
     },
     biography: [
-      "Sophia Turner has designed over 60+ digital interfaces across web and mobile platforms. Her user-centric design process ensures every interaction feels seamless and visually engaging.",
-      "She combines research-driven design with creativity to create memorable user experiences that align with business goals.",
+      "Muazam Mughal is a versatile Full Stack Software Engineer proficient in Next.js, React.js, TypeScript, Laravel, Vue.js, Python, FastAPI, and cutting-edge generative AI technologies. He excels in architecting robust, scalable web applications that prioritize performance, security, and exceptional user experiences.",
+      "With a keen analytical mind and strong problem-solving abilities, Muazam delivers efficient, data-driven solutions to intricate software challenges, ensuring seamless integration and optimal functionality across diverse projects.",
+      "His professional journey includes key roles in enterprise-level applications, multinational business platforms, and freelance initiatives, where he has honed skills in performance optimization, RESTful API development, and CI/CD pipelines. Notable GitHub contributions feature AuraCart-app, a sophisticated e-commerce solution leveraging Next.js, Clerk, Sanity, Stripe, and PostgreSQL; isStartup-app, an innovative platform for startup pitches; and Cloud-Native-Generative-AI, exploring advanced AI engineering with tools like LangChain and Pinecone.",
     ],
     skills: [
-      { name: "Figma / Adobe XD", percentage: 94 },
-      { name: "Wireframing", percentage: 88 },
-      { name: "UX Research", percentage: 91 },
-      { name: "Prototyping", percentage: 89 },
-      { name: "Accessibility Design", percentage: 87 },
+      { name: "Next.js", percentage: 95 },
+      { name: "Laravel Development", percentage: 90 },
+      { name: "Vue.js", percentage: 85 },
+      { name: "TypeScript", percentage: 90 },
+      { name: "Python", percentage: 85 },
+      { name: "JavaScript (ES6+)", percentage: 95 },
+      { name: "PostgreSQL", percentage: 85 },
+      { name: "Generative AI (OpenAI, Gemini)", percentage: 85 },
+      { name: "CI/CD Pipelines", percentage: 85 },
+      { name: "Google Cloud & APIs", percentage: 90 },
+      { name: "Sanity CMS", percentage: 85 },
+      { name: "Stripe Payments", percentage: 85 },
     ],
     socials: {
-      twitter: "#",
-      linkedin: "#",
+      stackoverflow: "https://stackoverflow.com/",
+      linkedin: "https://www.linkedin.com/in/muazam-mughal/",
       github: "https://github.com/MuazamMughal",
     },
   },
@@ -136,9 +145,13 @@ const teamMembers = [
       { name: "Git & GitHub", percentage: 85 },
     ],
     socials: {
-      stackoverflow : "https://stackoverflow.com/users/31519431/arham-ali",
+      stackoverflow: "https://stackoverflow.com/users/31519431/arham-ali",
       linkedin: "https://www.linkedin.com/in/arham-ali1323/",
       github: "https://github.com/arham-ali1323",
+    },
+    education: {
+      degree: "Bachelor’s in Economics",
+      institution: "University of Sahiwal, Sahiwal",
     },
   },
   // fazain
@@ -163,8 +176,8 @@ const teamMembers = [
       { name: "API Integration", percentage: 89 },
       { name: "Testing & Debugging", percentage: 88 },
     ],
-   socials: {
-      stackoverflow : "https://stackoverflow.com/",
+    socials: {
+      stackoverflow: "https://stackoverflow.com/",
       linkedin: "https://www.linkedin.com/",
       github: "https://github.com/",
     },
@@ -193,66 +206,128 @@ const teamMembers = [
       { name: "Git & GitHub", percentage: 85 },
     ],
     socials: {
-      stackoverflow : "https://stackoverflow.com/",
-      linkedin:  "https://www.linkedin.com/in/ahmad-hassan-41a28b26b/",
-      github:       "https://github.com/ahassandev",
-
+      stackoverflow: "https://stackoverflow.com/",
+      linkedin: "https://www.linkedin.com/in/ahmad-hassan-41a28b26b/",
+      github: "https://github.com/ahassandev",
+    },
+    education: {
+      degree: "BS Artificial Intelligence",
+      status: "1st Semester",
     },
   },
   // sameer
   {
-    id: "michael-brown",
-    image: portrait4,
-    name: "Michael Brown",
-    role: "QA Lead",
-    bio: "Committed to ensuring every product meets the highest standards of reliability and performance.",
+    id: "sameer-akhtar",
+    image: sameer_akhtar,
+    name: "Sameer Akhtar",
+    role: "Front-End Web Developer",
+    bio: "A results-driven and creative Front-End Developer with a keen eye for design and a passion for crafting seamless, responsive, and engaging user experiences. Proficient in transforming ideas and UI concepts into high-performing, visually compelling websites using modern web technologies. Committed to clean, maintainable code and continuous learning to stay ahead in the ever-evolving world of web development.",
     contact: {
-      email: "michael@alphasoft360.com",
-      phone: "(123) - 999 -1452",
+      email: "sameerxdev@gmail.com",
+      github: "https://github.com/Sameer-Builds",
+      linkedin: "https://www.linkedin.com/in/sameer-akhtar-601349381",
     },
     biography: [
-      "Michael Brown manages the QA division, building automation frameworks that reduce testing cycles and improve quality metrics. His leadership has resulted in a 30% reduction in post-deployment issues.",
-      "He’s passionate about mentoring QA engineers and promoting test-driven development within the engineering team.",
+      "Sameer Akhtar is a dedicated Front-End Developer skilled in HTML5, CSS3, JavaScript (ES6+), and Bootstrap 5. He specializes in building clean, responsive, and modern interfaces that balance functionality with aesthetic appeal.",
+      "He has a strong understanding of responsive web design, cross-browser compatibility, and UI/UX principles, ensuring that every project delivers an excellent user experience across all devices.",
+      "Sameer enjoys converting design concepts into reality, optimizing performance, and continuously learning new technologies to refine his craft. His development process emphasizes precision, clarity, and collaboration.",
+      "He holds a Bachelor's degree in Computer Science from Government College University Faisalabad, Sahiwal Campus, where he developed both technical and analytical skills that contribute to his professional growth.",
     ],
     skills: [
-      { name: "Automation Testing", percentage: 95 },
-      { name: "Manual Testing", percentage: 91 },
-      { name: "Bug Tracking", percentage: 89 },
-      { name: "Test Strategy", percentage: 92 },
-      { name: "Quality Assurance", percentage: 90 },
+      { name: "HTML5", percentage: 90 },
+      { name: "CSS3", percentage: 92 },
+      { name: "JavaScript (ES6+)", percentage: 80 },
+      { name: "Bootstrap 5", percentage: 88 },
+      { name: "Responsive Design", percentage: 93 },
+      { name: "Git & GitHub", percentage: 88 },
+      { name: "Figma (UI Collaboration)", percentage: 82 },
     ],
     socials: {
-      linkedin: "#",
-      github: "#",
-      stackoverflow: "#",
+      linkedin: "https://www.linkedin.com/in/sameer-akhtar-601349381",
+      github: "https://github.com/Sameer-Builds",
+      stackoverflow: "https://stackoverflow.com/",
+    },
+    education: {
+      degree: "Bachelor’s in Computer Science",
+      institution: "Government College University Faisalabad, Sahiwal Campus",
     },
   },
   // ubadullah
   {
-    id: "isabella-rossi",
-    image: portrait5,
-    name: "Isabella Rossi",
-    role: "Content Strategist",
-    bio: "Building brand stories that captivate, educate, and convert audiences.",
+    id: "ubaidullah",
+    image: ubaidullah,
+    name: "Ubaidullah",
+    role: "Front-End Web Developer",
+    bio: "A passionate and detail-oriented Front-End Developer with a strong focus on creating responsive, user-friendly, and visually appealing web interfaces. Skilled in transforming ideas into functional designs and ensuring seamless user experiences through clean, efficient, and accessible code. Always eager to learn new technologies and improve development workflows.",
     contact: {
-      email: "isabella@alphasoft360.com",
-      phone: "(123) - 000 -1452",
+      email: "ubaidullah.web.dev@gmail.com",
+      github: "https://github.com/Ubaidullah-Web-Dev",
+      linkedin: "https://www.linkedin.com/in/ubaidullah-sajid-21792a383",
     },
     biography: [
-      "Isabella Rossi creates content ecosystems that elevate brand voice and SEO performance. She has led campaigns generating a 250% increase in engagement rates.",
-      "Her strength lies in blending creativity with analytics to deliver content that ranks and resonates.",
+      "Ubaidullah is a passionate Front-End Web Developer dedicated to crafting elegant, responsive, and accessible web experiences using modern technologies such as HTML5, CSS,  JavaScript (ES6+), and Bootstrap.",
+      "He excels at transforming design concepts into functional, pixel-perfect interfaces that deliver exceptional user experiences across all devices and browsers.",
+      "Currently pursuing Intermediate at Aspire Group of Colleges (2025), Ubaidullah continues to learn and grow as a developer, exploring new frameworks and tools to enhance his front-end expertise.",
     ],
     skills: [
-      { name: "SEO Writing", percentage: 91 },
-      { name: "Content Strategy", percentage: 89 },
-      { name: "Keyword Research", percentage: 86 },
-      { name: "Copywriting", percentage: 93 },
-      { name: "Brand Messaging", percentage: 88 },
+      { name: "HTML5", percentage: 95 },
+      { name: "CSS3", percentage: 92 },
+      { name: "JavaScript (ES6+)", percentage: 90 },
+      { name: "Bootstrap", percentage: 88 },
+      { name: "Responsive Design", percentage: 93 },
+      { name: "Git & GitHub", percentage: 88 },
+      { name: "Figma (UI Collaboration)", percentage: 82 },
     ],
-     socials: {
-      stackoverflow : "https://stackoverflow.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://github.com/",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/ubaidullah-sajid-21792a383",
+      github: "https://github.com/Ubaidullah-Web-Dev",
+      stackoverflow: "https://stackoverflow.com/",
+    },
+    education: {
+      degree: "Intermediate",
+      institution: "Aspire Group Of Colleges",
+      year: "2025",
+    },
+  },
+  {
+    id: "ali-hassan",
+    image: ali_hassan,
+    name: "Ali Hassan",
+    role: "Front-End Web Developer",
+    bio: "A motivated and detail-oriented Front-End Developer currently pursuing a BS in Artificial Intelligence. Passionate about building modern, responsive, and user-friendly web interfaces using HTML, CSS, JavaScript, and Bootstrap. Actively learning and improving skills to create clean, efficient code and deliver professional-quality digital experiences.",
+    contact: {
+      email: "ali.xdev77@gmail.com",
+      github: "https://github.com/Ali-xdev",
+      linkedin:
+        "https://www.linkedin.com/in/ali-hasssan-857929383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    },
+    biography: [
+      "Ali Hassan is an aspiring Front-End Web Developer currently pursuing a BS in Artificial Intelligence. He enjoys creating visually appealing, responsive, and functional web interfaces using HTML, CSS, JavaScript (ES6+), and Bootstrap 5.",
+      "His focus lies in building modern web designs that are user-friendly, optimized, and accessible across all devices. Ali is dedicated to writing clean and efficient code that ensures smooth performance and great user experiences.",
+      "He also leverages tools like Git, GitHub, VS Code, and Figma for version control, design collaboration, and efficient development workflows.",
+      "With a growing interest in AI and front-end technologies, Ali aims to merge creativity with technical expertise to craft innovative digital solutions.",
+    ],
+    skills: [
+      { name: "HTML5", percentage: 95 },
+      { name: "CSS3", percentage: 92 },
+      { name: "JavaScript (ES6+)", percentage: 90 },
+      { name: "Bootstrap 5", percentage: 88 },
+      { name: "Responsive Design", percentage: 93 },
+      { name: "Cross-Browser Compatibility", percentage: 87 },
+      { name: "UI/UX Principles", percentage: 89 },
+      { name: "Performance Optimization", percentage: 85 },
+      { name: "Git & GitHub", percentage: 88 },
+      { name: "Figma", percentage: 82 },
+    ],
+    socials: {
+      linkedin:
+        "https://www.linkedin.com/in/ali-hasssan-857929383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/Ali-xdev",
+      stackoverflow: "https://stackoverflow.com/",
+    },
+    education: {
+      degree: "BS Artificial Intelligence",
+      status: "1st Semester",
     },
   },
 ];

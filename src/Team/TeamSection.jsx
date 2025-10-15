@@ -1,9 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaGithub, FaStackOverflow } from "react-icons/fa";
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaStackOverflow,
+} from "react-icons/fa";
 import ngbng from "../assets/img/ngbng.png";
 import teamMembers from "./teamData";
-
 
 const TeamSection = () => {
   return (
@@ -18,40 +20,44 @@ const TeamSection = () => {
                     className="team-img-wrapper"
                     style={{ backgroundImage: `url(${ngbng})` }}
                   >
-                    <img src={member.image} alt={member.name} className="team-img" />
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="team-img"
+                    />
                   </div>
                   <h5 className="team-name">{member.name}</h5>
                   <p className="team-role">{member.role}</p>
 
                   {/* Social Links */}
                   <div className="social-links">
-                    {member.socials.facebook && (
-                      <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="social-link">
-                        <FaFacebookF />
-                      </a>
-                    )}
-                    {member.socials.instagram && (
-                      <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="social-link">
-                        <FaInstagram />
-                      </a>
-                    )}
-                    {member.socials.twitter && (
-                      <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer" className="social-link">
-                        <FaTwitter />
-                      </a>
-                    )}
                     {member.socials.linkedin && (
-                      <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
+                      <a
+                        href={member.socials.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-link"
+                      >
                         <FaLinkedinIn />
                       </a>
                     )}
                     {member.socials.github && (
-                      <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="social-link">
+                      <a
+                        href={member.socials.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-link"
+                      >
                         <FaGithub />
                       </a>
                     )}
                     {member.socials.stackoverflow && (
-                      <a href={member.socials.stackoverflow} target="_blank" rel="noopener noreferrer" className="social-link">
+                      <a
+                        href={member.socials.stackoverflow}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-link"
+                      >
                         <FaStackOverflow />
                       </a>
                     )}

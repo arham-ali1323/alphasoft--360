@@ -1,55 +1,34 @@
-// src/components/Footer.js
 import React from "react";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaPinterestP,
-  FaInstagram,
-  FaPaperPlane,
-} from "react-icons/fa";
+import { FaPaperPlane } from "react-icons/fa";
 import { MdLocationOn, MdCall, MdEmail, MdAccessTime } from "react-icons/md";
 import Logo from "../assets/img/AlphaSoft_logo1.png"; // Adjust the path as needed
 
 const Footer = () => {
   return (
     <footer id="rs-footer" className="rs-footer">
-      <div className="footer-top" style={{background: 'linear-gradient(180deg, #061b6b 0%, #000a33 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+      <div
+        className="footer-top"
+        style={{
+          background: "linear-gradient(180deg, #061b6b 0%, #000a33 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
         <div className="container">
           <div className="row">
             {/* Logo & About */}
             <div className="col-lg-3 col-md-12 col-sm-12 footer-widget">
               <div className="footer-logo mb-30">
                 <a href="/">
-                  <img src={Logo} alt="logo"  className="img-fluid"/>
+                  <img src={Logo} alt="logo" className="img-fluid" />
                 </a>
               </div>
               <p className="pb-30">
-                AlphaSoft is a leading software development company specializing in
-                custom web applications, mobile apps, and cloud solutions. We deliver
-                high-quality software that helps businesses thrive in the digital age.
+                AlphaSoft is a leading software development company specializing
+                in custom web applications, mobile apps, and cloud solutions. We
+                deliver high-quality software that helps businesses thrive in
+                the digital age.
               </p>
-              <ul className="footer-social">
-                <li>
-                  <a href="#">
-                    <FaFacebook />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FaTwitter />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FaPinterestP />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <FaInstagram />
-                  </a>
-                </li>
-              </ul>
             </div>
 
             {/* Services */}
@@ -81,7 +60,13 @@ const Footer = () => {
                 <li>
                   <MdLocationOn />{" "}
                   <span>
-                    <a href="https://maps.app.goo.gl/hrJJY1yzK8GJ1brM6" target="_blank" rel="noopener noreferrer">Main Pakavenue Rd, Sahiwal, 57000, Pakistan</a>
+                    <a
+                      href="https://maps.app.goo.gl/hrJJY1yzK8GJ1brM6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Main Pakavenue Rd, Sahiwal, 57000, Pakistan
+                    </a>
                   </span>
                 </li>
                 <li>
@@ -105,7 +90,13 @@ const Footer = () => {
                 news & offers.
               </p>
 
-              <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); alert('Thank you for subscribing to our newsletter!'); }}>
+              <form
+                className="newsletter-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert("Thank you for subscribing to our newsletter!");
+                }}
+              >
                 <input type="email" placeholder="Your email address" required />
                 <button type="submit">
                   <FaPaperPlane />
