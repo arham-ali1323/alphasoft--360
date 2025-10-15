@@ -64,28 +64,19 @@ const TeamMemberDetail = () => {
                 <FaEnvelope className="me-2" />
                 {member.contact.email}
               </p>
-              <p>
+              <p className="mb-2">
                 <FaPhoneAlt className="me-2" />
                 {member.contact.phone}
               </p>
+              <p>
+                <FaLinkedinIn className="me-2" />
+                <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
+                  {member.socials.linkedin}
+                </a>
+              </p>
             </div>
 
-            <div className="social-icons d-flex gap-3">
-              {member.socials?.facebook && (
-                <a href={member.socials.facebook} target="_blank" rel="noreferrer">
-                  <FaFacebookF />
-                </a>
-              )}
-              {member.socials?.twitter && (
-                <a href={member.socials.twitter} target="_blank" rel="noreferrer">
-                  <FaTwitter />
-                </a>
-              )}
-              {member.socials?.instagram && (
-                <a href={member.socials.instagram} target="_blank" rel="noreferrer">
-                  <FaInstagram />
-                </a>
-              )}
+            <div className="social-icons d-flex gap-3">       
               {member.socials?.linkedin && (
                 <a href={member.socials.linkedin} target="_blank" rel="noreferrer">
                   <FaLinkedinIn />
