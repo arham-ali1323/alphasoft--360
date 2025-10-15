@@ -92,11 +92,11 @@ const MainNavbar = () => {
                 Main Pakavenue Rd, Sahiwal, 57000, Pakistan
               </a>
               <a
-                href="mailto:info@yourmail.com"
+                href="mailto:alphasoft@gmail.com"
                 className="text-decoration-none text-dark small d-flex align-items-center"
               >
                 <FaEnvelope className="text-primary me-2" />
-                info@yourmail.com
+               alphasoft@gmail.com
               </a>
               <a
                 href="tel:+01234567890"
