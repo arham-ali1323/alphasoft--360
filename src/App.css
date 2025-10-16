@@ -240,3 +240,44 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
   background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
   border-color: transparent;
 }
+
+/* Hover effects for MainNavbar */
+
+/* Social media icons hover */
+.navbar-social a {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #6c757d; /* Default color */
+}
+
+.navbar-social a:hover {
+  color: #007bff; /* Blue on hover */
+  transform: scale(1.1);
+}
+
+/* Top bar links hover (address, email, phone) */
+.top-link {
+  transition: color 0.3s ease;
+}
+
+.top-link:hover {
+  color: #007bff !important; /* Yellow on hover */
+}
+
+/* Desktop navbar links hover */
+.navbar-link {
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #007bff !important; /* Yellow on hover */
+}
+
+/* Offcanvas menu links hover */
+.offcanvas-link {
+  transition: color 0.3s ease;
+}
+
+.offcanvas-link:hover {
+  color: #007bff !important;
+}
+

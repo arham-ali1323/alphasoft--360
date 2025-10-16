@@ -81,7 +81,7 @@ const MainNavbar = () => {
                   e.preventDefault();
                   window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank");
                 }}
-                className="text-decoration-none text-primary small d-flex align-items-center me-2"
+                className="text-decoration-none text-primary small d-flex align-items-center me-2 top-link"
                 style={{ cursor: "pointer" }}
               >
                 <FaMapMarkerAlt size={20} className=" me-2" />
@@ -93,7 +93,7 @@ const MainNavbar = () => {
                   e.preventDefault();
                   window.open("https://mail.google.com/mail/?view=cm&fs=1&to=alphasoft360@gmail.com", "_blank");
                 }}
-                className="text-decoration-none text-primary small d-flex align-items-center"
+                className="text-decoration-none text-primary small d-flex align-items-center top-link"
               >
                 <FaEnvelope size={20} className=" me-2" />
                alphasoft360@gmail.com
