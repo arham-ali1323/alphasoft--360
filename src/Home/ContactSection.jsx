@@ -66,9 +66,7 @@ const ContactSection = () => {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
-                    window.open("https://wa.me/923704857471", "_blank");
-                  }
+                  window.open("https://wa.me/923704857471", "_blank");
                 }}
               >
                 <FaPhone className="throbbing-heartbeat" />
@@ -110,9 +108,7 @@ const ContactSection = () => {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
-                  window.open("https://wa.me/923704857471", "_blank");
-                }
+                window.open("https://wa.me/923704857471", "_blank");
               }}
             >
               Let's Chat

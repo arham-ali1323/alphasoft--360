@@ -28,9 +28,7 @@ const MainNavbar = () => {
 
 
   const handleCallClick = () => {
-    if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
-      window.open("https://wa.me/923704857471", "_blank");
-    }
+    window.open("https://wa.me/923704857471", "_blank");
   };
 
   return (
@@ -99,9 +97,7 @@ const MainNavbar = () => {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
-                    window.open("https://wa.me/923704857471", "_blank");
-                  }
+                  window.open("https://wa.me/923704857471", "_blank");
                 }}
                 className="text-decoration-none text-primary small d-flex align-items-center phone-link"
               >
