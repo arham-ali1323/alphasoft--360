@@ -93,7 +93,7 @@ const MainNavbar = () => {
               </a>
               <a
                 href="tel:+923704857471"
-                className="text-decoration-none text-primary small d-flex align-items-center"
+                className="text-decoration-none text-primary small d-flex align-items-center phone-link"
               >
                 <FaPhone className="text-primary me-2" />
                 +92 3704857471
@@ -141,7 +141,7 @@ const MainNavbar = () => {
             </Nav.Link>
             <Button
               variant="outline-light"
-              className="ms-3 call-button text-light"
+              className="ms-3 call-button text-light phone-button"
               onClick={handleCallClick}
             >
               <FaPhone size={30} />
@@ -213,7 +213,7 @@ const MainNavbar = () => {
 
             <Button
               variant="outline-light"
-              className="mt-4"
+              className="mt-4 phone-button-mobile"
               onClick={handleCallClick}
             >
               <FaPhone className="me-2" /> Call Us

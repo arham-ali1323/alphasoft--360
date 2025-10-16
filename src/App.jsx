@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainNavbar from "./components/MainNavbar";
 import Footer from "./components/Footer";
+import WhatsAppIcon from "./components/WhatsAppIcon";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Services from "./Pages/Services";
@@ -30,6 +31,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppIcon />
       </div>
     </Router>
   );

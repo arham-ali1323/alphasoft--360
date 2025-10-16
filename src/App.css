@@ -102,6 +102,8 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
     justify-content: center;
   }
 }
+
+/* footer=-============================ */
 .footer-widget a {
   color: #000; /* Default text color */
   text-decoration: none; /* Remove underline */
@@ -216,4 +218,25 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
 }
 .contact-details a:hover {
   font-weight: bolder;
+}
+
+/* Phone icon hover effects */
+.phone-link:hover .fa-phone,
+.phone-button:hover .fa-phone,
+.phone-button-mobile:hover .fa-phone {
+  transform: scale(1.1);
+  color: #007bff !important;
+}
+
+.phone-link:hover,
+.phone-button:hover,
+.phone-button-mobile:hover {
+  font-weight: bold;
+}
+
+/* Call button hover effects */
+.call-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
+  border-color: transparent;
 }

@@ -129,10 +129,14 @@ const About_teamSliderSection = () => {
         }
 
         .about_team-card:hover {
-          transform: translateY(-8px);
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
           background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
           color: white;
+        }
+
+        .about_team-card:hover h5,
+        .about_team-card:hover p {
+          font-weight: bold;
         }
 
         .social-icon {
