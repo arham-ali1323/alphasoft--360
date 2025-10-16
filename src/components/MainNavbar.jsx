@@ -28,8 +28,8 @@ const MainNavbar = () => {
 
 
   const handleCallClick = () => {
-    if (window.confirm("Do you want to call +0123 456 7890?")) {
-      window.location.href = "tel:+01234567890";
+    if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
+      window.open("https://wa.me/923704857471", "_blank");
     }
   };
 
@@ -85,14 +85,20 @@ const MainNavbar = () => {
                 Main Pakavenue Road, Sahiwal, 57000, Pakistan
               </a>
               <a
-                href="mailto:info@alphasoft360.com"
+                href="mailto:alphasoft360@gmail.com"
                 className="text-decoration-none text-primary small d-flex align-items-center"
               >
                 <FaEnvelope size={20} className=" me-2" />
                alphasoft360@gmail.com 
               </a>
               <a
-                href="tel:+923704857471"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
+                    window.open("https://wa.me/923704857471", "_blank");
+                  }
+                }}
                 className="text-decoration-none text-primary small d-flex align-items-center phone-link"
               >
                 <FaPhone className="text-primary me-2" />
