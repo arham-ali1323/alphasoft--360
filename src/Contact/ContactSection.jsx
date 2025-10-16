@@ -15,7 +15,9 @@ const ContactSection = () => {
   const [validated, setValidated] = useState(false);
 
   const handleCallClick = () => {
-    window.location.href = 'tel:+1234569989'; // Replace with actual phone number if needed
+    if (window.confirm("Do you want to chat on WhatsApp with (+123) 456-9989?")) {
+      window.open("https://wa.me/1234569989", "_blank");
+    }
   };
 
   const handleSubmit = (e) => {

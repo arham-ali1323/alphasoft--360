@@ -69,7 +69,18 @@ const Footer = () => {
                   </span>
                 </li>
                 <li>
-                  <MdCall /> <a href="tel:+923704857471">+92 3704857471</a>
+                  <MdCall />{" "}
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
+                        window.open("https://wa.me/923704857471", "_blank");
+                      }
+                    }}
+                  >
+                    +92 3704857471
+                  </a>
                 </li>
                 <li>
                   <MdEmail />{" "}

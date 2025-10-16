@@ -62,14 +62,22 @@ const ContactSection = () => {
           {/* Right: Contact Info */}
           <div className="contact-info">
             <div className="phone-icon-circle">
-              <a href="tel:+1234569989">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
+                    window.open("https://wa.me/923704857471", "_blank");
+                  }
+                }}
+              >
                 <FaPhone className="throbbing-heartbeat" />
               </a>
             </div>
-            <p className="call-us-text">CALL US 24/7</p>
-            <p className="phone-number">+92 3704857471</p>    
+            <p className="call-us-text">CHAT WITH US 24/7</p>
+            <p className="phone-number">+92 3704857471</p>
             <p className="contact-description">
-              Have any idea or project in your mind? Call us or schedule an
+              Have any idea or project in your mind? Chat with us on WhatsApp or schedule an
               appointment. Our representative will reply to you shortly.
             </p>
 
@@ -93,7 +101,18 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <a className=" btn text-light lets-talk-button" href="tel:+923704857471">Let's Talk</a>
+            <a
+              className="btn text-light lets-talk-button"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                if (window.confirm("Do you want to chat on WhatsApp with +92 3704857471?")) {
+                  window.open("https://wa.me/923704857471", "_blank");
+                }
+              }}
+            >
+              Let's Chat
+            </a>
           </div>
         </div>
 
