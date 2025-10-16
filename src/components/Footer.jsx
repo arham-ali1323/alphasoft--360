@@ -84,7 +84,15 @@ const Footer = () => {
                 </li>
                 <li>
                   <MdEmail />{" "}
-                  <a href="mailto:alphasoft@gmail.com">alphasoft360@gmail.com </a>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open("https://mail.google.com/mail/?view=cm&fs=1&to=alphasoft360@gmail.com", "_blank");
+                    }}
+                  >
+                    alphasoft360@gmail.com
+                  </a>
                 </li>
                 <li>
                   <MdAccessTime /> <span>Opening Hours: 10:00 - 18:00</span>

@@ -85,11 +85,15 @@ const MainNavbar = () => {
                 Main Pakavenue Road, Sahiwal, 57000, Pakistan
               </a>
               <a
-                href="mailto:alphasoft360@gmail.com"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open("https://mail.google.com/mail/?view=cm&fs=1&to=alphasoft360@gmail.com", "_blank");
+                }}
                 className="text-decoration-none text-primary small d-flex align-items-center"
               >
                 <FaEnvelope size={20} className=" me-2" />
-               alphasoft360@gmail.com 
+               alphasoft360@gmail.com
               </a>
               <a
                 href="#"

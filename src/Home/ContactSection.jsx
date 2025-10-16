@@ -83,7 +83,11 @@ const ContactSection = () => {
 
             {/* Additional Contact Methods */}
             <div className="additional-contact-methods">
-              <div className="contact-method">
+              <div
+                className="contact-method"
+                onClick={() => window.open("https://mail.google.com/mail/?view=cm&fs=1&to=alphasoft360@gmail.com", "_blank")}
+                style={{ cursor: "pointer" }}
+              >
                 <FaEnvelope size={30} className="me-2" />
                 <div>
                   <p className="contact-method-title">Email Us</p>
