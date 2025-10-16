@@ -24,15 +24,7 @@ import logo from "../assets/img/AlphaSoft_logo.png";
 const MainNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://animatedicons.co/scripts/embed-animated-icons.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+
 
   const handleCallClick = () => {
     if (window.confirm("Do you want to call +0123 456 7890?")) {
@@ -88,26 +80,14 @@ const MainNavbar = () => {
                 href="/"
                 className="text-decoration-none text-dark small d-flex align-items-center"
               >
-                <animated-icons
-                  src="https://animatedicons.co/get-icon?name=location&style=minimalistic&token=45b3e531-a5b4-4725-afdf-330d67562c0e"
-                  trigger="loop"
-                  attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#FFFFFFFF","group-2":"#000000","background":"#0C6AF7FF"}}'
-                  height="30"
-                  width="30"
-                ></animated-icons>
+                <FaMapMarkerAlt size={30} />
                 Main Pakavenue Road, Sahiwal, 57000, Pakistan
               </a>
               <a
                 href="mailto:info@alphasoft360.com"
                 className="text-decoration-none text-dark small d-flex align-items-center"
               >
-                <animated-icons
-                  src="https://animatedicons.co/get-icon?name=mail&style=minimalistic&token=e55f9897-402e-4453-b539-03e933b6d7fa"
-                  trigger="loop"
-                  attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#E6E9EC","group-2":"#000000","background":"#0C6AF7FF"}}'
-                  height="40"
-                  width="40"
-                ></animated-icons>
+                <FaEnvelope size={30} />
                 info@alphasoft360.com
               </a>
               {/* <a
@@ -163,13 +143,7 @@ const MainNavbar = () => {
               className="ms-3 call-button"
               onClick={handleCallClick}
             >
-              <animated-icons
-                src="https://animatedicons.co/get-icon?name=Calling%20V3&style=minimalistic&token=66ff3706-138c-41fa-a993-dee03566e48c"
-                trigger="loop"
-                attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":0.98,"backgroundIsGroup":true,"defaultColours":{"group-1":"#E6E9EC","group-2":"#FFFFFFFF","background":"#FFFFFFFF"}}'
-                height="30"
-                width="30"
-              ></animated-icons>
+              <FaPhone size={30} />
             </Button>
           </Nav>
         </Container>

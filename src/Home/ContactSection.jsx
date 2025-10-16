@@ -76,27 +76,14 @@ const ContactSection = () => {
             {/* Additional Contact Methods */}
             <div className="additional-contact-methods">
               <div className="contact-method">
-                <animated-icons
-                  src="https://animatedicons.co/get-icon?name=mail&style=minimalistic&token=e55f9897-402e-4453-b539-03e933b6d7fa"
-                  trigger="loop"
-                  attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#000000FF","group-2":"#000000","background":"#FFFFFFFF"}}'
-                  height="50"
-                  width="50"
-                ></animated-icons>
+                <FaEnvelope size={50} />
                 <div>
                   <p className="contact-method-title">Email Us</p>
                   <p className="contact-method-detail">info@alphasoft360.com</p>
                 </div>
               </div>
               <div className="contact-method">
-                <animated-icons
-                  src="https://animatedicons.co/get-icon?name=location&style=minimalistic&token=45b3e531-a5b4-4725-afdf-330d67562c0e"
-                  trigger="loop"
-                  attributes='{"variationThumbColour":"#000000","variationName":"Dark","variationNumber":4,"numberOfGroups":2,"strokeWidth":1.5,"backgroundIsGroup":true,"defaultColours":{"group-1":"#000000FF","group-2":"#000000","background":"#FFFFFFFF"}}'
-                  height="50"
-                  width="50"
-                ></animated-icons>
-
+                <FaMapMarkerAlt size={50} />
                 <div>
                   <p className="contact-method-title">Our Location</p>
                   <p className="contact-method-detail">
