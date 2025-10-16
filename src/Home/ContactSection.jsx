@@ -76,14 +76,14 @@ const ContactSection = () => {
             {/* Additional Contact Methods */}
             <div className="additional-contact-methods">
               <div className="contact-method">
-                <FaEnvelope size={50} />
+                <FaEnvelope size={30} className="me-2" />
                 <div>
                   <p className="contact-method-title">Email Us</p>
                   <p className="contact-method-detail">info@alphasoft360.com</p>
                 </div>
               </div>
               <div className="contact-method">
-                <FaMapMarkerAlt size={50} />
+                <FaMapMarkerAlt size={30}  className="me-3" />
                 <div>
                   <p className="contact-method-title">Our Location</p>
                   <p className="contact-method-detail">

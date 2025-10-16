@@ -84,7 +84,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <strong>Phone:</strong>
-                  <p className="mb-0">alphasoft@gmail.com</p>
+                  <p className="mb-0">(+123) 456-9989</p>
                 </div>
               </div>
 

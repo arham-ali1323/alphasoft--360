@@ -139,8 +139,8 @@ const MainNavbar = () => {
               Contact
             </Nav.Link>
             <Button
-              variant="outline-primary"
-              className="ms-3 call-button"
+              variant="outline-light"
+              className="ms-3 call-button text-light"
               onClick={handleCallClick}
             >
               <FaPhone size={30} />
