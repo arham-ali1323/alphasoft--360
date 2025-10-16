@@ -20,6 +20,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
+import logoLight from "../assets/img/AlphaSoft_logo1.png";
 
 const MainNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -158,7 +159,7 @@ const MainNavbar = () => {
       >
         <Offcanvas.Header className="position-relative">
           <Offcanvas.Title>
-            <img src={logo} alt="logo" width={100} />
+            <img src={logoLight} alt="logo" width={100} />
           </Offcanvas.Title>
           <Button
             variant="outline-light"
