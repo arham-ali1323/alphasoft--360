@@ -78,16 +78,16 @@ const MainNavbar = () => {
             >
               <a
                 href="/"
-                className="text-decoration-none text-dark small d-flex align-items-center"
+                className="text-decoration-none text-primary small d-flex align-items-center me-2"
               >
-                <FaMapMarkerAlt size={30} />
+                <FaMapMarkerAlt size={20} className=" me-2" />
                 Main Pakavenue Road, Sahiwal, 57000, Pakistan
               </a>
               <a
                 href="mailto:info@alphasoft360.com"
-                className="text-decoration-none text-dark small d-flex align-items-center"
+                className="text-decoration-none text-primary small d-flex align-items-center"
               >
-                <FaEnvelope size={30} />
+                <FaEnvelope size={20} className=" me-2" />
                 info@alphasoft360.com
               </a>
               {/* <a
