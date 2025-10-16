@@ -57,6 +57,11 @@ body {
   padding: 50px 50px !important;
 }
 
+.contact-info-box .d-flex:hover {
+  font-weight: bold;
+  transition: font-weight 0.3s ease;
+}
+
 .icon-box {
   background: #fff;
   color: #005bb5;

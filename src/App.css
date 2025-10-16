@@ -96,19 +96,6 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
   font-size: 16px;
 }
 
-/* Call button hover */
-.call-button:hover {
-  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
-  color: white !important;
-  border-color: transparent !important;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-
-.call-button:hover svg {
-  color: #ffffff !important;
-}
-
 @media (max-width: 991px) {
   .navbar-social {
     margin: 15px 0;
@@ -190,9 +177,6 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
 .site-map a:hover,
 .copy-right-menu a:hover,
 .address-widget a:hover {
-    color: black;
-  padding: 5px 10px;
-  border-radius: 5px;
   font-weight: bolder;
 }
 
@@ -231,7 +215,5 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
   text-decoration: none;
 }
 .contact-details a:hover {
-  padding: 5px 10px;
-  border-radius: 5px;
   font-weight: bolder;
 }

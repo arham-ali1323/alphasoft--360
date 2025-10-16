@@ -89,15 +89,15 @@ const MainNavbar = () => {
                 className="text-decoration-none text-primary small d-flex align-items-center"
               >
                 <FaEnvelope size={20} className=" me-2" />
-                info@alphasoft360.com
+               alphasoft360@gmail.com 
               </a>
-              {/* <a
-                href="tel:+01234567890"
-                className="text-decoration-none text-dark small d-flex align-items-center"
+              <a
+                href="tel:+923704857471"
+                className="text-decoration-none text-primary small d-flex align-items-center"
               >
                 <FaPhone className="text-primary me-2" />
-                +0123 456 7890
-              </a> */}
+                +92 3704857471
+              </a>
             </Col>
           </Row>
         </Container>

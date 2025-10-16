@@ -149,3 +149,7 @@
   background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: white;
 }
+
+.contact-details a:hover {
+  font-weight: bolder;
+}

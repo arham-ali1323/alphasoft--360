@@ -2,7 +2,7 @@ import maroof_sultan from "../assets/img/maroof_sultan.jpg";
 import muhammad_shahbaz from "../assets/img/muhammad_shahbaz.jpg";
 import muazam_mughal from "../assets/img/muazam_mughal.jpg";
 import arham_ali from "../assets/img/arham_ali.jpg";
-import portrait2 from "../assets/img/portrait-3.jpg";
+import faizan_ali from "../assets/img/faizan_ali.jpg";
 import ahmed_hassan from "../assets/img/ahmed_hassan.jpg";
 import sameer_akhtar from "../assets/img/sameer_akhtar.jpg";
 import ubaidullah from "../assets/img/ubaidullah.jpg";
@@ -155,33 +155,50 @@ const teamMembers = [
     },
   },
   // fazain
-  {
-    id: "david-khan",
-    image: portrait2,
-    name: "David Khan",
-    role: "Software Engineer",
-    bio: "Full-stack engineer passionate about scalable, high-performance web applications.",
-    contact: {
-      email: "alphasoft@gmail.com",
-      phone: "(123) - 777 -1452",
-    },
-    biography: [
-      "David Khan’s expertise lies in building end-to-end JavaScript applications. He’s skilled in both front-end and back-end frameworks and focuses on writing clean, reusable code.",
-      "He enjoys collaborating across teams to build responsive, secure, and maintainable solutions for clients.",
-    ],
-    skills: [
-      { name: "React.js / Next.js", percentage: 90 },
-      { name: "Node.js / Express", percentage: 87 },
-      { name: "Database Systems", percentage: 85 },
-      { name: "API Integration", percentage: 89 },
-      { name: "Testing & Debugging", percentage: 88 },
-    ],
-    socials: {
-      stackoverflow: "https://stackoverflow.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://github.com/",
-    },
+{
+  "id": "faizan-ali",
+  "image": faizan_ali,
+  "name": "Faizan Ali",
+  "role": "Front-End Developer",
+  "bio": "A professional Web Developer specializing in Front-End development with a strong foundation in responsive and user-focused web design. Skilled in building modern, dynamic, and visually appealing interfaces using clean and efficient code. Possesses working knowledge of Back-End concepts, ensuring seamless integration and performance across platforms. Passionate about continuous learning, optimizing user experience, and crafting high-quality digital products.",
+  "contact": {
+    "email": "faizandevx@gmail.com",
+    "phone": "+92 347 3057550",
+    "github": "https://github.com/faizandevx",
+    "linkedin": "https://www.linkedin.com/in/faizan-ali-5aa430380/",
+    "facebook": "https://www.facebook.com/faizan.rajput.716970"
   },
+  "biography": [
+    "Faizan Ali is a dedicated Front-End Developer with expertise in creating responsive, high-performance, and visually appealing web interfaces using modern technologies like HTML5, CSS3, JavaScript (ES6+), and Bootstrap 5.",
+    "He focuses on crafting user-friendly and accessible designs that deliver seamless experiences across devices and browsers. His clean coding approach ensures maintainability and efficiency in all projects.",
+    "Faizan also has a solid understanding of back-end concepts, enabling smooth collaboration between front-end and back-end systems for optimized web solutions.",
+    "He utilizes tools such as Git, GitHub, VS Code, and Figma for version control, design prototyping, and efficient development workflows, while constantly exploring new techniques to enhance UI/UX performance."
+  ],
+  "skills": [
+    { "name": "HTML5", "percentage": 95 },
+    { "name": "CSS3", "percentage": 92 },
+    { "name": "JavaScript (ES6+)", "percentage": 90 },
+    { "name": "Bootstrap 5", "percentage": 88 },
+    { "name": "Tailwind CSS", "percentage": 86 },
+    { "name": "Responsive Design", "percentage": 94 },
+    { "name": "Cross-Browser Compatibility", "percentage": 89 },
+    { "name": "UI/UX Principles", "percentage": 87 },
+    { "name": "Performance Optimization", "percentage": 85 },
+    { "name": "Git & GitHub", "percentage": 90 },
+    { "name": "Figma", "percentage": 83 }
+  ],
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/faizan-ali-5aa430380/",
+    "github": "https://github.com/faizandevx",
+    "facebook": "https://www.facebook.com/faizan.rajput.716970",
+    "instagram": "#",
+    "twitter": "#"
+  },
+  "education": {
+    "degree": "BS Software Engineering"
+  }
+},
+
   // Ahmed
   {
     id: "ahmed_hassan",

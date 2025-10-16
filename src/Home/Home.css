@@ -169,13 +169,12 @@
 .feature-card:hover {
   background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: #fff;
-  transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(6, 27, 107, 0.3);
 }
 
 .feature-card:hover h5,
 .feature-card:hover p {
-  color: #fff;
+  font-weight: bold;
 }
 
 .ring-icon {
@@ -342,8 +341,8 @@
 .lets-talk-button:hover {
   background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: white;
-  transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+  font-weight: bold;
 }
 
 /* Stats Bar */
@@ -375,8 +374,12 @@
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
   background: #f8f9fa;
+}
+
+.stat-card:hover h3,
+.stat-card:hover p {
+  font-weight: bold;
 }
 
 .stat-card h3 {
@@ -411,8 +414,12 @@
 
 .contact-method:hover {
  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
-  transform: translateX(5px);
   border-left-color: #007bff;
+}
+
+.contact-method:hover .contact-method-title,
+.contact-method:hover .contact-method-detail {
+  font-weight: bold;
 }
 
 .contact-icon-img {
@@ -1120,8 +1127,11 @@
 }
 
 .project-item:hover {
-  transform: translateY(-8px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-item:hover .title {
+  font-weight: bold;
 }
 
 .project-img img {
@@ -1202,8 +1212,12 @@
 }
 
 .pricing-card:hover {
-  transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card:hover .card-title,
+.pricing-card:hover .price {
+  font-weight: bold;
 }
 
 /* Highlighted Card (Gold) */
@@ -1365,7 +1379,6 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
 }
 
 .testimonial-card:hover {
-  transform: translateY(-8px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   color: #fff; /* Makes headings & text white */
@@ -1373,6 +1386,7 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
 
 .testimonial-card:hover .testimonial-text {
   color: #fff;
+  font-weight: bold;
 }
 
 .testimonial-card:hover .quote-icon {
@@ -1423,8 +1437,8 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   transition: transform 0.3s ease;
 }
 
-.blog-card:hover {
-  transform: translateY(-10px);
+.blog-card:hover .title {
+  font-weight: bold;
 }
 
 .card-image-wrapper {

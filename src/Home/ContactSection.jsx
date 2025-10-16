@@ -67,7 +67,7 @@ const ContactSection = () => {
               </a>
             </div>
             <p className="call-us-text">CALL US 24/7</p>
-            <p className="phone-number">(+123) 456-9989</p>
+            <p className="phone-number">+92 3704857471</p>    
             <p className="contact-description">
               Have any idea or project in your mind? Call us or schedule an
               appointment. Our representative will reply to you shortly.
@@ -79,7 +79,7 @@ const ContactSection = () => {
                 <FaEnvelope size={30} className="me-2" />
                 <div>
                   <p className="contact-method-title">Email Us</p>
-                  <p className="contact-method-detail">info@alphasoft360.com</p>
+                  <p className="contact-method-detail">alphasoft360@gmail.com</p>
                 </div>
               </div>
               <div className="contact-method">
@@ -87,13 +87,13 @@ const ContactSection = () => {
                 <div>
                   <p className="contact-method-title">Our Location</p>
                   <p className="contact-method-detail">
-                    123 Business Ave, Tech City
+                    Main Pakavenue Road, Sahiwal, 57000, Pakistan
                   </p>
                 </div>
               </div>
             </div>
 
-            <button className="lets-talk-button">Let's Talk</button>
+            <a className=" btn text-light lets-talk-button" href="tel:+923704857471">Let's Talk</a>
           </div>
         </div>
 
