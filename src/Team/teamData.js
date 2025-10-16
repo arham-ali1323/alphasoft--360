@@ -188,14 +188,12 @@ const teamMembers = [
     { "name": "Figma", "percentage": 83 }
   ],
   "socials": {
-    "linkedin": "https://www.linkedin.com/in/faizan-ali-5aa430380/",
-    "github": "https://github.com/faizandevx",
-    "facebook": "https://www.facebook.com/faizan.rajput.716970",
-    "instagram": "#",
-    "twitter": "#"
+    linkedin: "https://www.linkedin.com/in/faizan-ali-5aa430380/",
+    github: "https://github.com/faizandevx",
+    stackoverflow: "https://stackoverflow.com/",
   },
   "education": {
-    "degree": "BS Software Engineering"
+    degree: "BS Software Engineering",
   }
 },
 
