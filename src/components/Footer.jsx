@@ -58,14 +58,11 @@ const Footer = () => {
               <ul className="address-widget">
                 <li>
                   <MdLocationOn />{" "}
-                  <span>
-                    <a
-                      href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6862.439295652244!2d73.09087971987711!3d30.684095530953844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922b7f973c7db4d%3A0x86b3a893395d785d!2sMain%20Pakavenue%20Rd%2C%20Sahiwal%2C%20Pakistan!5e0!3m2!1sen!2s!4v1759863741524!5m2!1sen!2s"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      Main Pakavenue Rd, Sahiwal, 57000, Pakistan
-                    </a>
+                  <span
+                    onClick={() => window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Main Pakavenue Rd, Sahiwal, 57000, Pakistan
                   </span>
                 </li>
                 <li>

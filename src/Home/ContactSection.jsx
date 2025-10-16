@@ -92,7 +92,11 @@ const ContactSection = () => {
                   <p className="contact-method-detail">alphasoft360@gmail.com</p>
                 </div>
               </div>
-              <div className="contact-method">
+              <div
+                className="contact-method"
+                onClick={() => window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank")}
+                style={{ cursor: "pointer" }}
+              >
                 <FaMapMarkerAlt size={30}  className="me-3" />
                 <div>
                   <p className="contact-method-title">Our Location</p>

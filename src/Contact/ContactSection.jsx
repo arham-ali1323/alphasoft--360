@@ -88,7 +88,11 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="d-flex align-items-center">
+              <div
+                className="d-flex align-items-center"
+                onClick={() => window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank")}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="icon-box me-3">
                   <FaMapMarkerAlt size={30} />
                 </div>

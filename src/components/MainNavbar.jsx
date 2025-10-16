@@ -76,8 +76,13 @@ const MainNavbar = () => {
               className="d-flex flex-wrap justify-content-center justify-content-lg-end gap-3"
             >
               <a
-                href="/"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank");
+                }}
                 className="text-decoration-none text-primary small d-flex align-items-center me-2"
+                style={{ cursor: "pointer" }}
               >
                 <FaMapMarkerAlt size={20} className=" me-2" />
                 Main Pakavenue Road, Sahiwal, 57000, Pakistan
