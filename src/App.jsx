@@ -7,6 +7,7 @@ import About from "./Pages/About";
 import Services from "./Pages/Services";
 import Team from "./Pages/Team";
 import TeamMemberDetail from "./Pages/TeamMemberDetail";
+import ServiceDetail from "./Pages/ServiceDetail";
 import Contact from "./Pages/Contact";
 import FAQ from "./Pages/FAQ";
 import Messages from "./Pages/Messages";
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/team" element={<Team />} />
             <Route path="/team/:id" element={<TeamMemberDetail />} />
             <Route path="/contact" element={<Contact />} />
