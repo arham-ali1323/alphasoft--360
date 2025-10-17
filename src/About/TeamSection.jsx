@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,21 +13,25 @@ import Person4 from "../assets/img/CEo.jpeg";
 
 const about_teamMembers = [
   {
+    id: "isabella-croline",
     image: Person1,
     name: "Isabella Croline",
     role: "Project Manager",
   },
   {
+    id: "jullia-siger",
     image: Person2,
     name: "Jullia Siger",
     role: "Product Designer",
   },
   {
+    id: "corey-anderson",
     image: Person3,
     name: "Corey Anderson",
     role: "President & CEO",
   },
   {
+    id: "jane-doe",
     image: Person4,
     name: "Jane Doe",
     role: "Lead Developer",
@@ -83,17 +88,20 @@ const About_teamSliderSection = () => {
             <div key={index} className="px-3">
               <div className="about_team-card bg-white text-center rounded shadow-sm p-4">
                 <div className="position-relative d-inline-block mb-3">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="rounded-circle about_team-img"
-                    style={{
-                      width: "120px",
-                      height: "120px",
-                      objectFit: "cover",
-                      border: "4px solid #0d6efd",
-                    }}
-                  />
+                  <Link to={`/team/${member.id}`}>
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="rounded-circle about_team-img"
+                      style={{
+                        width: "120px",
+                        height: "120px",
+                        objectFit: "cover",
+                        border: "4px solid #0d6efd",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </Link>
                 </div>
                 <h5 className="fw-bold mb-1">{member.name}</h5>
                 <p className="text-primary small mb-3">{member.role}</p>

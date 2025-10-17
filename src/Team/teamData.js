@@ -7,6 +7,10 @@ import ahmed_hassan from "../assets/img/ahmed_hassan.jpg";
 import sameer_akhtar from "../assets/img/sameer_akhtar.jpg";
 import ubaidullah from "../assets/img/ubaidullah.jpg";
 import ali_hassan from "../assets/img/ali_hassan.jpg";
+import Person1 from "../assets/img/client1.png";
+import Person2 from "../assets/img/client2.png";
+import Person3 from "../assets/img/client3.png";
+import Person4 from "../assets/img/CEo.jpeg";
 
 const teamMembers = [
   // Maroof Sultan
@@ -343,6 +347,119 @@ const teamMembers = [
     education: {
       degree: "BS Artificial Intelligence",
       status: "1st Semester",
+    },
+  },
+  // About Team Members
+  {
+    id: "isabella-croline",
+    image: Person1,
+    name: "Isabella Croline",
+    role: "Project Manager",
+    bio: "Experienced project manager with a passion for leading teams to success.",
+    contact: {
+      email: "isabella@alphasoft.com",
+      phone: "+92 300 1234567",
+    },
+    biography: [
+      "Isabella Croline is a dedicated Project Manager with extensive experience in overseeing software development projects. She excels in coordinating teams, managing timelines, and ensuring high-quality deliverables.",
+      "Her expertise lies in agile methodologies, stakeholder communication, and risk management. Isabella has successfully led multiple projects from inception to deployment.",
+      "She is committed to fostering a collaborative environment and driving innovation within the team.",
+    ],
+    skills: [
+      { name: "Project Management", percentage: 95 },
+      { name: "Agile Methodologies", percentage: 90 },
+      { name: "Team Leadership", percentage: 88 },
+      { name: "Risk Management", percentage: 85 },
+      { name: "Communication", percentage: 92 },
+    ],
+    socials: {
+      linkedin: "https://www.linkedin.com/in/isabella-croline",
+      github: "https://github.com/isabella-croline",
+      stackoverflow: "https://stackoverflow.com/",
+    },
+  },
+  {
+    id: "jullia-siger",
+    image: Person2,
+    name: "Jullia Siger",
+    role: "Product Designer",
+    bio: "Creative product designer focused on user-centered design and innovation.",
+    contact: {
+      email: "jullia@alphasoft.com",
+      phone: "+92 300 1234568",
+    },
+    biography: [
+      "Jullia Siger is a talented Product Designer with a keen eye for aesthetics and functionality. She specializes in creating intuitive user interfaces and enhancing user experiences.",
+      "Her design philosophy centers around empathy, research, and iterative improvement. Jullia has designed products that have significantly improved user satisfaction and engagement.",
+      "She stays updated with the latest design trends and tools, ensuring her work is both modern and effective.",
+    ],
+    skills: [
+      { name: "UI/UX Design", percentage: 95 },
+      { name: "Prototyping", percentage: 90 },
+      { name: "User Research", percentage: 88 },
+      { name: "Adobe Creative Suite", percentage: 92 },
+      { name: "Figma", percentage: 94 },
+    ],
+    socials: {
+      linkedin: "https://www.linkedin.com/in/jullia-siger",
+      github: "https://github.com/jullia-siger",
+      stackoverflow: "https://stackoverflow.com/",
+    },
+  },
+  {
+    id: "corey-anderson",
+    image: Person3,
+    name: "Corey Anderson",
+    role: "President & CEO",
+    bio: "Visionary leader driving the company's growth and innovation.",
+    contact: {
+      email: "corey@alphasoft.com",
+      phone: "+92 300 1234569",
+    },
+    biography: [
+      "Corey Anderson is the President and CEO of AlphaSoft, bringing years of experience in technology leadership. He is passionate about fostering a culture of innovation and excellence.",
+      "Under his leadership, the company has expanded its services and achieved significant milestones. Corey focuses on strategic planning, partnerships, and customer satisfaction.",
+      "He is committed to staying ahead of industry trends and guiding the team towards sustainable success.",
+    ],
+    skills: [
+      { name: "Strategic Leadership", percentage: 95 },
+      { name: "Business Development", percentage: 90 },
+      { name: "Team Management", percentage: 88 },
+      { name: "Innovation", percentage: 92 },
+      { name: "Customer Relations", percentage: 85 },
+    ],
+    socials: {
+      linkedin: "https://www.linkedin.com/in/corey-anderson",
+      github: "https://github.com/corey-anderson",
+      stackoverflow: "https://stackoverflow.com/",
+    },
+  },
+  {
+    id: "jane-doe",
+    image: Person4,
+    name: "Jane Doe",
+    role: "Lead Developer",
+    bio: "Skilled lead developer with expertise in full-stack development.",
+    contact: {
+      email: "jane@alphasoft.com",
+      phone: "+92 300 1234570",
+    },
+    biography: [
+      "Jane Doe is a Lead Developer with a strong background in software engineering. She leads development teams in building robust and scalable applications.",
+      "Her technical expertise spans multiple programming languages and frameworks. Jane is dedicated to code quality, best practices, and mentoring junior developers.",
+      "She actively contributes to open-source projects and stays engaged with the developer community.",
+    ],
+    skills: [
+      { name: "Full-Stack Development", percentage: 95 },
+      { name: "JavaScript", percentage: 92 },
+      { name: "React", percentage: 90 },
+      { name: "Node.js", percentage: 88 },
+      { name: "Database Design", percentage: 85 },
+    ],
+    socials: {
+      linkedin: "https://www.linkedin.com/in/jane-doe",
+      github: "https://github.com/jane-doe",
+      stackoverflow: "https://stackoverflow.com/",
     },
   },
 ];
