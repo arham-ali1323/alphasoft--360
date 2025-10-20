@@ -170,7 +170,7 @@ const MainNavbar = () => {
       >
         <Offcanvas.Header className="position-relative">
           <Offcanvas.Title>
-            <img src={logoLight} alt="logo" width={100} />
+            <img src={logo} alt="logo" width={100} />
           </Offcanvas.Title>
           <Button
             variant="outline-light"
