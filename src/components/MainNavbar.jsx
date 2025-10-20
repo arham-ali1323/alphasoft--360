@@ -20,24 +20,15 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
+import logoLight from "../assets/img/AlphaSoft_logo1.png";
 
 const MainNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://animatedicons.co/scripts/embed-animated-icons.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+
 
   const handleCallClick = () => {
-    if (window.confirm("Do you want to call +0123 456 7890?")) {
-      window.location.href = "tel:+01234567890";
-    }
+    window.open("https://wa.me/923704857471", "_blank");
   };
 
   return (
@@ -85,25 +76,38 @@ const MainNavbar = () => {
               className="d-flex flex-wrap justify-content-center justify-content-lg-end gap-3"
             >
               <a
-                href="/"
-                className="text-decoration-none text-dark small d-flex align-items-center"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank");
+                }}
+                className="text-decoration-none text-primary small d-flex align-items-center me-2 top-link"
+                style={{ cursor: "pointer" }}
               >
-                <FaMapMarkerAlt className="text-primary me-2" />
-                Main Pakavenue Rd, Sahiwal, 57000, Pakistan
+                <FaMapMarkerAlt size={20} className=" me-2" />
+                Main Pakavenue Road, Sahiwal, 57000, Pakistan
               </a>
               <a
-                href="mailto:info@yourmail.com"
-                className="text-decoration-none text-dark small d-flex align-items-center"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open("https://mail.google.com/mail/?view=cm&fs=1&to=alphasoft360@gmail.com", "_blank");
+                }}
+                className="text-decoration-none text-primary small d-flex align-items-center top-link"
               >
-                <FaEnvelope className="text-primary me-2" />
-                info@yourmail.com
+                <FaEnvelope size={20} className=" me-2" />
+               alphasoft360@gmail.com
               </a>
               <a
-                href="tel:+01234567890"
-                className="text-decoration-none text-dark small d-flex align-items-center"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open("https://wa.me/923704857471", "_blank");
+                }}
+                className="text-decoration-none text-primary small d-flex align-items-center phone-link"
               >
                 <FaPhone className="text-primary me-2" />
-                +0123 456 7890
+                +92 3704857471
               </a>
             </Col>
           </Row>
@@ -140,18 +144,18 @@ const MainNavbar = () => {
             <Nav.Link as={Link} to="/team" className="text-white">
               Team
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="text-white">
-              Contact
-            </Nav.Link>
             <Nav.Link as={Link} to="/FAQ" className="text-white">
               FAQs
             </Nav.Link>
+            <Nav.Link as={Link} to="/contact" className="text-white">
+              Contact
+            </Nav.Link>
             <Button
               variant="outline-light"
-              className="ms-3 call-button"
+              className="ms-3 call-button text-light phone-button"
               onClick={handleCallClick}
             >
-              <FaPhone size={18} />
+              <FaPhone size={30} />
             </Button>
           </Nav>
         </Container>
@@ -166,7 +170,7 @@ const MainNavbar = () => {
       >
         <Offcanvas.Header className="position-relative">
           <Offcanvas.Title>
-            <img src={logo} alt="logo" width={100} />
+            <img src={logoLight} alt="logo" width={100} />
           </Offcanvas.Title>
           <Button
             variant="outline-light"
@@ -220,7 +224,7 @@ const MainNavbar = () => {
 
             <Button
               variant="outline-light"
-              className="mt-4"
+              className="mt-4 phone-button-mobile"
               onClick={handleCallClick}
             >
               <FaPhone className="me-2" /> Call Us

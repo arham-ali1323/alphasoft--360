@@ -14,6 +14,10 @@ const ContactSection = () => {
   const [alert, setAlert] = useState({ show: false, variant: "", message: "" });
   const [validated, setValidated] = useState(false);
 
+  const handleCallClick = () => {
+    window.open("https://wa.me/923704857471", "_blank");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -64,7 +68,7 @@ const ContactSection = () => {
               <p className="small">LET'S TALK</p>
               <h3 className="fw-bold mb-4">Speak With Expert Engineers.</h3>
 
-              <div className="d-flex align-items-center mb-3">
+              {/* <div className="d-flex align-items-center mb-3">
                 <div className="icon-box me-3">
                   <FaHome size={24} />
                 </div>
@@ -72,25 +76,29 @@ const ContactSection = () => {
                   <strong>Email:</strong>
                   <p className="mb-0">(+088)589-8745</p>
                 </div>
-              </div>
+              </div> */}
 
               <div className="d-flex align-items-center mb-3">
                 <div className="icon-box me-3">
-                  <FaPhone size={24} />
+                  <FaPhone size={30} />
                 </div>
                 <div>
                   <strong>Phone:</strong>
-                  <p className="mb-0">support@rstheme.com</p>
+                  <p className="mb-0">(+123) 456-9989</p>
                 </div>
               </div>
 
-              <div className="d-flex align-items-center">
+              <div
+                className="d-flex align-items-center"
+                onClick={() => window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank")}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="icon-box me-3">
-                  <FaMapMarkerAlt size={24} />
+                  <FaMapMarkerAlt size={30} />
                 </div>
                 <div>
                   <strong>Address:</strong>
-                  <p className="mb-0">New Jersey, 1201, USA</p>
+                  <p className="mb-0">Main Pakavenue Road, Sahiwal, 57000, Pakistan</p>
                 </div>
               </div>
             </div>

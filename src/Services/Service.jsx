@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 // Import service icons
 import icon1 from "../assets/img/1.png";
 import icon2 from "../assets/img/2.png";
@@ -10,36 +11,42 @@ import icon6 from "../assets/img/6.png";
 // Data for services
 const services = [
   {
+    id: "software-development",
     img: icon1,
     title: "App Development",
     description:
       "Secure and scalable data center services offering advanced infrastructure management, ensuring peak performance and maximum uptime."
   },
   {
+    id: "web-development",
     img: icon2,
     title: "Web Development",
     description:
       "Custom web application development using modern frameworks and technologies to create responsive, user-friendly websites and web platforms.",
   },
   {
+    id: "analytic-solutions",
     img: icon3,
     title: "Analytic Solutions",
     description:
       "Advanced data analytics and business intelligence solutions to transform raw data into actionable insights for informed decision-making.",
   },
   {
+    id: "cloud-devops",
     img: icon4,
     title: "Cloud & DevOps",
     description:
       "Comprehensive cloud migration, infrastructure automation, and DevOps practices to accelerate development cycles and improve deployment reliability.",
   },
   {
+    id: "product-design",
     img: icon5,
     title: "Product & Design",
     description:
       "User-centered product design and UX/UI development services to create intuitive, engaging digital products that delight your customers.",
   },
   {
+    id: "data-center",
     img: icon6,
      title: "Software Development",
     description:
@@ -49,7 +56,7 @@ const services = [
 
 const Services = () => {
   // Service Card Component
-  const ServiceCard = ({ image, title, description }) => (
+  const ServiceCard = ({ image, title, description, id }) => (
     <div className="feature-card">
       <div className="feature-card-inner">
         {/* Front (icon + title only) */}
@@ -63,7 +70,7 @@ const Services = () => {
         <div className="feature-card-back shadow-sm rounded text-center p-4">
           <h5 className="fw-bold">{title}</h5>
           <p className="mb-3 mt-2">{description}</p>
-          <button className="btn btn-light fw-bold">Learn More</button>
+          <Link to={`/services/${id}`} className="btn btn-light fw-bold">Learn More</Link>
         </div>
       </div>
     </div>
@@ -91,6 +98,7 @@ const Services = () => {
                 image={service.img}
                 title={service.title}
                 description={service.description}
+                id={service.id}
               />
             </Col>
           ))}

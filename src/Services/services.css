@@ -46,15 +46,9 @@ body {
   align-items: center;
 }
 
-/* Front */
-.feature-card-front {
-  background: #fff;
-}
-
 /* Back */
 .feature-card-back {
-  background: linear-gradient(135deg, #007bff, #00c6ff);
-  /* border: 1px solid #eee; */
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: #fff;
   transform: rotateX(180deg);
 }
@@ -63,14 +57,14 @@ body {
 .feature-card-back .btn {
   margin-top: 15px;
   font-weight: bold;
-  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: white;
   border: none;
   transition: 0.3s ease;
 }
 
 .feature-card-back .btn:hover {
-  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
+  background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   color: white;
 }
 
@@ -80,10 +74,13 @@ body {
     height: 260px;
     margin-bottom: 20px;
   }
-}.Services-process2
+}
 
 /* ---------- Services Section ---------- */
-
+.Services-section {
+   background:  #061b6b !important;
+  padding: 60px 20px;
+}
 .Services-section .form-box input,
 .Services-section .form-box textarea {
   background: rgba(255, 255, 255, 0.9);
@@ -356,4 +353,9 @@ body {
   .process2-step h4 {
     font-size: 1.1em;
   }
+}
+
+.service-back-btn:hover {
+  background-color: #0056b3 !important;
+  border-color: #0056b3 !important;
 }

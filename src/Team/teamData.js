@@ -2,7 +2,7 @@ import maroof_sultan from "../assets/img/maroof_sultan.jpg";
 import muhammad_shahbaz from "../assets/img/muhammad_shahbaz.jpg";
 import muazam_mughal from "../assets/img/muazam_mughal.jpg";
 import arham_ali from "../assets/img/arham_ali.jpg";
-import portrait2 from "../assets/img/portrait-3.jpg";
+import faizan_ali from "../assets/img/faizan_ali.jpg";
 import ahmed_hassan from "../assets/img/ahmed_hassan.jpg";
 import sameer_akhtar from "../assets/img/sameer_akhtar.jpg";
 import ubaidullah from "../assets/img/ubaidullah.jpg";
@@ -17,7 +17,7 @@ const teamMembers = [
     role: "Full Stack Laravel Developer",
     bio: "Expert in agile methodologies with a track record of delivering enterprise projects on time and within scope.",
     contact: {
-      email: "maroofsultan.dev@gmail.com",
+      email: "alphasoft@gmail.com",
       phone: "+92 310 6510421",
     },
     biography: [
@@ -125,7 +125,7 @@ const teamMembers = [
     role: "Frontend developer and Designer",
     bio: "Expert in agile methodologies with a track record of delivering enterprise projects on time and within scope.",
     contact: {
-      email: "arham.ali1323.com",
+      email: "arham.ali1323@gmail.com",
       phone: "+92 321 10651323",
     },
     biography: [
@@ -155,33 +155,48 @@ const teamMembers = [
     },
   },
   // fazain
-  {
-    id: "david-khan",
-    image: portrait2,
-    name: "David Khan",
-    role: "Software Engineer",
-    bio: "Full-stack engineer passionate about scalable, high-performance web applications.",
-    contact: {
-      email: "david@alphasoft360.com",
-      phone: "(123) - 777 -1452",
-    },
-    biography: [
-      "David Khan’s expertise lies in building end-to-end JavaScript applications. He’s skilled in both front-end and back-end frameworks and focuses on writing clean, reusable code.",
-      "He enjoys collaborating across teams to build responsive, secure, and maintainable solutions for clients.",
-    ],
-    skills: [
-      { name: "React.js / Next.js", percentage: 90 },
-      { name: "Node.js / Express", percentage: 87 },
-      { name: "Database Systems", percentage: 85 },
-      { name: "API Integration", percentage: 89 },
-      { name: "Testing & Debugging", percentage: 88 },
-    ],
-    socials: {
-      stackoverflow: "https://stackoverflow.com/",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://github.com/",
-    },
+{
+  "id": "faizan-ali",
+  "image": faizan_ali,
+  "name": "Faizan Ali",
+  "role": "Front-End Developer",
+  "bio": "A professional Web Developer specializing in Front-End development with a strong foundation in responsive and user-focused web design. Skilled in building modern, dynamic, and visually appealing interfaces using clean and efficient code. Possesses working knowledge of Back-End concepts, ensuring seamless integration and performance across platforms. Passionate about continuous learning, optimizing user experience, and crafting high-quality digital products.",
+  "contact": {
+    "email": "faizandevx@gmail.com",
+    "phone": "+92 347 3057550",
+    "github": "https://github.com/faizandevx",
+    "linkedin": "https://www.linkedin.com/in/faizan-ali-5aa430380/",
+    "facebook": "https://www.facebook.com/faizan.rajput.716970"
   },
+  "biography": [
+    "Faizan Ali is a dedicated Front-End Developer with expertise in creating responsive, high-performance, and visually appealing web interfaces using modern technologies like HTML5, CSS3, JavaScript (ES6+), and Bootstrap 5.",
+    "He focuses on crafting user-friendly and accessible designs that deliver seamless experiences across devices and browsers. His clean coding approach ensures maintainability and efficiency in all projects.",
+    "Faizan also has a solid understanding of back-end concepts, enabling smooth collaboration between front-end and back-end systems for optimized web solutions.",
+    "He utilizes tools such as Git, GitHub, VS Code, and Figma for version control, design prototyping, and efficient development workflows, while constantly exploring new techniques to enhance UI/UX performance."
+  ],
+  "skills": [
+    { "name": "HTML5", "percentage": 95 },
+    { "name": "CSS3", "percentage": 92 },
+    { "name": "JavaScript (ES6+)", "percentage": 90 },
+    { "name": "Bootstrap 5", "percentage": 88 },
+    { "name": "Tailwind CSS", "percentage": 86 },
+    { "name": "Responsive Design", "percentage": 94 },
+    { "name": "Cross-Browser Compatibility", "percentage": 89 },
+    { "name": "UI/UX Principles", "percentage": 87 },
+    { "name": "Performance Optimization", "percentage": 85 },
+    { "name": "Git & GitHub", "percentage": 90 },
+    { "name": "Figma", "percentage": 83 }
+  ],
+  "socials": {
+    linkedin: "https://www.linkedin.com/in/faizan-ali-5aa430380/",
+    github: "https://github.com/faizandevx",
+    stackoverflow: "https://stackoverflow.com/",
+  },
+  "education": {
+    degree: "BS Software Engineering",
+  }
+},
+
   // Ahmed
   {
     id: "ahmed_hassan",
@@ -190,11 +205,14 @@ const teamMembers = [
     role: "Frontend Developer",
     bio: "Turning data and insights into meaningful business strategies that drive performance.",
     contact: {
-      email: "ahassandevx@gmail.com",
+      email: "alphasoft@gmail.com",
       phone: "+92 327 1888082",
     },
     biography: [
       " Ahmad Hassan is a passionate Web Developer skilled in HTML, CSS, Bootstrap, and JavaScript, dedicated to creating modern, responsive, and user-friendly websites. He focuses on clean code and elegant design to deliver seamless digital experiences.",
+      "Currently pursuing a BS in Artificial Intelligence, Ahmad combines his technical skills with a strong foundation in problem-solving and analytical thinking.",
+      "He is committed to continuous learning and professional growth, actively exploring new technologies and best practices in web development.",
+      "Ahmad is eager to contribute his skills and enthusiasm to dynamic teams and projects, aiming to make a positive impact in the tech industry.",
     ],
     skills: [
       { name: "JavaScript (ES6+)", percentage: 92 },
@@ -327,6 +345,7 @@ const teamMembers = [
       status: "1st Semester",
     },
   },
+ 
 ];
 
 export default teamMembers;

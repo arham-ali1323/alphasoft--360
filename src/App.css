@@ -102,6 +102,8 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
     justify-content: center;
   }
 }
+
+/* footer=-============================ */
 .footer-widget a {
   color: #000; /* Default text color */
   text-decoration: none; /* Remove underline */
@@ -177,9 +179,6 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
 .site-map a:hover,
 .copy-right-menu a:hover,
 .address-widget a:hover {
-    color: black;
-  padding: 5px 10px;
-  border-radius: 5px;
   font-weight: bolder;
 }
 
@@ -213,3 +212,72 @@ background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95
 .copyright {
   color: #ccc !important;
 }
+.contact-details a{
+  color: #061b6b !important;
+  text-decoration: none;
+}
+.contact-details a:hover {
+  font-weight: bolder;
+}
+
+/* Phone icon hover effects */
+.phone-link:hover .fa-phone,
+.phone-button:hover .fa-phone,
+.phone-button-mobile:hover .fa-phone {
+  transform: scale(1.1);
+  color: #007bff !important;
+}
+
+.phone-link:hover,
+.phone-button:hover,
+.phone-button-mobile:hover {
+  font-weight: bold;
+}
+
+/* Call button hover effects */
+.call-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%) !important;
+  border-color: transparent;
+}
+
+/* Hover effects for MainNavbar */
+
+/* Social media icons hover */
+.navbar-social a {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #6c757d; /* Default color */
+}
+
+.navbar-social a:hover {
+  color: #007bff; /* Blue on hover */
+  transform: scale(1.1);
+}
+
+/* Top bar links hover (address, email, phone) */
+.top-link {
+  transition: color 0.3s ease;
+}
+
+.top-link:hover {
+  color: #007bff !important; /* Yellow on hover */
+}
+
+/* Desktop navbar links hover */
+.navbar-link {
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #007bff !important; /* Yellow on hover */
+}
+
+/* Offcanvas menu links hover */
+.offcanvas-link {
+  transition: color 0.3s ease;
+}
+
+.offcanvas-link:hover {
+  color: #007bff !important;
+}
+

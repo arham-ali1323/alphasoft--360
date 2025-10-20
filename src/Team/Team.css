@@ -138,6 +138,12 @@
   color: #061b6b ;
   background-clip: text;
   -webkit-background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover svg {
+  transform: scale(1.1);
+  color: #4e95ed;
 }
 .team-member-detail .btn {
   background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
@@ -148,4 +154,8 @@
 .team-member-detail .btn:hover {
   background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   color: white;
+}
+
+.contact-details a:hover {
+  font-weight: bolder;
 }

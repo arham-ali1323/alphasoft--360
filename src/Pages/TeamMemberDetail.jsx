@@ -56,7 +56,7 @@ const TeamMemberDetail = () => {
               {member.bio}
             </p>
 
-            <div className="contact-details mb-3">
+            <div className="contact-details mb-3 ">
               <p className="mb-2">
                 <FaEnvelope className="me-2" />
                 <a href={`mailto:${member.contact.email}`}>

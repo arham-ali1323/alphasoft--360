@@ -58,22 +58,36 @@ const Footer = () => {
               <ul className="address-widget">
                 <li>
                   <MdLocationOn />{" "}
-                  <span>
-                    <a
-                      href="https://maps.app.goo.gl/hrJJY1yzK8GJ1brM6"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Main Pakavenue Rd, Sahiwal, 57000, Pakistan
-                    </a>
+                  <span
+                    onClick={() => window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Main Pakavenue Rd, Sahiwal, 57000, Pakistan
                   </span>
                 </li>
                 <li>
-                  <MdCall /> <a href="/">1234567890</a>
+                  <MdCall />{" "}
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open("https://wa.me/923704857471", "_blank");
+                    }}
+                  >
+                    +92 3704857471
+                  </a>
                 </li>
                 <li>
                   <MdEmail />{" "}
-                  <a href="mailto:info@yourmail.com">info@yourmail.com</a>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open("https://mail.google.com/mail/?view=cm&fs=1&to=alphasoft360@gmail.com", "_blank");
+                    }}
+                  >
+                    alphasoft360@gmail.com
+                  </a>
                 </li>
                 <li>
                   <MdAccessTime /> <span>Opening Hours: 10:00 - 18:00</span>
