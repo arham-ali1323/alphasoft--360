@@ -54,7 +54,7 @@ const Hero = () => {
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC;
-
+    
     if (!serviceID || !templateID || !publicKey) {
       console.error("EmailJS environment variables are not configured.");
       toast.error("Email service is not configured. Please contact support.");
