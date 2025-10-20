@@ -232,6 +232,12 @@ const MainNavbar = () => {
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
+
+      <style>{`
+        .top-link:hover {
+          font-weight: bold;
+        }
+      `}</style>
     </>
   );
 };

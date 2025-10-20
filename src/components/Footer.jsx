@@ -61,6 +61,7 @@ const Footer = () => {
                   <span
                     onClick={() => window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank")}
                     style={{ cursor: "pointer" }}
+                    className="footer-link"
                   >
                     Main Pakavenue Rd, Sahiwal, 57000, Pakistan
                   </span>
@@ -85,6 +86,7 @@ const Footer = () => {
                       e.preventDefault();
                       window.open("https://mail.google.com/mail/?view=cm&fs=1&to=alphasoft360@gmail.com", "_blank");
                     }}
+                    className="footer-link"
                   >
                     alphasoft360@gmail.com
                   </a>
@@ -138,6 +140,12 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .footer-link:hover {
+          font-weight: bold;
+        }
+      `}</style>
     </footer>
   );
 };
