@@ -50,14 +50,7 @@ const ContactSection = () => {
       <div className="contact-section-container ">
         {/* Main Content */}
         <div className="contact-main-content">
-          {/* Left: Image + Idea Bubble */}
-          <div className="image-and-bubble">
-            <img
-              src={personImage}
-              alt="Businessman"
-              className="contact-person-image"
-            />
-          </div>
+        
 
           {/* Right: Contact Info */}
           <div className="contact-info">
@@ -117,6 +110,15 @@ const ContactSection = () => {
             >
               Let's Chat
             </a>
+          </div>
+
+            {/* Left: Image + Idea Bubble */}
+          <div className="image-and-bubble">
+            <img
+              src={personImage}
+              alt="Businessman"
+              className="contact-person-image"
+            />
           </div>
         </div>
 
