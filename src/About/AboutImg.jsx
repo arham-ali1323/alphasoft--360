@@ -1,5 +1,4 @@
 // src/components/ImageTextSection.jsx
-import React from "react";
 
 const ServicesImage = () => {
   return (

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TODO: Replace All Emails with alphasoft@gmail.com
 
 ## Files to Edit:
@@ -18,3 +19,6 @@
 ## Followup Steps:
 - [ ] Verify all replacements are correct by searching for emails again.
 - [ ] Test the application to ensure no broken links or functionality.
+=======
+- Add carousel to Hero section in src/Home/Hero.jsx using local background images (completed)
+>>>>>>> blackboxai/update-alphaSoft-content

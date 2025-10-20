@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 // src/Home/ContactSection.jsx
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+=======
+// src/components/ContactSection.jsx
+import React from "react";
+import { FaPhoneAlt } from "react-icons/fa";
+>>>>>>> blackboxai/update-alphaSoft-content
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
+import mail from "../assets/img/mail.png";
+import worldGlobe from "../assets/img/world-globe.png";
 
 // Stat Card with CountUp
 const StatCard = ({ value, label, isVisible }) => {
@@ -32,6 +40,7 @@ const ContactSection = () => {
   });
 
   return (
+<<<<<<< HEAD
     <>
       <style
         dangerouslySetInnerHTML={{
@@ -119,6 +128,20 @@ const ContactSection = () => {
               alt="Businessman"
               className="contact-person-image"
             />
+=======
+    <div className="contact-section-container ">
+      {/* Main Content */}
+      <div className="contact-main-content">
+        {/* Left: Image + Idea Bubble */}
+        <div className="image-and-bubble">
+          <img
+            src={personImage}
+            alt="Businessman"
+            className="contact-person-image"
+          />
+          <div className="idea-bubble">
+            <p>Got a Project Idea?</p>
+>>>>>>> blackboxai/update-alphaSoft-content
           </div>
         </div>
 
@@ -129,9 +152,50 @@ const ContactSection = () => {
             <StatCard value="40+" label="Companies" isVisible={inView} />
             <StatCard value="250+" label="Projects Done" isVisible={inView} />
           </div>
+<<<<<<< HEAD
         </div>
       </div>
     </>
+=======
+          <p className="call-us-text">CALL US 24/7</p>
+          <p className="phone-number">(+123) 456-9989</p>
+          <p className="contact-description">
+            Have any idea or project in your mind? Call us or schedule an
+            appointment. Our representative will reply to you shortly.
+          </p>
+
+          {/* Additional Contact Methods */}
+          <div className="additional-contact-methods">
+            <div className="contact-method">
+              <img src={mail} alt="Email" className="contact-icon-img" />
+              <div>
+                <p className="contact-method-title">Email Us</p>
+                <p className="contact-method-detail">info@alphasoft360.com</p>
+              </div>
+            </div>
+            <div className="contact-method">
+              <img src={worldGlobe} alt="Location" className="contact-icon-img" />
+              <div>
+                <p className="contact-method-title">Our Location</p>
+                <p className="contact-method-detail">123 Business Ave, Tech City</p>
+              </div>
+            </div>
+          </div>
+
+           <button className="lets-talk-button">Lets Talk</button>
+        </div>
+      </div>
+
+      {/* Stats Bar */}
+      <div className="stats-bar-wrapper mb-5" ref={ref}>
+  <div className="stats-bar text-primary">
+    <StatCard value="60k" label="Happy Clients" isVisible={inView} />
+    <StatCard value="40+" label="Companies" isVisible={inView} />
+    <StatCard value="250+" label="Projects Done" isVisible={inView} />
+  </div>
+</div>
+    </div>
+>>>>>>> blackboxai/update-alphaSoft-content
   );
 };
 

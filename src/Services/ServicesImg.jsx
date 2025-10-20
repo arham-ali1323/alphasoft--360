@@ -6,7 +6,11 @@ const ServicesImage = () => {
     <section
       className="image-text-section"
       style={{
+<<<<<<< HEAD
         backgroundImage: `url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=2000&h=300&fit=crop')`, // Live Unsplash image link for IT software houses
+=======
+        backgroundImage: `url('/src/assets/img/Services.jpeg')`,
+>>>>>>> blackboxai/update-alphaSoft-content
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

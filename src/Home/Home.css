@@ -50,6 +50,7 @@
   position: relative;
   z-index: 2;
 }
+<<<<<<< HEAD
 .hero-form {
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
@@ -61,6 +62,9 @@
     inset 0 0 0px rgba(255, 255, 255, 0),
     inset 0px 0px 4px 2px rgba(255, 255, 255, 0.05);
 }
+=======
+
+>>>>>>> blackboxai/update-alphaSoft-content
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero,
@@ -241,6 +245,7 @@
 
 .contact-person-image {
   width: 100%;
+<<<<<<< HEAD
   height: 630px;
   border-radius: 10px;
   /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
@@ -249,6 +254,33 @@
 
 .contact-person-image:hover {
   transform: scale(1.02);
+=======
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.contact-person-image:hover {
+  transform: scale(1.02);
+}
+
+/* Bubble */
+.idea-bubble {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #fff;
+  color: #1877f2;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  white-space: nowrap;
+>>>>>>> blackboxai/update-alphaSoft-content
 }
 /* Right */
 .contact-info {
@@ -335,6 +367,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+<<<<<<< HEAD
   margin-bottom: 20px;
 }
 
@@ -343,6 +376,14 @@
   color: white;
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
   font-weight: bold;
+=======
+}
+
+.lets-talk-button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+>>>>>>> blackboxai/update-alphaSoft-content
 }
 
 /* Stats Bar */
@@ -374,12 +415,17 @@
 }
 
 .stat-card:hover {
+<<<<<<< HEAD
   background: #f8f9fa;
 }
 
 .stat-card:hover h3,
 .stat-card:hover p {
   font-weight: bold;
+=======
+  transform: translateY(-5px);
+  background: #f8f9fa;
+>>>>>>> blackboxai/update-alphaSoft-content
 }
 
 .stat-card h3 {
@@ -413,6 +459,7 @@
 }
 
 .contact-method:hover {
+<<<<<<< HEAD
  background: linear-gradient(to right, #03228f 0%, #03228f 0%, #03228f 26%, #4e95ed 100%, #2989d8 100%, #207cca 100%, #0b70e1 100%);
   border-left-color: #007bff;
 }
@@ -422,6 +469,13 @@
   font-weight: bold;
 }
 
+=======
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  border-left-color: #007bff;
+}
+
+>>>>>>> blackboxai/update-alphaSoft-content
 .contact-icon-img {
   width: 40px;
   height: 40px;
@@ -555,6 +609,7 @@
   }
 
   .phone-icon-circle {
+<<<<<<< HEAD
     position: relative;
     width: 80px;
     height: 80px;
@@ -610,6 +665,15 @@
     60% {
       transform: scale(1.2);
     }
+=======
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px auto;
+  }
+
+  .phone-icon-circle svg {
+    font-size: 1.5em;
+>>>>>>> blackboxai/update-alphaSoft-content
   }
 
   .call-us-text {
@@ -1437,8 +1501,13 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   transition: transform 0.3s ease;
 }
 
+<<<<<<< HEAD
 .blog-card:hover .title {
   font-weight: bold;
+=======
+.blog-card:hover {
+  transform: translateY(-10px);
+>>>>>>> blackboxai/update-alphaSoft-content
 }
 
 .card-image-wrapper {
@@ -1457,12 +1526,17 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
   position: absolute;
   top: 20px;
   left: 20px;
+<<<<<<< HEAD
   background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+=======
+  background: rgba(13, 110, 253, 0.9);
+>>>>>>> blackboxai/update-alphaSoft-content
   color: white;
   padding: 8px 16px;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: 500;
+<<<<<<< HEAD
   transition: all 0.3s ease;
 }
 
@@ -1480,6 +1554,8 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
 .category-badge a:hover {
   text-decoration: none;
   color: inherit;
+=======
+>>>>>>> blackboxai/update-alphaSoft-content
 }
 
 .card-meta {
@@ -1487,7 +1563,11 @@ background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
 }
 
 .meta-item i {
+<<<<<<< HEAD
 background: linear-gradient(180deg, #061b6b 0%, #000a33 100%);
+=======
+  color: #0d6efd;
+>>>>>>> blackboxai/update-alphaSoft-content
 }
 /* partner section ==========================================================================*/
 .partner-item {
