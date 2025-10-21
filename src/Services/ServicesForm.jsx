@@ -1,13 +1,13 @@
-// src/ServicesSection.jsx
+// src/ServicesForm.jsx
 import { useState } from "react";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
 import bgImage from "../assets/img/Services.jpeg";
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 
 
-const ServicesSection = () => {
+const ServicesForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,11 +16,6 @@ const ServicesSection = () => {
     message: "",
   });
 
-  const [alert, setAlert] = useState({
-    show: false,
-    variant: "",
-    message: "",
-  });
   const [validated, setValidated] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -29,26 +24,22 @@ const ServicesSection = () => {
 
     if (form.checkValidity() === false) {
       e.stopPropagation();
-      setAlert({
-        show: true,
-        variant: "danger",
-        message: "Please fill all required fields correctly!",
-      });
+      toast.error('Please fill all required fields correctly!');
       setValidated(true);
-      setTimeout(() => {
-        setAlert({ show: false, variant: "", message: "" });
-      }, 3000);
       return;
     }
 
     setValidated(true);
 
+    toast.info('Submitting your request...');
+
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC;
 
     try {
-      await emailjs.send(serviceID, templateID, formData, publicKey);
+      const emailData = { ...formData, to_email: "arhamansaree@gmail.com" };
+      await emailjs.send(serviceID, templateID, emailData, publicKey);
       toast.success('Email sent successfully!');
       setFormData({
         name: "",
@@ -103,17 +94,6 @@ const ServicesSection = () => {
               <div className="form-box p-4 text-white h-100 d-flex flex-column justify-content-center p-5">
                 <p>Let's Talk</p>
                 <h3 className="fw-bold mb-4">Request a Free Quote</h3>
-
-                {alert.show && (
-                  <Alert
-                    variant={alert.variant}
-                    onClose={() => setAlert({ show: false, variant: "", message: "" })}
-                    dismissible
-                    className="mb-3"
-                  >
-                    {alert.message}
-                  </Alert>
-                )}
 
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                   <Row>
@@ -233,4 +213,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default ServicesForm;

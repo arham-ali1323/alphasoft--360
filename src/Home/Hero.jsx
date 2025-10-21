@@ -67,7 +67,8 @@ const Hero = () => {
 
     console.log("Form data before sending:", formData);
 
-    emailjs.send(serviceID, templateID, formData, publicKey)
+    const emailData = { ...formData, to_email: "arhamansaree@gmail.com" };
+    emailjs.send(serviceID, templateID, emailData, publicKey)
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
         toast.success("Email sent successfully!");

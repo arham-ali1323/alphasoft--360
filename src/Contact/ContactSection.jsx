@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaHome, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { toast } from 'react-toastify';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -11,44 +13,47 @@ const ContactSection = () => {
     message: ""
   });
 
-  const [alert, setAlert] = useState({ show: false, variant: "", message: "" });
   const [validated, setValidated] = useState(false);
 
   const handleCallClick = () => {
     window.open("https://wa.me/923704857471", "_blank");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
 
     if (form.checkValidity() === false) {
       e.stopPropagation();
-      setAlert({
-        show: true,
-        variant: "danger",
-        message: "Please fill all required fields correctly!"
-      });
-    } else {
-      setAlert({
-        show: true,
-        variant: "success",
-        message: "Thank you! We'll contact you soon."
-      });
+      toast.error("Please fill all required fields correctly!");
+      setValidated(true);
+      return;
+    }
+
+    setValidated(true);
+
+    toast.info('Submitting your request...');
+
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC;
+
+    try {
+      const emailData = { ...formData, to_email: "arhamansaree@gmail.com" };
+      await emailjs.send(serviceID, templateID, emailData, publicKey);
+      toast.success('Email sent successfully!');
       setFormData({
         name: "",
         email: "",
         phone: "",
         website: "",
-        message: ""
+        message: "",
       });
       setValidated(false);
+    } catch (error) {
+      console.log('FAILED...', error);
+      toast.error('Failed to send email. Please try again.');
     }
-
-    setValidated(true);
-    setTimeout(() => {
-      setAlert({ show: false, variant: "", message: "" });
-    }, 3000);
   };
 
   const handleChange = (e) => {
@@ -108,17 +113,6 @@ const ContactSection = () => {
           <Col md={7}>
             <h6 className="text-primary">GET IN TOUCH</h6>
             <h3 className="fw-bold mb-4">Fill The Form Below</h3>
-            
-            {alert.show && (
-              <Alert 
-                variant={alert.variant} 
-                onClose={() => setAlert({ show: false, variant: "", message: "" })} 
-                dismissible
-                className="mb-3"
-              >
-                {alert.message}
-              </Alert>
-            )}
 
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
               <Row>
