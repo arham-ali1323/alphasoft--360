@@ -5,11 +5,8 @@ import {
   FaStackOverflow,
 } from "react-icons/fa";
 import ngbng from "../assets/img/ngbng.png";
-<<<<<<< HEAD
-import teamMembers from "./teamData";
-=======
 
-import CEo from "../assets/img/CEo.jpeg";
+import CEo from "../assets/img/portrait-5.jpg";
 import person1 from "../assets/img/person1.jpg";
 import person2 from "../assets/img/person2.jpg";
 import person3 from "../assets/img/person3.jpg";
@@ -130,7 +127,6 @@ const teamMembers = [
   }
 ];
 
->>>>>>> blackboxai/update-alphaSoft-content
 
 const TeamSection = () => {
   return (

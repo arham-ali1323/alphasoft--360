@@ -12,13 +12,10 @@ import ProjectDetail from "./Pages/ProjectDetail";
 import BlogDetail from "./Pages/BlogDetail";
 import Contact from "./Pages/Contact";
 import FAQ from "./Pages/FAQ";
-<<<<<<< HEAD
 import Messages from "./Pages/Messages";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
-=======
 
->>>>>>> blackboxai/update-alphaSoft-content
 function App() {
   return (
     <Router

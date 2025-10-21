@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 import React, { useMemo, useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Carousel } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
-=======
-import { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Button, Carousel } from 'react-bootstrap';
->>>>>>> blackboxai/update-alphaSoft-content
 
 // High-quality software company themed images from Unsplash
 const allHeroImages = [
@@ -21,7 +16,6 @@ const allHeroImages = [
 ];
 
 const Hero = () => {
-<<<<<<< HEAD
   const [refreshSeed, setRefreshSeed] = useState(0);
   const [formData, setFormData] = useState({
     from_name: "",
@@ -60,7 +54,7 @@ const Hero = () => {
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC;
-    
+
     if (!serviceID || !templateID || !publicKey) {
       console.error("EmailJS environment variables are not configured.");
       toast.error("Email service is not configured. Please contact support.");
@@ -84,15 +78,6 @@ const Hero = () => {
         toast.error("Failed to send email. Please try again later.");
       });
   };
-=======
-  const [heroImages, setHeroImages] = useState([]);
-
-  // Randomly select 4 images on component mount
-  useEffect(() => {
-    const shuffled = [...allHeroImages].sort(() => 0.5 - Math.random());
-    setHeroImages(shuffled.slice(0, 4));
-  }, []);
->>>>>>> blackboxai/update-alphaSoft-content
 
   return (
     <div>

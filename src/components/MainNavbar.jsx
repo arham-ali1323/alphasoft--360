@@ -1,20 +1,13 @@
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-=======
-import React, { useState } from "react";
->>>>>>> blackboxai/update-alphaSoft-content
+
+import { useState } from "react";
 import {
   Navbar,
   Nav,
   Container,
   Offcanvas,
   Button,
-<<<<<<< HEAD
   Row,
   Col,
-=======
-  Offcanvas,
->>>>>>> blackboxai/update-alphaSoft-content
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {
@@ -28,20 +21,15 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import logo from "../assets/img/AlphaSoft_logo.png";
-import logoLight from "../assets/img/AlphaSoft_logo1.png";
 
 const MainNavbar = () => {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
-
-<<<<<<< HEAD
-
+  const [showContactOffcanvas, setShowContactOffcanvas] = useState(false);
 
   const handleCallClick = () => {
     window.open("https://wa.me/923704857471", "_blank");
   };
 
-=======
->>>>>>> blackboxai/update-alphaSoft-content
   return (
     <>
       {/* ===== Top Info Bar ===== */}
@@ -117,14 +105,10 @@ const MainNavbar = () => {
                 }}
                 className="text-decoration-none text-primary small d-flex align-items-center phone-link"
               >
-<<<<<<< HEAD
                 <FaPhone className="text-primary me-2" />
                 +92 3704857471
-=======
                 <i className="bi bi-telephone-fill text-primary me-2"></i>
-                +0123 456 7890
->>>>>>> blackboxai/update-alphaSoft-content
-              </a>
+                +0123 456 7890              </a>
             </Col>
           </Row>
         </Container>
@@ -133,7 +117,6 @@ const MainNavbar = () => {
       {/* ===== Navbar ===== */}
       <Navbar bg="primary" variant="dark" sticky="top" expand="lg">
         <Container>
-<<<<<<< HEAD
           <Navbar.Brand as={Link} to="/">
             <img src={logo} alt="logo" width={120} />
           </Navbar.Brand>
@@ -175,29 +158,26 @@ const MainNavbar = () => {
               <FaPhone size={30} />
             </Button>
           </Nav>
-        </Container>
-=======
-          {" "}
-          <Navbar.Brand href="#">AlphaSoft360</Navbar.Brand>{" "}
+
           <Navbar.Toggle aria-controls="main-navbar" />
           <Navbar.Collapse id="main-navbar">
             <Nav className="me-auto me-3">
-              <Nav.Link as={NavLink} to="/">
+              <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/About">
+              <Nav.Link as={Link} to="/about">
                 About
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/Services">
+              <Nav.Link as={Link} to="/services">
                 Services
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/Pages">
-                Pages
-              </Nav.Link>
-              <Nav.Link as={NavLink} to="/Team">
+              <Nav.Link as={Link} to="/team">
                 Team
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/Contact">
+              <Nav.Link as={Link} to="/FAQ">
+                FAQs
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
             </Nav>
@@ -215,13 +195,11 @@ const MainNavbar = () => {
                 <FaLinkedinIn />
               </a>
             </div>
-            <Button variant="outline-light ms-auto" onClick={() => setShowOffcanvas(true)}>
+            <Button variant="outline-light ms-auto" onClick={() => setShowContactOffcanvas(true)}>
               <i className="bi bi-telephone-fill"></i>
             </Button>
           </Navbar.Collapse>
-        </Container>{""}
->>>>>>> blackboxai/update-alphaSoft-content
-      </Navbar>
+        </Container>{""}  </Navbar>
 
       {/* ===== Offcanvas Menu for Mobile ===== */}
       <Offcanvas
@@ -243,7 +221,6 @@ const MainNavbar = () => {
           </Button>
         </Offcanvas.Header>
 
-<<<<<<< HEAD
         <Offcanvas.Body>
           <Nav className="flex-column text-center">
             <Nav.Link as={Link} to="/" onClick={() => setShowOffcanvas(false)}>
@@ -265,10 +242,10 @@ const MainNavbar = () => {
             </Nav.Link>
             <Nav.Link
               as={Link}
-              to="/NotFound"
+              to="/FAQ"
               onClick={() => setShowOffcanvas(false)}
             >
-              Pages
+              FAQs
             </Nav.Link>
             <Nav.Link
               as={Link}
@@ -301,8 +278,7 @@ const MainNavbar = () => {
           font-weight: bold;
         }
       `}</style>
-=======
-      <Offcanvas show={showOffcanvas} onHide={() => setShowOffcanvas(false)} placement="end">
+      <Offcanvas show={showContactOffcanvas} onHide={() => setShowContactOffcanvas(false)} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Contact Details</Offcanvas.Title>
         </Offcanvas.Header>
@@ -315,7 +291,7 @@ const MainNavbar = () => {
         </Offcanvas.Body>
       </Offcanvas>
 
->>>>>>> blackboxai/update-alphaSoft-content
+
     </>
   );
 };
