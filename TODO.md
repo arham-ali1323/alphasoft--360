@@ -9,3 +9,6 @@
 - [x] Test form submissions
 - [x] Create Express server to handle API calls
 - [x] Update all fetch URLs to point to localhost:3001
+- [x] Update vercel.json for API routes
+- [x] Create Vercel API route for sendEmail
+- [x] Install resend package
