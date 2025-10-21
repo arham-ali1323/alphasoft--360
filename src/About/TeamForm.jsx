@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
 import bgImage from "../assets/img/Services.jpeg";
 import emailjs from '@emailjs/browser';

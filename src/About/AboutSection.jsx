@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import React from 'react';
 import About from '../assets/img/portrait-5.jpg'; // Ensure you have this image in the specified path
-=======
-import About from '../assets/img/CEo.jpeg'; // Ensure you have this image in the specified path
->>>>>>> blackboxai/update-alphaSoft-content
 
 const AboutSection = () => {
   return (

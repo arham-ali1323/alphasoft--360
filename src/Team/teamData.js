@@ -1,3 +1,4 @@
+import awais_ali from "../assets/img/awais_ali.png";
 import maroof_sultan from "../assets/img/maroof_sultan.jpg";
 import muhammad_shahbaz from "../assets/img/muhammad_shahbaz.jpg";
 import muazam_mughal from "../assets/img/muazam_mughal.jpg";
@@ -9,6 +10,52 @@ import ubaidullah from "../assets/img/ubaidullah.jpg";
 import ali_hassan from "../assets/img/ali_hassan.jpg";
 
 const teamMembers = [
+  // Awais Ali,
+  {
+    id: "awais-ali",
+    image: awais_ali,
+    name: "M Awais",
+    role: "Full Stack Developer",
+    bio: "Expert in agile methodologies with a track record of delivering enterprise projects on time and within scope.",
+    contact: {
+      email: "alphasoft@gmail.com",
+      phone: "+92 370 6510421",
+    },
+    biography: [
+     " I am a highly experienced Full Stack Developer with over 7 years of expertise in web application development, IoT applications, and API integrations. Throughout my career, I have utilized cutting-edge technologies to build scalable, high-performance applications, delivering impactful solutions across various domains. Here’s a summary of my key skills and experience",         
+
+"PHP & Laravel: I have a strong command over PHP and extensive experience developing web applications using PHP frameworks, with OpenCart and Laravel being areas of specialization for e-commerce and custom solutions.",
+"Node.js & Nest.js: I am proficient in Node.js and Nest.js, utilizing these frameworks to build efficient, scalable server-side applications. My expertise in real-time data processing and backend development enables me to deliver high-performance solutions.",
+"Frontend Technologies (Vue.js, Angular, React.js): I am adept at using modern front-end frameworks such as Vue.js, Angular, and React.js to build dynamic, responsive, and user-friendly web applications with a focus on superior user experiences and seamless interactions.",
+
+"Database Management (MySQL, MongoDB): I have extensive experience working with both relational (MySQL, Sequelize ORM) and NoSQL (MongoDB, Mongoose) databases, ensuring robust, efficient, and scalable data storage solutions for a variety of applications.",
+
+"API Development & Integrations: I am skilled in designing and developing RESTful APIs, ensuring seamless communication and integration across different systems and applications, including third-party services and IoT platforms.",
+
+"E-commerce Solutions & Custom Dashboards: With a strong background in e-commerce, I specialize in creating custom e-commerce solutions, dashboards, and admin panels that enhance operational efficiency and user engagement.",
+
+"Throughout my career, I have demonstrated my ability to collaborate effectively with cross-functional teams, deliver high-quality products, and meet project deadlines while maintaining a focus on code reusability, performance optimization, and continuous improvement. I am passionate about tackling complex challenges, learning new technologies, and driving innovation in every project I work on.",
+
+" #PHP #Laravel #NodeJS #NestJS #VueJS #Angular #ReactJS #MySQL #MongoDB #Sequelize #Mongoose #OpenCart #RESTfulAPI #Ecommerce #IoT #FullStack #RealTimeProcessing",
+    ],
+    skills: [
+      { name: "Laravel Development", percentage: 95 },
+      { name: "Next.js", percentage: 90 },
+      { name: "Symfony", percentage: 85 },
+      { name: "CI/CD Pipelines", percentage: 70 },
+      { name: "PHP", percentage: 94 },
+      { name: "JavaScript (ES6+)", percentage: 80 },
+      { name: "HTML5 & CSS3", percentage: 96 },
+      { name: "Bootstrap & Tailwind CSS", percentage: 94 },
+      { name: "Responsive Web Design", percentage: 93 },
+      { name: "Git & GitHub", percentage: 95 },
+    ],
+    socials: {
+      stackoverflow: "https://stackoverflow.com",
+      linkedin: "https://www.linkedin.com/",
+      github: "https://github.com/",
+    },
+  },
   // Maroof Sultan
   {
     id: "maroof-sultan",
@@ -29,6 +76,8 @@ const teamMembers = [
     skills: [
       { name: "Laravel Development", percentage: 95 },
       { name: "Next.js", percentage: 80 },
+       { name: "Vue.js", percentage: 85 },
+      { name: "TypeScript", percentage: 90 },
       { name: "Symfony", percentage: 80 },
       { name: "OpenCart", percentage: 93 },
       { name: "CI/CD Pipelines", percentage: 70 },
@@ -53,7 +102,7 @@ const teamMembers = [
     role: "Full Stack Developer",
     bio: "Skilled in modern web technologies with a proven ability to deliver robust, scalable, and efficient software solutions.",
     contact: {
-      email: "shahbaz.dev012@gmail.com",
+      email: "maroofsultan.dev@gmail.com",
       phone: "+92 310 6510421",
     },
     biography: [
@@ -155,47 +204,47 @@ const teamMembers = [
     },
   },
   // fazain
-{
-  "id": "faizan-ali",
-  "image": faizan_ali,
-  "name": "Faizan Ali",
-  "role": "Front-End Developer",
-  "bio": "A professional Web Developer specializing in Front-End development with a strong foundation in responsive and user-focused web design. Skilled in building modern, dynamic, and visually appealing interfaces using clean and efficient code. Possesses working knowledge of Back-End concepts, ensuring seamless integration and performance across platforms. Passionate about continuous learning, optimizing user experience, and crafting high-quality digital products.",
-  "contact": {
-    "email": "faizandevx@gmail.com",
-    "phone": "+92 347 3057550",
-    "github": "https://github.com/faizandevx",
-    "linkedin": "https://www.linkedin.com/in/faizan-ali-5aa430380/",
-    "facebook": "https://www.facebook.com/faizan.rajput.716970"
+  {
+    id: "faizan-ali",
+    image: faizan_ali,
+    name: "Faizan Ali",
+    role: "Front-End Developer",
+    bio: "A professional Web Developer specializing in Front-End development with a strong foundation in responsive and user-focused web design. Skilled in building modern, dynamic, and visually appealing interfaces using clean and efficient code. Possesses working knowledge of Back-End concepts, ensuring seamless integration and performance across platforms. Passionate about continuous learning, optimizing user experience, and crafting high-quality digital products.",
+    contact: {
+      email: "faizandevx@gmail.com",
+      phone: "+92 347 3057550",
+      github: "https://github.com/faizandevx",
+      linkedin: "https://www.linkedin.com/in/faizan-ali-5aa430380/",
+      facebook: "https://www.facebook.com/faizan.rajput.716970",
+    },
+    biography: [
+      "Faizan Ali is a dedicated Front-End Developer with expertise in creating responsive, high-performance, and visually appealing web interfaces using modern technologies like HTML5, CSS3, JavaScript (ES6+), and Bootstrap 5.",
+      "He focuses on crafting user-friendly and accessible designs that deliver seamless experiences across devices and browsers. His clean coding approach ensures maintainability and efficiency in all projects.",
+      "Faizan also has a solid understanding of back-end concepts, enabling smooth collaboration between front-end and back-end systems for optimized web solutions.",
+      "He utilizes tools such as Git, GitHub, VS Code, and Figma for version control, design prototyping, and efficient development workflows, while constantly exploring new techniques to enhance UI/UX performance.",
+    ],
+    skills: [
+      { name: "HTML5", percentage: 95 },
+      { name: "CSS3", percentage: 92 },
+      { name: "JavaScript (ES6+)", percentage: 90 },
+      { name: "Bootstrap 5", percentage: 88 },
+      { name: "Tailwind CSS", percentage: 86 },
+      { name: "Responsive Design", percentage: 94 },
+      { name: "Cross-Browser Compatibility", percentage: 89 },
+      { name: "UI/UX Principles", percentage: 87 },
+      { name: "Performance Optimization", percentage: 85 },
+      { name: "Git & GitHub", percentage: 90 },
+      { name: "Figma", percentage: 83 },
+    ],
+    socials: {
+      linkedin: "https://www.linkedin.com/in/faizan-ali-5aa430380/",
+      github: "https://github.com/faizandevx",
+      stackoverflow: "https://stackoverflow.com/",
+    },
+    education: {
+      degree: "BS Software Engineering",
+    },
   },
-  "biography": [
-    "Faizan Ali is a dedicated Front-End Developer with expertise in creating responsive, high-performance, and visually appealing web interfaces using modern technologies like HTML5, CSS3, JavaScript (ES6+), and Bootstrap 5.",
-    "He focuses on crafting user-friendly and accessible designs that deliver seamless experiences across devices and browsers. His clean coding approach ensures maintainability and efficiency in all projects.",
-    "Faizan also has a solid understanding of back-end concepts, enabling smooth collaboration between front-end and back-end systems for optimized web solutions.",
-    "He utilizes tools such as Git, GitHub, VS Code, and Figma for version control, design prototyping, and efficient development workflows, while constantly exploring new techniques to enhance UI/UX performance."
-  ],
-  "skills": [
-    { "name": "HTML5", "percentage": 95 },
-    { "name": "CSS3", "percentage": 92 },
-    { "name": "JavaScript (ES6+)", "percentage": 90 },
-    { "name": "Bootstrap 5", "percentage": 88 },
-    { "name": "Tailwind CSS", "percentage": 86 },
-    { "name": "Responsive Design", "percentage": 94 },
-    { "name": "Cross-Browser Compatibility", "percentage": 89 },
-    { "name": "UI/UX Principles", "percentage": 87 },
-    { "name": "Performance Optimization", "percentage": 85 },
-    { "name": "Git & GitHub", "percentage": 90 },
-    { "name": "Figma", "percentage": 83 }
-  ],
-  "socials": {
-    linkedin: "https://www.linkedin.com/in/faizan-ali-5aa430380/",
-    github: "https://github.com/faizandevx",
-    stackoverflow: "https://stackoverflow.com/",
-  },
-  "education": {
-    degree: "BS Software Engineering",
-  }
-},
 
   // Ahmed
   {
@@ -345,7 +394,6 @@ const teamMembers = [
       status: "1st Semester",
     },
   },
- 
 ];
 
 export default teamMembers;

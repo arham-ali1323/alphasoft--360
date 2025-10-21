@@ -107,8 +107,7 @@ const MainNavbar = () => {
               >
                 <FaPhone className="text-primary me-2" />
                 +92 3704857471
-                <i className="bi bi-telephone-fill text-primary me-2"></i>
-                +0123 456 7890              </a>
+              </a>
             </Col>
           </Row>
         </Container>
@@ -159,46 +158,7 @@ const MainNavbar = () => {
             </Button>
           </Nav>
 
-          <Navbar.Toggle aria-controls="main-navbar" />
-          <Navbar.Collapse id="main-navbar">
-            <Nav className="me-auto me-3">
-              <Nav.Link as={Link} to="/">
-                Home
-              </Nav.Link>
-              <Nav.Link as={Link} to="/about">
-                About
-              </Nav.Link>
-              <Nav.Link as={Link} to="/services">
-                Services
-              </Nav.Link>
-              <Nav.Link as={Link} to="/team">
-                Team
-              </Nav.Link>
-              <Nav.Link as={Link} to="/FAQ">
-                FAQs
-              </Nav.Link>
-              <Nav.Link as={Link} to="/contact">
-                Contact
-              </Nav.Link>
-            </Nav>
-            <div className="d-flex gap-3 navbar-social">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaFacebookF />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaTwitter />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaInstagram />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaLinkedinIn />
-              </a>
-            </div>
-            <Button variant="outline-light ms-auto" onClick={() => setShowContactOffcanvas(true)}>
-              <i className="bi bi-telephone-fill"></i>
-            </Button>
-          </Navbar.Collapse>
+
         </Container>{""}  </Navbar>
 
       {/* ===== Offcanvas Menu for Mobile ===== */}

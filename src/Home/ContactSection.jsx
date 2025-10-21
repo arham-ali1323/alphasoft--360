@@ -3,8 +3,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import personImage from "../assets/img/contact-us.jpg";
-import mail from "../assets/img/mail.png";
-import worldGlobe from "../assets/img/world-globe.png";
+
 
 // Stat Card with CountUp
 const StatCard = ({ value, label, isVisible }) => {
@@ -52,7 +51,7 @@ const ContactSection = () => {
       <div className="contact-section-container ">
         {/* Main Content */}
         <div className="contact-main-content">
-
+          
 
           {/* Right: Contact Info */}
           <div className="contact-info">
@@ -103,7 +102,7 @@ const ContactSection = () => {
             </div>
 
             <a
-              className="btn text-light lets-talk-button"
+              className="btn btn-lg text-light lets-talk-button"
               href="#"
               onClick={(e) => {
                 e.preventDefault();
@@ -113,8 +112,7 @@ const ContactSection = () => {
               Let's Chat
             </a>
           </div>
-
-            {/* Left: Image + Idea Bubble */}
+          {/* Left: Image + Idea Bubble */}
           <div className="image-and-bubble">
             <img
               src={personImage}
