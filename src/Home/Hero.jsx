@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button, Carousel } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import emailjs from "@emailjs/browser";
+import { Resend } from 'resend';
 
 // High-quality software company themed images from Unsplash
 const allHeroImages = [
@@ -38,7 +38,7 @@ const Hero = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -51,33 +51,35 @@ const Hero = () => {
       return;
     }
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC;
-
-    if (!serviceID || !templateID || !publicKey) {
-      console.error("EmailJS environment variables are not configured.");
-      toast.error("Email service is not configured. Please contact support.");
-      return;
-    }
-
-    console.log("Service ID:", serviceID);
-    console.log("Template ID:", templateID);
-    console.log("Public Key:", publicKey);
-
     console.log("Form data before sending:", formData);
 
-    const emailData = { ...formData, to_email: "arhamansaree@gmail.com" };
-    emailjs.send(serviceID, templateID, emailData, publicKey)
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        toast.success("Email sent successfully!");
-        setFormData({ from_name: "", from_email: "", from_phone: "", message: "" });
-      })
-      .catch((error) => {
-        console.error("FAILED...", error);
-        toast.error("Failed to send email. Please try again later.");
+    try {
+      const response = await fetch('http://localhost:3001/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.from_name,
+          email: formData.from_email,
+          phone: formData.from_phone,
+          message: formData.message,
+          subject: 'New Appointment Request from AlphaSoft Website',
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+        console.log("Response not ok:", response);
+      }
+
+      console.log("SUCCESS!");
+      toast.success("Email sent successfully!");
+      setFormData({ from_name: "", from_email: "", from_phone: "", message: "" });
+    } catch (error) {
+      console.error("FAILED...", error);
+      toast.error("Failed to send email. Please try again later.");
+    }
   };
 
   return (

@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
 import bgImage from "../assets/img/Services.jpeg";
-import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import { Resend } from 'resend';
 
 const ServicesSection = () => {
   const [formData, setFormData] = useState({
@@ -26,12 +26,22 @@ const ServicesSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
     try {
-      await emailjs.send(serviceID, templateID, formData, publicKey);
+      const response = await fetch('http://localhost:3001/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          subject: 'New Team Inquiry from AlphaSoft Website',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
       toast.success('Email sent successfully!');
       setFormData({
         name: "",

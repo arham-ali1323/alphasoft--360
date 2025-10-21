@@ -3,9 +3,8 @@ import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaPlay } from "react-icons/fa";
 import bgImage from "../assets/img/Services.jpeg";
-import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-
+import { Resend } from 'resend';
 
 const ServicesForm = () => {
   const [formData, setFormData] = useState({
@@ -33,13 +32,22 @@ const ServicesForm = () => {
 
     toast.info('Submitting your request...');
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC;
-
     try {
-      const emailData = { ...formData, to_email: "arhamansaree@gmail.com" };
-      await emailjs.send(serviceID, templateID, emailData, publicKey);
+      const response = await fetch('http://localhost:3001/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          subject: 'New Service Request from AlphaSoft Website',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
       toast.success('Email sent successfully!');
       setFormData({
         name: "",

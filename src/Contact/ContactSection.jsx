@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { FaHome, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import { toast } from 'react-toastify';
-import emailjs from '@emailjs/browser';
+import { FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,13 +9,16 @@ const ContactSection = () => {
     email: "",
     phone: "",
     website: "",
-    message: ""
+    message: "",
   });
 
   const [validated, setValidated] = useState(false);
 
-  const handleCallClick = () => {
-    window.open("https://wa.me/923704857471", "_blank");
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -31,17 +33,19 @@ const ContactSection = () => {
     }
 
     setValidated(true);
-
-    toast.info('Submitting your request...');
-
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC;
+    toast.info("Submitting your request...");
 
     try {
-      const emailData = { ...formData, to_email: "arhamansaree@gmail.com" };
-      await emailjs.send(serviceID, templateID, emailData, publicKey);
-      toast.success('Email sent successfully!');
+      const response = await fetch("http://localhost:3001/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Failed to send email");
+
+      toast.success("✅ Email sent successfully!");
       setFormData({
         name: "",
         email: "",
@@ -51,37 +55,19 @@ const ContactSection = () => {
       });
       setValidated(false);
     } catch (error) {
-      console.log('FAILED...', error);
-      toast.error('Failed to send email. Please try again.');
+      console.error("FAILED...", error);
+      toast.error("❌ Failed to send email. Please try again.");
     }
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
   };
 
   return (
     <section className="contact-section py-5">
       <Container>
         <Row className="align-items-stretch">
-          {/* Left Side - Contact Info */}
           <Col md={5} className="mb-4">
             <div className="contact-info-box h-100 text-white p-4 rounded">
               <p className="small">LET'S TALK</p>
               <h3 className="fw-bold mb-4">Speak With Expert Engineers.</h3>
-
-              {/* <div className="d-flex align-items-center mb-3">
-                <div className="icon-box me-3">
-                  <FaHome size={24} />
-                </div>
-                <div>
-                  <strong>Email:</strong>
-                  <p className="mb-0">(+088)589-8745</p>
-                </div>
-              </div> */}
 
               <div className="d-flex align-items-center mb-3">
                 <div className="icon-box me-3">
@@ -95,7 +81,12 @@ const ContactSection = () => {
 
               <div
                 className="d-flex align-items-center"
-                onClick={() => window.open("https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan", "_blank")}
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/maps/search/?api=1&query=Main%20Pakavenue%20Road%2C%20Sahiwal%2C%2057000%2C%20Pakistan",
+                    "_blank"
+                  )
+                }
                 style={{ cursor: "pointer" }}
               >
                 <div className="icon-box me-3">
@@ -103,13 +94,14 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <strong>Address:</strong>
-                  <p className="mb-0">Main Pakavenue Road, Sahiwal, 57000, Pakistan</p>
+                  <p className="mb-0">
+                    Main Pakavenue Road, Sahiwal, 57000, Pakistan
+                  </p>
                 </div>
               </div>
             </div>
           </Col>
 
-          {/* Right Side - Form */}
           <Col md={7}>
             <h6 className="text-primary">GET IN TOUCH</h6>
             <h3 className="fw-bold mb-4">Fill The Form Below</h3>
@@ -143,6 +135,7 @@ const ContactSection = () => {
                   </Form.Control.Feedback>
                 </Col>
               </Row>
+
               <Row>
                 <Col md={6} className="mb-3">
                   <Form.Control
@@ -168,6 +161,7 @@ const ContactSection = () => {
                   />
                 </Col>
               </Row>
+
               <Form.Group className="mb-3">
                 <Form.Control
                   required
@@ -182,6 +176,7 @@ const ContactSection = () => {
                   Please provide your message.
                 </Form.Control.Feedback>
               </Form.Group>
+
               <Button type="submit" className="submit-btn px-4 py-2">
                 Submit Now
               </Button>
