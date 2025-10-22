@@ -8,6 +8,9 @@ export default defineConfig({
     hmr: {
       port: 5173,
     },
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
   },
   define: {
     global: 'globalThis',
@@ -26,7 +29,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           ui: ['react-bootstrap', 'react-icons'],
-          utils: ['@emailjs/browser', 'react-toastify']
+        utils: ['react-toastify']
         }
       }
     },

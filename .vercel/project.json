@@ -1,16 +1,1 @@
-{
-  "projectId": "prj_LKH3AqMFJyeUNS9h7zEVAFuKl09Q",
-  "orgId": "team_b7KK7fyp73E5nBvyVqbzP4Mv",
-  "projectName": "alphasoft-360",
-  "settings": {
-    "createdAt": 1760516685086,
-    "framework": "vite",
-    "devCommand": null,
-    "installCommand": null,
-    "buildCommand": null,
-    "outputDirectory": null,
-    "rootDirectory": null,
-    "directoryListing": false,
-    "nodeVersion": "22.x"
-  }
-}
+{"projectId":"prj_LKH3AqMFJyeUNS9h7zEVAFuKl09Q","orgId":"team_b7KK7fyp73E5nBvyVqbzP4Mv","projectName":"alphasoft-360"}
